@@ -131,9 +131,15 @@ public class GameManager : MonoBehaviour
     public void colocarTile(Vector3 position, Transform parent)
     {
         //instanciar tile no local
-        GameObject newTile = Instantiate(grabbedTile,position,grabbedTileRotation);
+        GameObject newTile = Instantiate(grabbedTile,position,grabbedTile.transform.rotation);
         newTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
+
+        for(int x = 0; x < newTile.GetComponent<tileSetup>().spawnPoints.Length; x++)
+        {
+            newTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.SetActive(grabbedTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.active);
+        }
         //newTile.transform.parent = parent;
+        //newTile.transform.rotation = grabbedTile.transform.rotation;
         newTile.transform.parent = tileWorld;
 
         //destroy tile preview
