@@ -21,6 +21,8 @@ public class checkSpawnPointConnection : MonoBehaviour
                 {
                     hasConnection = true;
                     connectionTile = hitCollider.gameObject.GetComponentInParent<tileSetup>();
+                    //gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                    //gameObject.SetActive(false);
                 }
             }
         }

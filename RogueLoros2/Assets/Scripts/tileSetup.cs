@@ -46,7 +46,10 @@ public class tileSetup : MonoBehaviour
     {
         for(int x = 0; x < spawnPoints.Length; x++)
         {
-            spawnPoints[x].transform.GetChild(0).gameObject.SetActive(true);
+            if (spawnPoints[x].GetComponent<checkSpawnPointConnection>().hasConnection == false)
+            {
+                spawnPoints[x].transform.GetChild(0).gameObject.SetActive(true);
+            }
         }
     }
     public void deactivateMarkers()
