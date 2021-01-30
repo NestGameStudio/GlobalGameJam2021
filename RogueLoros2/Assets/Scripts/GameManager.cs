@@ -78,6 +78,10 @@ public class GameManager : MonoBehaviour
         GameObject tile = Instantiate(Tile,transform.position,Quaternion.identity);
         tile.transform.parent = tileWorld;
         tile.transform.position = new Vector3(0, 0, 0);
+
+        tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+        tile.GetComponent<tileSetup>().updateTile(type);
+        activeTile = tile;
     }
 
     public void createHoverInstance(tileType tipo)
@@ -99,6 +103,9 @@ public class GameManager : MonoBehaviour
                 tilePanel.transform.GetChild(x).GetComponentInChildren<Button>().interactable = false;
             }
 
+            //ativar marcadores
+            activeTile.GetComponent<tileSetup>().activateMarkers();
+
             //cancelar colocacao de tile
             if (Input.GetMouseButtonDown(1))
             {
@@ -111,6 +118,9 @@ public class GameManager : MonoBehaviour
                     tilePanel.transform.GetChild(x).GetComponentInChildren<Button>().interactable = true;
                     tilePanel.transform.GetChild(x).gameObject.SetActive(true);
                 }
+
+                //desativar marcadores
+                activeTile.GetComponent<tileSetup>().deactivateMarkers();
             }
         }
     }

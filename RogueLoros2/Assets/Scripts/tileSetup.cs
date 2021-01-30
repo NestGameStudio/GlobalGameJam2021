@@ -36,6 +36,21 @@ public class tileSetup : MonoBehaviour
         }
     }
     
+    public void activateMarkers()
+    {
+        for(int x = 0; x < spawnPoints.Length; x++)
+        {
+            spawnPoints[x].transform.GetChild(0).gameObject.SetActive(true);
+        }
+    }
+    public void deactivateMarkers()
+    {
+        for (int x = 0; x < spawnPoints.Length; x++)
+        {
+            spawnPoints[x].transform.GetChild(0).gameObject.SetActive(false);
+        }
+    }
+
     public void updateTile(tileType tipoTile)
     {
 
