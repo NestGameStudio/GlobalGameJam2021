@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance  {get; private set;}
 
+    public GameObject Player;
+
     //referencias dentro do gamemanager
     public GameObject itemPanel;
     public GameObject tilePanel;
@@ -60,6 +62,9 @@ public class GameManager : MonoBehaviour
 
         //instanciar primeiro tile
         firstTile();
+
+        //criar player
+        positionPlayer();
     }
 
     // Update is called once per frame
@@ -169,5 +174,10 @@ public class GameManager : MonoBehaviour
 
         //desativar marcadores
         activeTile.GetComponent<tileSetup>().deactivateMarkers();
+    }
+    void positionPlayer()
+    {
+        GameObject newPlayer = Instantiate(Player,activeTile.transform.position,Quaternion.identity);
+        newPlayer.transform.parent = gameObject.transform;
     }
 }
