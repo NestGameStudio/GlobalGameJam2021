@@ -33,6 +33,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public GameObject grabbedTile;
 
+    [HideInInspector]
+    public GameObject grabbedTilePreview;
+
+    [HideInInspector]
+    public Quaternion grabbedTileRotation;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -90,15 +96,41 @@ public class GameManager : MonoBehaviour
         activeTile = tile;
     }
 
-    public void createHoverInstance(tileType tipo)
+    public void createHoverInstance(tileType tipo,GameObject previewGrabbed)
     {
         isPlacingTile = true;
         tipoTileGrabbed = tipo;
-        
+
+        //pegando o botao que foi apertado para ser destruido depois
+        grabbedTilePreview = previewGrabbed;
+
         //instanciou tile que sera ativado no local de preview antes de de fato o colocar na posicao
         grabbedTile = Instantiate(Tile,transform.position,Quaternion.identity);
         grabbedTile.GetComponent<tileSetup>().updateTile(tipo);
         grabbedTile.SetActive(false);
+    }
+
+    public void colocarTile(Vector3 position)
+    {
+        //instanciar tile no local
+        GameObject newTile = Instantiate(grabbedTile,position,grabbedTileRotation);
+        newTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
+        newTile.transform.parent = tileWorld;
+
+        //destroy tile preview
+        Destroy(grabbedTilePreview);
+
+        //destruir o tile criado para servir como visualizacao
+        Destroy(grabbedTile);
+
+        //parar visualizacao de tileplacement
+        isPlacingTile = false;
+
+        //retornar ao estado 0 -> todos os botoes interativos
+
+
+        reenableTileButtons();
+
     }
 
     void interacaoDeColocacaoTile()
@@ -121,17 +153,21 @@ public class GameManager : MonoBehaviour
             {
                 isPlacingTile = false;
 
-                for (int x = 0; x < tilePanel.transform.childCount; x++)
-                {
-                    Debug.Log("tile buttons disabled");
-
-                    tilePanel.transform.GetChild(x).GetComponentInChildren<Button>().interactable = true;
-                    tilePanel.transform.GetChild(x).gameObject.SetActive(true);
-                }
-
-                //desativar marcadores
-                activeTile.GetComponent<tileSetup>().deactivateMarkers();
+                reenableTileButtons();
             }
         }
+    }
+    void reenableTileButtons()
+    {
+        for (int x = 0; x < tilePanel.transform.childCount; x++)
+        {
+            Debug.Log("tile buttons disabled");
+
+            tilePanel.transform.GetChild(x).GetComponentInChildren<Button>().interactable = true;
+            tilePanel.transform.GetChild(x).gameObject.SetActive(true);
+        }
+
+        //desativar marcadores
+        activeTile.GetComponent<tileSetup>().deactivateMarkers();
     }
 }

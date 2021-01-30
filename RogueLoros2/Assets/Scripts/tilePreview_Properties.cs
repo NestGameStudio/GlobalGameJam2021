@@ -74,19 +74,19 @@ public class tilePreview_Properties : MonoBehaviour
             switch (tipoPreview)
             {
                 case previewType.OneSide:
-                    GameManager.instance.createHoverInstance(tileType.OneSide);
+                    GameManager.instance.createHoverInstance(tileType.OneSide,gameObject);
 
                     break;
                 case previewType.OneSideB:
-                    GameManager.instance.createHoverInstance(tileType.OneSideB);
+                    GameManager.instance.createHoverInstance(tileType.OneSideB, gameObject);
 
                     break;
                 case previewType.ThreeSides:
-                    GameManager.instance.createHoverInstance(tileType.ThreeSides);
+                    GameManager.instance.createHoverInstance(tileType.ThreeSides, gameObject);
 
                     break;
                 case previewType.FourSides:
-                    GameManager.instance.createHoverInstance(tileType.FourSides);
+                    GameManager.instance.createHoverInstance(tileType.FourSides, gameObject);
 
                     break;
             }

@@ -59,7 +59,7 @@ public class tileSetup : MonoBehaviour
         switch (tipoTile)
         {
             case tileType.OneSide:
-                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[0];
+                tileGraphics.GetComponent<MeshRenderer>().material.mainTexture = tileTextures[0];
 
                 //deixar ativado apenas o primeiro spawnpoint
                 for (int x = 0; x < spawnPoints.Length; x++)
@@ -76,7 +76,7 @@ public class tileSetup : MonoBehaviour
 
                 break;
             case tileType.OneSideB:
-                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[1];
+                tileGraphics.GetComponent<MeshRenderer>().material.mainTexture = tileTextures[1];
 
                 //ativar spawnpoints correspondentes
                 for (int x = 0; x < spawnPoints.Length; x++)
@@ -93,7 +93,7 @@ public class tileSetup : MonoBehaviour
 
                 break;
             case tileType.ThreeSides:
-                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[2];
+                tileGraphics.GetComponent<MeshRenderer>().material.mainTexture = tileTextures[2];
 
                 //ativar spawnpoints correspondentes
                 for (int x = 0; x < spawnPoints.Length; x++)
@@ -110,7 +110,7 @@ public class tileSetup : MonoBehaviour
 
                 break;
             case tileType.FourSides:
-                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[3];
+                tileGraphics.GetComponent<MeshRenderer>().material.mainTexture = tileTextures[3];
 
                 //ativar spawnpoints correspondentes
                 for (int x = 0; x < spawnPoints.Length; x++)
