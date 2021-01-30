@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public GameObject Tile;
     public Transform tileWorld;
 
+    public Button nextTurnButton;
+
     //public GameObject hoverPrefab;
 
     public bool isPlacingTile = false;
@@ -139,6 +141,8 @@ public class GameManager : MonoBehaviour
 
         activeTile.GetComponent<tileSetup>().checkConnections();
 
+        hasTilePreviewsLeft();
+
     }
 
     void interacaoDeColocacaoTile()
@@ -180,6 +184,8 @@ public class GameManager : MonoBehaviour
 
         //desativar marcadores
         activeTile.GetComponent<tileSetup>().deactivateMarkers();
+
+        //hasTilePreviewsLeft();
     }
     void positionPlayer()
     {
@@ -196,5 +202,15 @@ public class GameManager : MonoBehaviour
         player.transform.position = activeTile.transform.position;
 
         activeTile.GetComponent<tileSetup>().checkConnections();
+    }
+
+    void hasTilePreviewsLeft()
+    {
+        if(tilePanel.transform.childCount == 0)
+        {
+            Debug.Log("acabaram cartas");
+            //acabaram os tiles -> religar o botao
+            nextTurnButton.interactable = true;
+        }
     }
 }

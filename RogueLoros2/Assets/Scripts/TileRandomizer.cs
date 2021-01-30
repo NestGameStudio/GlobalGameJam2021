@@ -32,6 +32,8 @@ public class TileRandomizer : MonoBehaviour {
 
         Button UIButton = UITilePanel.transform.GetChild(tileNum).GetComponentInChildren<Button>();
 
+        GameManager.instance.nextTurnButton.interactable = false;
+
         if (UIButton.GetComponentInParent<tilePreview_Properties>() != null)
         {
             UIButton.GetComponentInParent<tilePreview_Properties>().randomizePreview();
