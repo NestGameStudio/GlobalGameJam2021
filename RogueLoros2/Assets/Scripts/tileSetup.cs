@@ -21,9 +21,13 @@ public class tileSetup : MonoBehaviour
 
     public Transform[] spawnPoints;
 
+    public visualizeFutureTile[] tileMarkers;
+
     // Start is called before the first frame update
     void Start()
     {
+        //dar o numero de cada spawnpoint pros marcadores para detectar onde nao existe conexao
+        assignMarkerNumbers();
         
     }
 
@@ -121,6 +125,13 @@ public class tileSetup : MonoBehaviour
                 }
 
                 break;
+        }
+    }
+    void assignMarkerNumbers()
+    {
+        for (int x = 0; x < tileMarkers.Length; x++)
+        {
+            tileMarkers[x].spawnPointNumber = x;
         }
     }
 }
