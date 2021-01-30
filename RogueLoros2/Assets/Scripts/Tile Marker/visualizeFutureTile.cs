@@ -42,7 +42,8 @@ public class visualizeFutureTile : MonoBehaviour
         //quando clica em cima do quadrado da visualizacao
         if (detectClick && Input.GetMouseButtonDown(0) && isConnection)
         {
-            GameManager.instance.colocarTile(gameObject.transform.position);
+            //o tile novo vai aparecer dentro do spawnpoint
+            GameManager.instance.colocarTile(gameObject.transform.position,transform.parent.parent.parent);
             detectClick = false;
 
             //destruir spawnpoint para nao poder ser usado depois

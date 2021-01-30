@@ -115,12 +115,12 @@ public class GameManager : MonoBehaviour
         grabbedTile.SetActive(false);
     }
 
-    public void colocarTile(Vector3 position)
+    public void colocarTile(Vector3 position, Transform parent)
     {
         //instanciar tile no local
         GameObject newTile = Instantiate(grabbedTile,position,grabbedTileRotation);
         newTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
-        newTile.transform.parent = tileWorld;
+        newTile.transform.parent = parent;
 
         //destroy tile preview
         Destroy(grabbedTilePreview);
@@ -157,6 +157,9 @@ public class GameManager : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 isPlacingTile = false;
+
+                //destruir o tile criado para servir como visualizacao
+                Destroy(grabbedTile);
 
                 reenableTileButtons();
             }
