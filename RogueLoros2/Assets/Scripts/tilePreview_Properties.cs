@@ -25,7 +25,16 @@ public class tilePreview_Properties : MonoBehaviour
 
     public void randomizePreview()
     {
-        previewType type = (previewType)Random.Range(0, System.Enum.GetValues(typeof(previewType)).Length - 1);
+        //Create a seed
+        //int seed = (int)Time.deltaTime;
+        //Set a seed in the Random Generator
+        int firstPass = Random.Range(0, System.DateTime.Now.Millisecond);
+        int secondPass = firstPass * Random.Range(0, firstPass);
+
+        Random.InitState(secondPass);
+
+
+        previewType type = (previewType)Random.Range(0, System.Enum.GetValues(typeof(previewType)).Length );
         tipoPreview = type;
 
         switch (tipoPreview)
@@ -56,5 +65,34 @@ public class tilePreview_Properties : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void GrabTile()
+    {
+        if(GameManager.instance != null)
+        {
+            switch (tipoPreview)
+            {
+                case previewType.OneSide:
+                    GameManager.instance.createHoverInstance(tileType.OneSide);
+
+                    break;
+                case previewType.OneSideB:
+                    GameManager.instance.createHoverInstance(tileType.OneSideB);
+
+                    break;
+                case previewType.ThreeSides:
+                    GameManager.instance.createHoverInstance(tileType.ThreeSides);
+
+                    break;
+                case previewType.FourSides:
+                    GameManager.instance.createHoverInstance(tileType.FourSides);
+
+                    break;
+            }
+
+            gameObject.SetActive(false);
+
+        }
     }
 }

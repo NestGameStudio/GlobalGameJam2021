@@ -196,7 +196,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7707732267567792666}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2868126891695450975}
+        m_MethodName: GrabTile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9222060220749506015
 GameObject:
   m_ObjectHideFlags: 0
