@@ -89,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5332dbfdbe46d2046a4f9c2884e86f4b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,6 +196,11 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 80a600d172de1aa41918a775d45dee6f, type: 3}
   - {fileID: 2800000, guid: 4897770d85524f3459f4dc49562ba220, type: 3}
   tipoTile: 3
+  spawnPoints:
+  - {fileID: 3045374445385586793}
+  - {fileID: 87319395252937712}
+  - {fileID: 2269570753642638713}
+  - {fileID: 7824561332443975617}
 --- !u!1 &6762765586422667212
 GameObject:
   m_ObjectHideFlags: 0

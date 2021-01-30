@@ -19,6 +19,8 @@ public class tileSetup : MonoBehaviour
 
     public tileType tipoTile;
 
+    public Transform[] spawnPoints;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,5 +53,23 @@ public class tileSetup : MonoBehaviour
                 break;
         }
     }
-    void 
+    
+    public void updateTile(tileType tipoTile)
+    {
+        switch (tipoTile)
+        {
+            case tileType.OneSide:
+                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[0];
+                break;
+            case tileType.OneSideB:
+                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[1];
+                break;
+            case tileType.ThreeSides:
+                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[2];
+                break;
+            case tileType.FourSides:
+                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[3];
+                break;
+        }
+    }
 }
