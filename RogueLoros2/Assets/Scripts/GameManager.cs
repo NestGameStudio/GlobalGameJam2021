@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance  {get; private set;}
 
     public GameObject Player;
+    private GameObject playerInGame;
 
     //referencias dentro do gamemanager
     public GameObject itemPanel;
@@ -68,7 +69,10 @@ public class GameManager : MonoBehaviour
         //criar player
         positionPlayer();
     }
-
+    private void Start()
+    {
+        playerInGame = GameObject.FindGameObjectWithTag("Player");
+    }
     // Update is called once per frame
     void Update()
     {
@@ -144,6 +148,9 @@ public class GameManager : MonoBehaviour
 
         hasTilePreviewsLeft();
 
+        //habilitar movimento do player
+        playerInGame.GetComponent<PlayerController>().canMove = true;
+
     }
 
     void interacaoDeColocacaoTile()
@@ -151,6 +158,9 @@ public class GameManager : MonoBehaviour
         //booleana que desliga os botoes de criar tiles
         if (isPlacingTile)
         {
+            //habilitar movimento do player
+            playerInGame.GetComponent<PlayerController>().canMove = false;
+
             for (int x = 0; x < tilePanel.transform.childCount; x++)
             {
                 Debug.Log("tile buttons disabled");
@@ -172,6 +182,11 @@ public class GameManager : MonoBehaviour
                 reenableTileButtons();
             }
         }
+        else
+        {
+            //habilitar movimento do player
+            playerInGame.GetComponent<PlayerController>().canMove = true;
+        }
     }
     void reenableTileButtons()
     {
@@ -186,6 +201,7 @@ public class GameManager : MonoBehaviour
         //desativar marcadores
         activeTile.GetComponent<tileSetup>().deactivateMarkers();
 
+        
         //hasTilePreviewsLeft();
     }
     void positionPlayer()
