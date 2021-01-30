@@ -6,8 +6,6 @@ public class item : MonoBehaviour {
 
     public itemType type;
 
-    // considera quantas vezes ele rotacionou para  a direita, se rotaciona para a esquerda, esse numero diminui
-    private int rotationCounter = 0;
 
     private void Start() {
         
@@ -34,22 +32,9 @@ public class item : MonoBehaviour {
 
     private void RotateClockwise() {
 
-        GameManager.instance.grabbedTile.transform.Rotate(Vector3.up, 90);
-
-        tileSetup tile = GameManager.instance.grabbedTile.GetComponent<tileSetup>();
-
-        Transform aux = tile.spawnPoints[tile.spawnPoints.Length - 1];
-        for (int i = tile.spawnPoints.Length; i < 0; i--) {
-
-            if (i == 0) {
-                tile.spawnPoints[i] = aux;
-            } else {
-                tile.spawnPoints[i] = tile.spawnPoints[i - 1];
-                //tile.spawnPoints[i + 1] = null;
-            }
-
+        for (int i = 0; i < 3; i++) {
+            RotateCounterClockwise();
         }
-
 
         print("rotaciona para direita");
     }
@@ -72,7 +57,6 @@ public class item : MonoBehaviour {
 
         }
 
-        print("rotaciona para esquerda");
     }
 
 }
