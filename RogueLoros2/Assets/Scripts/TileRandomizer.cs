@@ -7,10 +7,15 @@ public class TileRandomizer : MonoBehaviour {
 
     public GameObject Tile;
     public GameObject UITilePanel;
+    private void Awake()
+    {
+        //instanciar tilePreviews dentro do tilepanel
+        //GameManager.instance.instanciarTilePreview();
+    }
 
     private void Start()
     {
-        RandomizeAllTiles();
+        //RandomizeAllTiles();
     }
 
     public void RandomizeAllTiles() {
@@ -18,7 +23,14 @@ public class TileRandomizer : MonoBehaviour {
         for (int i = 0; i < UITilePanel.transform.childCount; i++) {
             RandomizeSingleTiles(i);
         }
-
+        /*
+        if (UITilePanel.transform.childCount == 0)
+        {
+            Debug.Log("instanciou mais cartas");
+            //instanciar tilePreviews dentro do tilepanel
+            GameManager.instance.instanciarTilePreview();
+        }
+        */
     }
 
     // os 4 espaços da UI são númerados de 0 a 3 da esquerda para a direita

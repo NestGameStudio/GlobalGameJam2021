@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         interacaoDeColocacaoTile();
 
     }
-    void instanciarItemSlots()
+    public void instanciarItemSlots()
     {
         for(int x = 0; x < numberItems; x++)
         {
@@ -83,12 +83,13 @@ public class GameManager : MonoBehaviour
             slot.transform.parent = itemPanel.transform;
         }
     }
-    void instanciarTilePreview()
+    public void instanciarTilePreview()
     {
         for (int x = 0; x < numberTilePreview; x++)
         {
             GameObject slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
             slot.transform.parent = tilePanel.transform;
+            GetComponent<TileRandomizer>().RandomizeAllTiles();
         }
     }
 
@@ -206,7 +207,8 @@ public class GameManager : MonoBehaviour
 
     void hasTilePreviewsLeft()
     {
-        if(tilePanel.transform.childCount == 0)
+        Debug.Log("tilepanel childcount: " + tilePanel.transform.childCount);
+        if(tilePanel.transform.childCount == 1)
         {
             Debug.Log("acabaram cartas");
             //acabaram os tiles -> religar o botao
