@@ -8,9 +8,14 @@ public class TileRandomizer : MonoBehaviour {
     public GameObject Tile;
     public GameObject UITilePanel;
 
+    private void Start()
+    {
+        RandomizeAllTiles();
+    }
+
     public void RandomizeAllTiles() {
 
-        for (int i = 0; i < UITilePanel.transform.childCount - 1; i++) {
+        for (int i = 0; i < UITilePanel.transform.childCount; i++) {
             RandomizeSingleTiles(i);
         }
 
@@ -20,22 +25,36 @@ public class TileRandomizer : MonoBehaviour {
     // o valor recebdo pela função é relacionado ao número do slot de tile na UI
     public void RandomizeSingleTiles(int tileNum) {
 
-        tileType type = (tileType) Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length - 1);
-        Tile.GetComponent<tileSetup>().updateTile(type);
+        //tileType type = (tileType) Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length - 1);
 
+        //essa funcao atualiza o tile do mapa tambem, entao ela nao pode ser chamada para atualizar os tiles do preview
+        //Tile.GetComponent<tileSetup>().updateTile(type);
+
+        Button UIButton = UITilePanel.transform.GetChild(tileNum).GetComponentInChildren<Button>();
+
+        if (UIButton.GetComponentInParent<tilePreview_Properties>() != null)
+        {
+            UIButton.GetComponentInParent<tilePreview_Properties>().randomizePreview();
+        }
+        else
+        {
+            Debug.LogError("Tile randomizado não foi encontrado",UIButton);
+        }
+        /*
         try {
 
 
-            Texture texture = Tile.GetComponent<tileSetup>().tileTextures[0];
+            //Texture texture = Tile.GetComponent<tileSetup>().tileTextures[0];
 
-            Button UIButton = UITilePanel.transform.GetChild(tileNum).GetComponentInChildren<Button>();
-            UIButton.image.sprite = Sprite.Create((Texture2D) texture, new Rect(0, 0, 32, 32), new Vector2()); ;
+            
+
+            //UIButton.image.sprite = Sprite.Create((Texture2D) texture, new Rect(0, 0, 32, 32), new Vector2()); ;
 
         } catch (System.Exception) {
 
             Debug.LogError("Tile randomizado não foi encontrado");
             throw;
         }
-
+        */
     }
 }

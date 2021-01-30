@@ -15,7 +15,7 @@ public class tileSetup : MonoBehaviour
 {
     public GameObject tileGraphics;
 
-    public Texture[] tileTextures;
+    public Texture2D[] tileTextures;
 
     public tileType tipoTileAtual;
 
