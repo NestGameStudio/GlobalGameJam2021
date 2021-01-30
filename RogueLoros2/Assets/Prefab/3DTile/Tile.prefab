@@ -198,13 +198,13 @@ MonoBehaviour:
   tipoTileAtual: 0
   spawnPoints:
   - {fileID: 3045374445385586793}
-  - {fileID: 87319395252937712}
   - {fileID: 2269570753642638713}
+  - {fileID: 87319395252937712}
   - {fileID: 7824561332443975617}
   tileMarkers:
   - {fileID: 7038498211565109112}
-  - {fileID: 1843277224683291833}
   - {fileID: 5688999371812734868}
+  - {fileID: 1843277224683291833}
   - {fileID: 4627765206217106849}
 --- !u!1 &6762765586422667212
 GameObject:
@@ -283,7 +283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7824561332443975617
 Transform:
   m_ObjectHideFlags: 0
