@@ -26,11 +26,6 @@ public class visualizeFutureTile : MonoBehaviour
         //verifica se ha conexoes disponiveis
         detectConnection();
 
-        if (isConnection)
-        {
-            //fica vermelho caso nao haja conexao
-            GameManager.instance.grabbedTile.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
-        }
     }
     private void OnMouseExit()
     {
@@ -53,15 +48,20 @@ public class visualizeFutureTile : MonoBehaviour
             //destruir spawnpoint para nao poder ser usado depois
             Destroy(transform.parent.gameObject);
         }
-        else
-        {
-            //fica vermelho caso nao haja conexao
-            GameManager.instance.grabbedTile.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
-        }
+
 
         
     }
-
+    void normalColor()
+    {
+        //fica branco caso haja conexao
+        GameManager.instance.grabbedTile.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
+    }
+    void denialColor()
+    {
+        //fica vermelho caso nao haja conexao
+        GameManager.instance.grabbedTile.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
+    }
     void detectConnection()
     {
         switch (spawnPointNumber)
@@ -74,6 +74,11 @@ public class visualizeFutureTile : MonoBehaviour
                 if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[1].gameObject.active)
                 {
                     isConnection = true;
+                    normalColor();
+                }
+                else
+                {
+                    denialColor();
                 }
 
                 break;
@@ -86,6 +91,11 @@ public class visualizeFutureTile : MonoBehaviour
                 if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[0].gameObject.active)
                 {
                     isConnection = true;
+                    normalColor();
+                }
+                else
+                {
+                    denialColor();
                 }
 
                 break;
@@ -98,6 +108,11 @@ public class visualizeFutureTile : MonoBehaviour
                 if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[3].gameObject.active)
                 {
                     isConnection = true;
+                    normalColor();
+                }
+                else
+                {
+                    denialColor();
                 }
 
                 break;
@@ -110,6 +125,11 @@ public class visualizeFutureTile : MonoBehaviour
                 if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[2].gameObject.active)
                 {
                     isConnection = true;
+                    normalColor();
+                }
+                else
+                {
+                    denialColor();
                 }
 
                 break;
