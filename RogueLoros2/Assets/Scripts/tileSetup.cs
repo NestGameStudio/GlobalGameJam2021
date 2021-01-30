@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum tileType
+{
+    FourSides,
+    ThreeSides,
+    OneSideB,
+    OneSide
+}
+
 [ExecuteInEditMode]
 public class tileSetup : MonoBehaviour
 {
@@ -9,13 +17,6 @@ public class tileSetup : MonoBehaviour
 
     public Texture[] tileTextures;
 
-    public enum tileType 
-    {
-        FourSides,
-        ThreeSides,
-        OneSideB,
-        OneSide
-    }
     public tileType tipoTile;
 
     // Start is called before the first frame update
@@ -50,4 +51,5 @@ public class tileSetup : MonoBehaviour
                 break;
         }
     }
+    void 
 }
