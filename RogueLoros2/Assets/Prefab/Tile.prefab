@@ -195,7 +195,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: c0a6c389d518ae94c9aa873f5541fcd7, type: 3}
   - {fileID: 2800000, guid: 80a600d172de1aa41918a775d45dee6f, type: 3}
   - {fileID: 2800000, guid: 4897770d85524f3459f4dc49562ba220, type: 3}
-  tipoTile: 3
+  tipoTileAtual: 0
   spawnPoints:
   - {fileID: 3045374445385586793}
   - {fileID: 87319395252937712}

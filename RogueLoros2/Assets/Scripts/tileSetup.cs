@@ -17,7 +17,7 @@ public class tileSetup : MonoBehaviour
 
     public Texture[] tileTextures;
 
-    public tileType tipoTile;
+    public tileType tipoTileAtual;
 
     public Transform[] spawnPoints;
 
@@ -32,12 +32,15 @@ public class tileSetup : MonoBehaviour
     {
         if(Application.isPlaying == false)
         {
-            updateTile(tipoTile);
+            updateTile(tipoTileAtual);
         }
     }
     
     public void updateTile(tileType tipoTile)
     {
+
+        tipoTileAtual = tipoTile;
+
         switch (tipoTile)
         {
             case tileType.OneSide:
