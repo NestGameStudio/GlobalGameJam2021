@@ -26,7 +26,13 @@ public class GameManager : MonoBehaviour
 
     //numero de prevviews de tile no painel de tiles
     public int numberTilePreview = 4;
-    
+
+    [HideInInspector]
+    public tileType tipoTileGrabbed;
+
+    [HideInInspector]
+    public GameObject grabbedTile;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -87,8 +93,12 @@ public class GameManager : MonoBehaviour
     public void createHoverInstance(tileType tipo)
     {
         isPlacingTile = true;
-
-        //Instantiate(hoverPrefab,transform.position,Quaternion.identity);
+        tipoTileGrabbed = tipo;
+        
+        //instanciou tile que sera ativado no local de preview antes de de fato o colocar na posicao
+        grabbedTile = Instantiate(Tile,transform.position,Quaternion.identity);
+        grabbedTile.GetComponent<tileSetup>().updateTile(tipo);
+        grabbedTile.SetActive(false);
     }
 
     void interacaoDeColocacaoTile()

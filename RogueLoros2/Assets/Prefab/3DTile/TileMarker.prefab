@@ -77,6 +77,8 @@ GameObject:
   - component: {fileID: 2551122666712252504}
   - component: {fileID: 7449948056321321874}
   - component: {fileID: 5406819646634549144}
+  - component: {fileID: 4257979863401355392}
+  - component: {fileID: 1832410591373475663}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -159,6 +161,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 0
   eraseRenderer: 0
+--- !u!65 &4257979863401355392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186239740423466867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1832410591373475663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186239740423466867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969dccc18854a924cbd65d30a65251cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile: {fileID: 6207175062040002095, guid: 89460e2098b27b848ac60646e7d7ba4f, type: 3}
 --- !u!1 &5864303682423162464
 GameObject:
   m_ObjectHideFlags: 0
