@@ -81,11 +81,14 @@ public class GameManager : MonoBehaviour
     }
     public void instanciarItemSlots()
     {
-        for(int x = 0; x < numberItems; x++)
+        for(int x = 0; x < System.Enum.GetValues(typeof(itemType)).Length; x++)
         {
             GameObject slot = Instantiate(itemSlot,transform.position,Quaternion.identity);
             slot.transform.parent = itemPanel.transform;
-            GetComponent<itemRandomization>().RandomizeSingleItem(slot);
+
+            // seta o item conforme o tiletype
+            GetComponent<itemSetup>().SetupItem(slot, (itemType) x);
+            slot.GetComponentInChildren<Button>().onClick.AddListener(slot.GetComponent<item>().DoAction);
 
         }
     }
@@ -166,8 +169,6 @@ public class GameManager : MonoBehaviour
 
             for (int x = 0; x < tilePanel.transform.childCount; x++)
             {
-                Debug.Log("tile buttons disabled");
-
                 tilePanel.transform.GetChild(x).GetComponentInChildren<Button>().interactable = false;
             }
 

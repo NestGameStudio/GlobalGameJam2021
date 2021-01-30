@@ -76,7 +76,7 @@ public class tileSetup : MonoBehaviour
                 //deixar ativado apenas o primeiro spawnpoint
                 for (int x = 0; x < spawnPoints.Length; x++)
                 {
-                    if(x == 0 || x == 1)
+                    if(x == 0 || x == 2)
                     {
                         spawnPoints[x].gameObject.SetActive(true);
                     }
@@ -93,7 +93,7 @@ public class tileSetup : MonoBehaviour
                 //ativar spawnpoints correspondentes
                 for (int x = 0; x < spawnPoints.Length; x++)
                 {
-                    if (x == 0 || x == 2)
+                    if (x == 0 || x == 1)
                     {
                         spawnPoints[x].gameObject.SetActive(true);
                     }

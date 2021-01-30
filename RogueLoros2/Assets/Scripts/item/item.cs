@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class item : MonoBehaviour {
 
-    itemType type;
+    public itemType type;
+
+
+    private void Start() {
+        
+    }
 
     public void setType(itemType type) {
         this.type = type;
@@ -12,7 +17,7 @@ public class item : MonoBehaviour {
 
     public void DoAction() {
 
-        if (GameManager.instance.grabbedTilePreview) {
+        if (GameManager.instance.grabbedTile) {
 
             if (type == itemType.clockwise) {
                 RotateClockwise();
@@ -27,9 +32,30 @@ public class item : MonoBehaviour {
 
     private void RotateClockwise() {
 
+        for (int i = 0; i < 3; i++) {
+            RotateCounterClockwise();
+        }
+
+        print("rotaciona para direita");
     }
 
     private void RotateCounterClockwise() {
+
+        GameManager.instance.grabbedTile.transform.Rotate(Vector3.up, -90);
+
+        tileSetup tile = GameManager.instance.grabbedTile.GetComponent<tileSetup>();
+
+        Transform aux = tile.spawnPoints[0];
+        for (int i = 0; i < tile.spawnPoints.Length; i++) {
+
+            if (i == tile.spawnPoints.Length - 1) {
+                tile.spawnPoints[i] = aux;
+            } else {
+                tile.spawnPoints[i] = tile.spawnPoints[i + 1];
+                tile.spawnPoints[i + 1] = null;
+            }
+
+        }
 
     }
 

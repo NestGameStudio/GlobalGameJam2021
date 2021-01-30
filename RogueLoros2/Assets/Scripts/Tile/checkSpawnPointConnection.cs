@@ -8,7 +8,6 @@ public class checkSpawnPointConnection : MonoBehaviour
 
     public tileSetup connectionTile;
 
-    
     public void detectConnection()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.1f);
@@ -19,11 +18,18 @@ public class checkSpawnPointConnection : MonoBehaviour
                 //gameObject.SetActive(false);
                 if (hitCollider.gameObject != gameObject)
                 {
+
+
                     hasConnection = true;
                     connectionTile = hitCollider.gameObject.GetComponentInParent<tileSetup>();
                     //gameObject.transform.GetChild(0).gameObject.SetActive(false);
                     //gameObject.SetActive(false);
                 }
+            } else {
+
+                hasConnection = false;
+                connectionTile = null;
+
             }
         }
     }
