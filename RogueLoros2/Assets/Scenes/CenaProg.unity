@@ -185,7 +185,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -426,6 +426,11 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 676889086}
+    - target: {fileID: 5302164660816276014, guid: a2fa46a6ce33591409e11f5da4061e6f,
+        type: 3}
+      propertyPath: field of view
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5432068704576851517, guid: a2fa46a6ce33591409e11f5da4061e6f,
         type: 3}
       propertyPath: m_Name
