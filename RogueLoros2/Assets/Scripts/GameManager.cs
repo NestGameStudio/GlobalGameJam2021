@@ -91,7 +91,8 @@ public class GameManager : MonoBehaviour
     }
     public void instanciarTilePreview()
     {
-        for (int x = 0; x < numberTilePreview; x++)
+        int numberTilePreviewsCompensated = numberTilePreview - GetComponent<TileRandomizer>().UITilePanel.transform.childCount;
+        for (int x = 0; x < numberTilePreviewsCompensated; x++)
         {
             GameObject slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
             slot.transform.parent = tilePanel.transform;
@@ -226,7 +227,7 @@ public class GameManager : MonoBehaviour
     void hasTilePreviewsLeft()
     {
         Debug.Log("tilepanel childcount: " + tilePanel.transform.childCount);
-        if(tilePanel.transform.childCount == 1)
+        if(tilePanel.transform.childCount == 3)
         {
             Debug.Log("acabaram cartas");
             //acabaram os tiles -> religar o botao

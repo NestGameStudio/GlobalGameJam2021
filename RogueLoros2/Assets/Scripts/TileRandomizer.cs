@@ -7,6 +7,8 @@ public class TileRandomizer : MonoBehaviour {
 
     public GameObject Tile;
     public GameObject UITilePanel;
+
+    //public int numeroMaxTiles = 4;
     private void Awake()
     {
         //instanciar tilePreviews dentro do tilepanel
@@ -20,9 +22,28 @@ public class TileRandomizer : MonoBehaviour {
 
     public void RandomizeAllTiles() {
 
+
+        
+
         for (int i = 0; i < UITilePanel.transform.childCount; i++) {
-            RandomizeSingleTiles(i);
+
+                RandomizeSingleTiles(i);
         }
+        /*
+        Debug.Log("UITilePanel childCount: " + UITilePanel.transform.childCount);
+
+        for (int i = 0; i < UITilePanel.transform.childCount; i++)
+        {
+
+            if (UITilePanel.transform.childCount > numeroMaxTiles)
+            {
+                Debug.Log("destruir");
+                Destroy(UITilePanel.transform.GetChild(0).gameObject);
+            }
+
+        }
+        */
+
         /*
         if (UITilePanel.transform.childCount == 0)
         {
