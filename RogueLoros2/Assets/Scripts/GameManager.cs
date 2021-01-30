@@ -183,4 +183,13 @@ public class GameManager : MonoBehaviour
         GameObject newPlayer = Instantiate(Player,activeTile.transform.position,Quaternion.identity);
         newPlayer.transform.parent = gameObject.transform;
     }
+
+    public void movePlayer(tileSetup tileObject)
+    {
+        activeTile = tileObject.gameObject;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        player.transform.position = activeTile.transform.position;
+    }
 }
