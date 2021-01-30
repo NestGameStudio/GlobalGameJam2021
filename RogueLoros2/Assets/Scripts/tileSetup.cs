@@ -28,6 +28,8 @@ public class tileSetup : MonoBehaviour
     {
         //dar o numero de cada spawnpoint pros marcadores para detectar onde nao existe conexao
         assignMarkerNumbers();
+
+        
         
     }
 
@@ -53,6 +55,7 @@ public class tileSetup : MonoBehaviour
         {
             spawnPoints[x].transform.GetChild(0).gameObject.SetActive(false);
         }
+        //checkConnections();
     }
 
     public void updateTile(tileType tipoTile)
@@ -132,6 +135,14 @@ public class tileSetup : MonoBehaviour
         for (int x = 0; x < tileMarkers.Length; x++)
         {
             tileMarkers[x].spawnPointNumber = x;
+        }
+    }
+
+    public void checkConnections()
+    {
+        for(int x = 0; x < spawnPoints.Length; x++)
+        {
+            spawnPoints[x].GetComponent<checkSpawnPointConnection>().detectConnection();
         }
     }
 }

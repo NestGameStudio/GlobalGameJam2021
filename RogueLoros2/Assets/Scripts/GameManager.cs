@@ -120,7 +120,8 @@ public class GameManager : MonoBehaviour
         //instanciar tile no local
         GameObject newTile = Instantiate(grabbedTile,position,grabbedTileRotation);
         newTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
-        newTile.transform.parent = parent;
+        //newTile.transform.parent = parent;
+        newTile.transform.parent = tileWorld;
 
         //destroy tile preview
         Destroy(grabbedTilePreview);
@@ -135,6 +136,8 @@ public class GameManager : MonoBehaviour
 
 
         reenableTileButtons();
+
+        activeTile.GetComponent<tileSetup>().checkConnections();
 
     }
 
@@ -191,5 +194,7 @@ public class GameManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         player.transform.position = activeTile.transform.position;
+
+        activeTile.GetComponent<tileSetup>().checkConnections();
     }
 }
