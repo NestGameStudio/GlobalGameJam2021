@@ -85,6 +85,8 @@ public class GameManager : MonoBehaviour
         {
             GameObject slot = Instantiate(itemSlot,transform.position,Quaternion.identity);
             slot.transform.parent = itemPanel.transform;
+            GetComponent<itemRandomization>().RandomizeSingleItem(slot);
+
         }
     }
     public void instanciarTilePreview()

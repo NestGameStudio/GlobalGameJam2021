@@ -36,10 +36,11 @@ public class tileSetup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Application.isPlaying == false)
-        {
+        if(Application.isPlaying == false){
             updateTile(tipoTileAtual);
         }
+
+
     }
     
     public void activateMarkers()
@@ -61,10 +62,11 @@ public class tileSetup : MonoBehaviour
         //checkConnections();
     }
 
-    public void updateTile(tileType tipoTile)
-    {
+    public void updateTile(tileType tipoTile) {
 
-        tipoTileAtual = tipoTile;
+        if (tipoTile != tipoTileAtual) {
+            tipoTileAtual = tipoTile;
+        }
 
         switch (tipoTile)
         {
