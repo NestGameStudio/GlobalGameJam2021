@@ -32,25 +32,7 @@ public class tileSetup : MonoBehaviour
     {
         if(Application.isPlaying == false)
         {
-            atualizarEditor();
-        }
-    }
-    void atualizarEditor()
-    {
-        switch(tipoTile)
-        {
-            case tileType.OneSide:
-                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[0];
-                break;
-            case tileType.OneSideB:
-                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[1];
-                break;
-            case tileType.ThreeSides:
-                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[2];
-                break;
-            case tileType.FourSides:
-                tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[3];
-                break;
+            updateTile(tipoTile);
         }
     }
     
@@ -60,15 +42,66 @@ public class tileSetup : MonoBehaviour
         {
             case tileType.OneSide:
                 tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[0];
+
+                //deixar ativado apenas o primeiro spawnpoint
+                for (int x = 0; x < spawnPoints.Length; x++)
+                {
+                    if(x == 0 || x == 1)
+                    {
+                        spawnPoints[x].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        spawnPoints[x].gameObject.SetActive(false);
+                    }
+                }
+
                 break;
             case tileType.OneSideB:
                 tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[1];
+
+                //ativar spawnpoints correspondentes
+                for (int x = 0; x < spawnPoints.Length; x++)
+                {
+                    if (x == 0 || x == 2)
+                    {
+                        spawnPoints[x].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        spawnPoints[x].gameObject.SetActive(false);
+                    }
+                }
+
                 break;
             case tileType.ThreeSides:
                 tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[2];
+
+                //ativar spawnpoints correspondentes
+                for (int x = 0; x < spawnPoints.Length; x++)
+                {
+                    if (x == 0 || x == 1 || x == 2)
+                    {
+                        spawnPoints[x].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        spawnPoints[x].gameObject.SetActive(false);
+                    }
+                }
+
                 break;
             case tileType.FourSides:
                 tileGraphics.GetComponent<MeshRenderer>().sharedMaterial.mainTexture = tileTextures[3];
+
+                //ativar spawnpoints correspondentes
+                for (int x = 0; x < spawnPoints.Length; x++)
+                {
+                    
+                    spawnPoints[x].gameObject.SetActive(true);
+                    
+                }
+
                 break;
         }
     }
