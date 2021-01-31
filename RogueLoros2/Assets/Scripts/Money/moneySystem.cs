@@ -77,6 +77,7 @@ public class moneySystem : MonoBehaviour
             else
             {
                 money -= quantity;
+                audioManager.instance.loseMoney();
             }
 
             atualizarText();
