@@ -18,6 +18,10 @@ public class audioManager : MonoBehaviour
 
     public AudioSource lose;
 
+    public AudioSource buildAudio;
+
+    public AudioSource cantBuildAudio;
+
     private void Awake()
     {
         //lida com duplicatas de instancia
@@ -53,5 +57,13 @@ public class audioManager : MonoBehaviour
     public void loseAudio()
     {
         lose.PlayOneShot(lose.clip, lose.volume);
+    }
+    public void audioBuild()
+    {
+        buildAudio.PlayOneShot(buildAudio.clip, buildAudio.volume);
+    }
+    public void audioBuildFail()
+    {
+        cantBuildAudio.PlayOneShot(cantBuildAudio.clip, cantBuildAudio.volume);
     }
 }
