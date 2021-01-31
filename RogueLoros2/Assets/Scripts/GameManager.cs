@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Quaternion grabbedTileRotation;
 
+    //Vector2 
+
     //distancia X ate chave 
     public int goalX = 5;
 

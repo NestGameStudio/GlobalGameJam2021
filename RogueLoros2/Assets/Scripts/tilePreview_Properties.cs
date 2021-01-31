@@ -40,25 +40,25 @@ public class tilePreview_Properties : MonoBehaviour
         switch (tipoPreview)
         {
             case previewType.OneSide:
-                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[0], new Rect(0, 0, 32, 32), new Vector2());
+                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[0], new Rect(0, 0, 64, 64), new Vector2());
 
                 
 
                 break;
             case previewType.OneSideB:
-                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[1], new Rect(0, 0, 32, 32), new Vector2());
+                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[1], new Rect(0, 0, 64, 64), new Vector2());
 
 
 
                 break;
             case previewType.ThreeSides:
-                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[2], new Rect(0, 0, 32, 32), new Vector2());
+                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[2], new Rect(0, 0, 64, 64), new Vector2());
 
 
 
                 break;
             case previewType.FourSides:
-                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[3], new Rect(0, 0, 32, 32), new Vector2());
+                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[3], new Rect(0, 0, 64, 64), new Vector2());
 
 
 

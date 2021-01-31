@@ -115,7 +115,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 220, y: 220}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2684684748266038752
 CanvasRenderer:
@@ -244,7 +244,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 220, y: 220}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1672587627273130161
 CanvasRenderer:
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoPreview: 0
   tileTextures:
-  - {fileID: 2800000, guid: df4262d98e71e6f4cbed67e375343dfb, type: 3}
-  - {fileID: 2800000, guid: c0a6c389d518ae94c9aa873f5541fcd7, type: 3}
-  - {fileID: 2800000, guid: 80a600d172de1aa41918a775d45dee6f, type: 3}
-  - {fileID: 2800000, guid: 4897770d85524f3459f4dc49562ba220, type: 3}
+  - {fileID: 2800000, guid: 8b0f9a4ddd9a89b4eb442aefdee27862, type: 3}
+  - {fileID: 2800000, guid: 8a359b271c1afba45a7c7d4b6417fd66, type: 3}
+  - {fileID: 2800000, guid: 43e87ed5a5843c34a89beb2d08a5ec1f, type: 3}
+  - {fileID: 2800000, guid: 19575fddbb890bb41b705e702b66fc36, type: 3}
