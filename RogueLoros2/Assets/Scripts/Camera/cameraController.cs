@@ -9,9 +9,13 @@ public class cameraController : MonoBehaviour
     void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+
         //setar para acompanhar o player no inicio
         GetComponent<CinemachineVirtualCamera>().m_Follow = player.transform;
         GetComponent<CinemachineVirtualCamera>().m_LookAt = player.transform;
+
+        //StartCoroutine(animInicio());
+        
     }
 
     // Update is called once per frame
@@ -19,4 +23,19 @@ public class cameraController : MonoBehaviour
     {
         
     }
+    /*
+    IEnumerator animInicio()
+    {
+        
+        GameObject goal = GameObject.FindGameObjectWithTag("Goal");
+
+        //setar para acompanhar o player no inicio
+        GetComponent<CinemachineVirtualCamera>().m_Follow = goal.transform;
+        GetComponent<CinemachineVirtualCamera>().m_LookAt = goal.transform;
+
+        yield return new WaitForSeconds(3);
+
+        
+    }
+    */
 }

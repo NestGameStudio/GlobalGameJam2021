@@ -26,6 +26,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 10
+  pickParticle: {fileID: 0}
 --- !u!1001 &5958233500292817690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88,6 +89,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3871073484304922208, guid: 51fe8cb30283a43478a9b12821964118,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4184272377350355313, guid: 51fe8cb30283a43478a9b12821964118,
         type: 3}
       propertyPath: m_IsActive
@@ -107,6 +113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Money
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880466414222548576, guid: 51fe8cb30283a43478a9b12821964118,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8640551883202523281, guid: 51fe8cb30283a43478a9b12821964118,
         type: 3}
