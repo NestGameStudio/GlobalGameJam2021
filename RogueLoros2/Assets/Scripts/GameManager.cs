@@ -285,11 +285,11 @@ public class GameManager : MonoBehaviour
             slot.transform.parent = tilePanel.transform;
 
             int randRotation = Random.Range(0, 4);
-            print(numberTilePreview);
             if (numberTilePreviewsCompensated == 4) {
                 GetComponent<TileRandomizer>().RandomizeSingleTiles(x, randRotation);
             } else {
-                GetComponent<TileRandomizer>().RandomizeSingleTiles(numberTilePreviewsCompensated + x, randRotation);
+                print(GetComponent<TileRandomizer>().UITilePanel.transform.childCount -1 + x);
+                GetComponent<TileRandomizer>().RandomizeSingleTiles(GetComponent<TileRandomizer>().UITilePanel.transform.childCount - 1, randRotation);
             }
 
         }

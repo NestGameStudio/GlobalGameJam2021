@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
                 //checar se no tile ativo, dentro do spawnpoint acessado tem um objeto tile
                 tileSetup tileAtivo = GameManager.instance.activeTile.GetComponent<tileSetup>();
 
-                
                 if (tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().hasConnection)
                 {
                     if (tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().connectionTile != null)
