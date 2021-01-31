@@ -33,7 +33,8 @@ public class tileSetup : MonoBehaviour
 
         if (assignOnPlay)
         {
-            tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+            //tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+            tileType type = tileType.FourSides;
             updateTile(type);
         }
         
