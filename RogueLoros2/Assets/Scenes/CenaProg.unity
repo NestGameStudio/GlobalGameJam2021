@@ -426,12 +426,6 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 676889086}
-    - target: {fileID: 3891712214812832632, guid: a2fa46a6ce33591409e11f5da4061e6f,
-        type: 3}
-      propertyPath: DeathFog
-      value: 
-      objectReference: {fileID: 7087040517301835968, guid: 8b311b574f9272f4b80bd789d677527e,
-        type: 3}
     - target: {fileID: 5432068704576851517, guid: a2fa46a6ce33591409e11f5da4061e6f,
         type: 3}
       propertyPath: m_Name

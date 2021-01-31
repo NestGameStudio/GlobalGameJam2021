@@ -47,10 +47,12 @@ public class GameManager : MonoBehaviour
     public Quaternion grabbedTileRotation;
 
     //min/max - distancia X ate chave
-    public Vector2 goalX = new Vector2(5,10);
+    public Vector2 goalX = new Vector2(-5,5);
 
     //min/max - distancia y ate chave
     public Vector2 goalY = new Vector2(5, 10);
+
+    private float tileChavePos;
 
     /*
     //distancia X ate chave 
@@ -111,6 +113,9 @@ public class GameManager : MonoBehaviour
     {
         float xTrue = (int)Random.Range(x.x,x.y);
         float yTrue = (int)Random.Range(y.x, y.y);
+        
+        tileChavePos = yTrue; //usado para forçar posição da Death Fog
+
         Vector3 local = new Vector3(xTrue*2.5f,0, yTrue*2.5f);
         GameObject tileGoal = Instantiate(tile, local,Quaternion.identity);
 
@@ -303,7 +308,7 @@ public class GameManager : MonoBehaviour
         if (activeTile.gameObject.CompareTag("Goal")) {
             startFinalAttack = true;
             // Alterar offset da câmera para deixar player mais pro topo da tela
-            DeathFogInGame = Instantiate(DeathFog, new Vector3 (tileChave.transform.position.x, tileChave.transform.position.y, tileChave.transform.position.z + 2.5f), Quaternion.identity);
+            DeathFogInGame = Instantiate(DeathFog, new Vector3 (0, 0, (2.5f * (tileChavePos + 1))), Quaternion.identity);
             print("começou");
         }
 
@@ -326,6 +331,9 @@ public class GameManager : MonoBehaviour
     }
 
     private void DestroyLastLineOfTiles() {
+
+        //move a tile forward
+        DeathFogInGame.transform.position = new Vector3 (0,0, DeathFogInGame.transform.position.z - 2.5f);
 
         foreach(GameObject tile in matrizTiles[matrizTiles.Count - 1]) {
 
