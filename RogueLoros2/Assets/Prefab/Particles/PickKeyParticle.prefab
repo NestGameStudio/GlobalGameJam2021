@@ -4824,7 +4824,7 @@ GameObject:
   - component: {fileID: 6551764916240548753}
   - component: {fileID: 6551764916240548766}
   m_Layer: 0
-  m_Name: PickCoinParticle
+  m_Name: PickKeyParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

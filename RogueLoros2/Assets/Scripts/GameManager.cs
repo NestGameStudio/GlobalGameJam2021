@@ -408,7 +408,7 @@ public class GameManager : MonoBehaviour
             activeTile.gameObject.tag = null;
 
             //tirar item em cima
-            activeTile.GetComponent<hoverItems>().destroyItem();
+            //activeTile.GetComponent<hoverItems>().destroyItem();
         }
         /*
         else if (activeTile.gameObject.CompareTag("Money"))

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class FinalAttack : MonoBehaviour
 {
+    public GameObject pickParticle;
     private void OnTriggerEnter(Collider other) {
-        print("is on final attack");
-        GameManager.instance.startFinalAttack = true;
+        if (other.gameObject.tag == "Player")
+        {
+            print("pick key");
+            if(pickParticle!=null) Instantiate(pickParticle,transform.position,Quaternion.identity);
+            gameObject.SetActive(false);
+        }
     }
 }
