@@ -372,11 +372,15 @@ public class GameManager : MonoBehaviour
 
     public void movePlayer(tileSetup tileObject)
     {
+        //resetar y de ultimo tile
         activeTile.transform.GetChild(1).transform.position = new Vector3(activeTile.transform.GetChild(1).transform.position.x,0, activeTile.transform.GetChild(1).transform.position.z);
+        activeTile.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
 
         activeTile = tileObject.gameObject;
 
+        //afundou
         activeTile.transform.GetChild(1).transform.position = new Vector3(activeTile.transform.GetChild(1).transform.position.x, -0.25f, activeTile.transform.GetChild(1).transform.position.z);
+        activeTile.GetComponentInChildren<MeshRenderer>().material.color = new Color(0.7f, 0.7f, 0.7f);
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
