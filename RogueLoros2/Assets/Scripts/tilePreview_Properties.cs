@@ -22,6 +22,11 @@ public class tilePreview_Properties : MonoBehaviour
     {
         //randomizePreview();
     }
+    private void Start()
+    {
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.7f).setEaseOutBounce();
+    }
 
     public void randomizePreview()
     {

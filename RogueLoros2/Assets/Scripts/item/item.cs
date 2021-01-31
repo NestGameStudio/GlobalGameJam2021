@@ -14,6 +14,9 @@ public class item : MonoBehaviour {
     Button button;
 
     private void Start() {
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.7f).setEaseOutBounce();
+
         priceText = GetComponentInChildren<Text>();
     }
     void setUI(int preco)
