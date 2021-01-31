@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     public int goalY = 8;
 
     public GameObject tileChave;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -148,7 +149,7 @@ public class GameManager : MonoBehaviour
     public void colocarTile(Vector3 position, Transform parent)
     {
         //instanciar tile no local
-        GameObject newTile = Instantiate(grabbedTile,position,grabbedTile.transform.rotation);
+        GameObject newTile = Instantiate(grabbedTile,position, grabbedTile.transform.rotation);
         newTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
 
         for(int x = 0; x < newTile.GetComponent<tileSetup>().spawnPoints.Length; x++)

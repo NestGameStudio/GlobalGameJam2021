@@ -55,7 +55,10 @@ public class visualizeFutureTile: MonoBehaviour {
     void denialColor() {
         //fica vermelho caso nao haja conexao
         GameManager.instance.grabbedTile.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
+
+
     }
+
     void detectConnection() {
         switch (spawnPointNumber) {
             case 0:
@@ -67,6 +70,7 @@ public class visualizeFutureTile: MonoBehaviour {
                     isConnection = true;
                     normalColor();
                 } else {
+                    isConnection = false;
                     denialColor();
                 }
 
@@ -81,6 +85,7 @@ public class visualizeFutureTile: MonoBehaviour {
                     isConnection = true;
                     normalColor();
                 } else {
+                    isConnection = false;
                     denialColor();
                 }
 
@@ -95,6 +100,7 @@ public class visualizeFutureTile: MonoBehaviour {
                     isConnection = true;
                     normalColor();
                 } else {
+                    isConnection = false;
                     denialColor();
                 }
 
@@ -108,6 +114,7 @@ public class visualizeFutureTile: MonoBehaviour {
                     isConnection = true;
                     normalColor();
                 } else {
+                    isConnection = false;
                     denialColor();
                 }
 

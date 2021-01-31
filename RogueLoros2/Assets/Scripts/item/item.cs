@@ -35,8 +35,6 @@ public class item : MonoBehaviour {
         for (int i = 0; i < 3; i++) {
             RotateCounterClockwise();
         }
-
-        print("rotaciona para direita");
     }
 
     private void RotateCounterClockwise() {
@@ -45,14 +43,18 @@ public class item : MonoBehaviour {
 
         tileSetup tile = GameManager.instance.grabbedTile.GetComponent<tileSetup>();
 
-        Transform aux = tile.spawnPoints[0];
+        Transform auxSP = tile.spawnPoints[0];
+        visualizeFutureTile auxVFT = tile.tileMarkers[0];
         for (int i = 0; i < tile.spawnPoints.Length; i++) {
 
             if (i == tile.spawnPoints.Length - 1) {
-                tile.spawnPoints[i] = aux;
+                tile.spawnPoints[i] = auxSP;
+                tile.tileMarkers[i] = auxVFT;
             } else {
                 tile.spawnPoints[i] = tile.spawnPoints[i + 1];
                 tile.spawnPoints[i + 1] = null;
+                tile.tileMarkers[i] = tile.tileMarkers[i + 1];
+                tile.tileMarkers[i + 1] = null;
             }
 
         }
