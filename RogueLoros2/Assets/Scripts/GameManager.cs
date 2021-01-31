@@ -283,10 +283,26 @@ public class GameManager : MonoBehaviour
         {
             slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
             slot.transform.parent = tilePanel.transform;
-           
+
+            int randRotation = Random.Range(0, 4);
+            print(numberTilePreview);
+            if (numberTilePreviewsCompensated == 4) {
+                GetComponent<TileRandomizer>().RandomizeSingleTiles(x, randRotation);
+            } else {
+                GetComponent<TileRandomizer>().RandomizeSingleTiles(numberTilePreviewsCompensated + x, randRotation);
+            }
+
         }
 
-        GetComponent<TileRandomizer>().RandomizeAllTiles();
+        /*GetComponent<TileRandomizer>().RandomizeAllTiles();
+
+        for (int i = 0; i < GetComponent<TileRandomizer>().UITilePanel.transform.childCount; i++) {
+
+            if (GetComponent<TileRandomizer>().UITilePanel.transform.GetChild(i) == slot) {
+                int randRotation = Random.Range(0, 4);
+                GetComponent<TileRandomizer>().RandomizeSingleTiles(i, randRotation);
+            }
+        }*/
 
     }
 
@@ -319,8 +335,9 @@ public class GameManager : MonoBehaviour
         grabbedTile.GetComponent<tileSetup>().updateTile(tipo);
         grabbedTile.SetActive(false);
 
+        //print("roda " + previewGrabbed.GetComponent<tilePreview_Properties>().randomCount);
         for (int i = 0; i < previewGrabbed.GetComponent<tilePreview_Properties>().randomCount; i++) {
-            
+            //print("retacionei");
             itemPanel.GetComponentInChildren<item>().RotateClockwise();
             
         }
@@ -336,7 +353,6 @@ public class GameManager : MonoBehaviour
 
         // adiciona os tiles na matriz para serem destruidos quando chegar o ataque final
         int index = (int) (newTile.transform.position.z / 2.5f);
-        print(index);
         if (index > matrizTiles.Count - 1) {
             matrizTiles.Add(new List<GameObject>());
 
