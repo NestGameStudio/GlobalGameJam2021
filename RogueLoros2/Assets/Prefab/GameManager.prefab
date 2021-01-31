@@ -107,7 +107,7 @@ MonoBehaviour:
   tileChave: {fileID: 4686599827725014374, guid: 51fe8cb30283a43478a9b12821964118,
     type: 3}
   startFinalAttack: 0
-  numeroTilesMoeda: 20
+  numeroTilesMoeda: 25
   raio: 50
   coinTile: {fileID: 1415749290348639868, guid: 121306c82b8ec6945a77595e989a6c5f,
     type: 3}
@@ -620,7 +620,7 @@ PrefabInstance:
     - target: {fileID: 6698215104707827742, guid: bd621e71d2bf6a34bab66be631b0ac3b,
         type: 3}
       propertyPath: m_Spacing
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6698215104707827742, guid: bd621e71d2bf6a34bab66be631b0ac3b,
         type: 3}
