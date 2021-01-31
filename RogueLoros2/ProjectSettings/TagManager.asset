@@ -9,6 +9,8 @@ TagManager:
   - Goal
   - Money
   - Enemy
+  - Tile
+  - Vida
   layers:
   - Default
   - TransparentFX
