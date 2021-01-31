@@ -44,6 +44,10 @@ public class visualizeFutureTile: MonoBehaviour {
             //destruir spawnpoint para nao poder ser usado depois
             Destroy(transform.parent.gameObject);
         }
+        else if(Input.GetMouseButtonDown(0) && detectClick && isConnection ==false)
+        {
+            audioManager.instance.audioBuildFail();
+        }
 
 
 

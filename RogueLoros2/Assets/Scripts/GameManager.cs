@@ -349,6 +349,8 @@ public class GameManager : MonoBehaviour
 
         //checar se nasce inimigo no tile
         newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo(newTile.gameObject,13);
+
+        audioManager.instance.audioBuild();
     }
 
     void interacaoDeColocacaoTile()
