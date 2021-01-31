@@ -5,11 +5,27 @@ using UnityEngine.UI;
 
 public class hpSystem : MonoBehaviour
 {
+    public static hpSystem instance { get; private set; }
+
     //max life = 3
     public int health = 3;
     public GameObject[] HPicons;
     public Sprite hpIconOn;
     public Sprite hpIconOff;
+
+    private void Awake()
+    {
+        //lida com duplicatas de instancia
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

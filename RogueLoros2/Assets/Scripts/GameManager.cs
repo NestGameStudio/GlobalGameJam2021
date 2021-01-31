@@ -298,11 +298,11 @@ public class GameManager : MonoBehaviour
             matrizTiles.Add(new List<GameObject>());
 
             matrizTiles[index].Add(newTile);
-        } 
+        }
 
         
 
-        for(int x = 0; x < newTile.GetComponent<tileSetup>().spawnPoints.Length; x++)
+        for (int x = 0; x < newTile.GetComponent<tileSetup>().spawnPoints.Length; x++)
         {
             newTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.SetActive(grabbedTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.active);
 
@@ -336,6 +336,9 @@ public class GameManager : MonoBehaviour
 
         //float randomPos = Random.Range(-1f,1.1f);
         //newTile.transform.transform.rotation = Quaternion.Euler(grabbedTile.transform.transform.rotation.x, grabbedTile.transform.transform.rotation.y + randomPos, grabbedTile.transform.transform.rotation.z );
+
+        //checar se nasce inimigo no tile
+        newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo();
     }
 
     void interacaoDeColocacaoTile()
