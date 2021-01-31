@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: assignOnPlay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8019944572600148860, guid: 89460e2098b27b848ac60646e7d7ba4f,
+        type: 3}
+      propertyPath: tipoTileAtual
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1843277224683291833, guid: 89460e2098b27b848ac60646e7d7ba4f,
         type: 3}
       propertyPath: spawnPointNumber
@@ -86,6 +91,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189897216158502008, guid: 89460e2098b27b848ac60646e7d7ba4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89460e2098b27b848ac60646e7d7ba4f, type: 3}

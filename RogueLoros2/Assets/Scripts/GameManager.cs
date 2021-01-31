@@ -189,6 +189,8 @@ public class GameManager : MonoBehaviour
         //booleana que desliga os botoes de criar tiles
         if (isPlacingTile)
         {
+            nextTurnButton.gameObject.SetActive(false);
+
             //habilitar movimento do player
             playerInGame.GetComponent<PlayerController>().canMove = false;
 
@@ -208,6 +210,7 @@ public class GameManager : MonoBehaviour
                 //destruir o tile criado para servir como visualizacao
                 Destroy(grabbedTile);
 
+
                 reenableTileButtons();
             }
         }
@@ -215,6 +218,8 @@ public class GameManager : MonoBehaviour
         {
             //habilitar movimento do player
             playerInGame.GetComponent<PlayerController>().canMove = true;
+
+            nextTurnButton.gameObject.SetActive(true);
         }
     }
     void reenableTileButtons()
@@ -230,7 +235,8 @@ public class GameManager : MonoBehaviour
         //desativar marcadores
         activeTile.GetComponent<tileSetup>().deactivateMarkers();
 
-        
+        //hasTilePreviewsLeft();
+
         //hasTilePreviewsLeft();
     }
     void positionPlayer()

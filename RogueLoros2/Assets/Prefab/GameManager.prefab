@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 1907114739189397749, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: 11.76
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
@@ -434,7 +434,7 @@ PrefabInstance:
     - target: {fileID: 9020278841855457345, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_TrackedObjectOffset.z
-      value: -17.49
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d6008b96b4d3764fb7df06295948186, type: 3}
