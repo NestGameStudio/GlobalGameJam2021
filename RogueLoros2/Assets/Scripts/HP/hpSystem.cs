@@ -66,6 +66,8 @@ public class hpSystem : MonoBehaviour
             health -= 1;
             updateLifeCounter();
             Debug.Log("morreu");
+
+            SceneController.instance.morte();
         }
     }
 }

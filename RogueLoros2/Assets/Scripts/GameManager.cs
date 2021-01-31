@@ -295,6 +295,8 @@ public class GameManager : MonoBehaviour
         }
 
         if(activeTile.gameObject.CompareTag("SpawnPoint") && startFinalAttack) {
+
+            SceneController.instance.vitoria();
             print("você ganhou");
         }
     }
@@ -316,6 +318,8 @@ public class GameManager : MonoBehaviour
 
             if (activeTile == tile) {
                 print("você perdeu");
+
+                SceneController.instance.morte();
             }
             Destroy(tile);
         }
@@ -324,4 +328,5 @@ public class GameManager : MonoBehaviour
 
         print("destrui ultima linha");
     }
+
 }
