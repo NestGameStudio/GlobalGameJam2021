@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class getMoney : MonoBehaviour
 {
+    public int money = 10;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             print("got money");
-            moneySystem.instance.addMoney(10);
+            moneySystem.instance.addMoney(money);
             gameObject.SetActive(false);
         }
     }
