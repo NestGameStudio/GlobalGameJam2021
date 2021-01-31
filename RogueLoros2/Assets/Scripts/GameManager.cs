@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         positionPlayer();
 
         //criar tiles pre setados
-        instanciarTilePresets();
+        instanciarTilePresets(tileChave, goalX, goalY );
     }
     private void Start()
     {
@@ -91,10 +91,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void instanciarTilePresets()
+    void instanciarTilePresets(GameObject tile, float x, float y)
     {
-        Vector3 local = new Vector3(goalX*2.5f,0, goalY*2.5f);
-        GameObject tileGoal = Instantiate(tileChave,local,Quaternion.identity);
+        Vector3 local = new Vector3(x*2.5f,0, y*2.5f);
+        GameObject tileGoal = Instantiate(tile, local,Quaternion.identity);
     }
 
     public void instanciarItemSlots()

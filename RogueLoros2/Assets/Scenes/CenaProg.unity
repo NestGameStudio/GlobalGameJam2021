@@ -426,11 +426,6 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 676889086}
-    - target: {fileID: 5302164660816276014, guid: a2fa46a6ce33591409e11f5da4061e6f,
-        type: 3}
-      propertyPath: field of view
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5432068704576851517, guid: a2fa46a6ce33591409e11f5da4061e6f,
         type: 3}
       propertyPath: m_Name
