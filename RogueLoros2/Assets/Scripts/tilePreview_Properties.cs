@@ -80,6 +80,8 @@ public class tilePreview_Properties : MonoBehaviour, IPointerClickHandler,IDragH
     public void GrabTile()
     {
 
+        audioManager.instance.chooseTilePreview();
+
         if(GameManager.instance != null)
         {
             switch (tipoPreview)

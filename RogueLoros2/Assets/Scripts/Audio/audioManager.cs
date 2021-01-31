@@ -22,6 +22,12 @@ public class audioManager : MonoBehaviour
 
     public AudioSource cantBuildAudio;
 
+    public AudioSource getNewTiles;
+
+    public AudioSource getTile;
+
+    public AudioSource spendMoney;
+
     private void Awake()
     {
         //lida com duplicatas de instancia
@@ -65,5 +71,17 @@ public class audioManager : MonoBehaviour
     public void audioBuildFail()
     {
         cantBuildAudio.PlayOneShot(cantBuildAudio.clip, cantBuildAudio.volume);
+    }
+    public void refreshTilesAudio()
+    {
+        getNewTiles.PlayOneShot(getNewTiles.clip, getNewTiles.volume);
+    }
+    public void chooseTilePreview()
+    {
+        getTile.PlayOneShot(getTile.clip, getTile.volume);
+    }
+    public void loseMoney()
+    {
+        spendMoney.PlayOneShot(spendMoney.clip, spendMoney.volume);
     }
 }

@@ -28,6 +28,8 @@ public class TileRandomizer : MonoBehaviour {
             int randRotation = Random.Range(0, 4);
             RandomizeSingleTiles(i, randRotation);
         }
+
+        audioManager.instance.refreshTilesAudio();
        
     }
 
