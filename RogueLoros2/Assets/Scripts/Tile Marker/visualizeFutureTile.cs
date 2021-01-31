@@ -66,7 +66,7 @@ public class visualizeFutureTile: MonoBehaviour {
                 //Debug.Log("primeiro spawnpoint", GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[2].gameObject);
 
                 //caso tenha conexao a partir do spawnpoint de baixo
-                if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[2].gameObject.active) {
+                if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[2].gameObject.active && GetComponentInParent<checkSpawnPointConnection>().hasConnection == false) {
                     isConnection = true;
                     normalColor();
                 } else {
@@ -81,7 +81,7 @@ public class visualizeFutureTile: MonoBehaviour {
                 //Debug.Log("segundo spawnpoint", GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[3].gameObject);
 
                 //caso tenha conexao a partir do spawnpoint de baixo
-                if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[3].gameObject.active) {
+                if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[3].gameObject.active && GetComponentInParent<checkSpawnPointConnection>().hasConnection == false) {
                     isConnection = true;
                     normalColor();
                 } else {
@@ -96,7 +96,7 @@ public class visualizeFutureTile: MonoBehaviour {
                 //Debug.Log("terceiro spawnpoint", GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[0].gameObject);
 
                 //caso tenha conexao a partir do spawnpoint de baixo
-                if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[0].gameObject.active) {
+                if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[0].gameObject.active && GetComponentInParent<checkSpawnPointConnection>().hasConnection == false) {
                     isConnection = true;
                     normalColor();
                 } else {
@@ -111,7 +111,7 @@ public class visualizeFutureTile: MonoBehaviour {
                 //Debug.Log("quarto spawnpoint", GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[1].gameObject);
 
                 //caso tenha conexao a partir do spawnpoint de baixo
-                if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[1].gameObject.active) {
+                if (GameManager.instance.grabbedTile.GetComponent<tileSetup>().spawnPoints[1].gameObject.active && GetComponentInParent<checkSpawnPointConnection>().hasConnection == false) {
                     isConnection = true;
                     normalColor();
                 } else {

@@ -72,6 +72,14 @@ public class GameManager : MonoBehaviour
 
     private List<List<GameObject>> matrizTiles = new List<List<GameObject>>();
 
+    [Header("Configs dos tiles de moeda")]
+    public int numeroTilesMoeda = 10;
+    public int raio = 50;
+
+    public GameObject coinTile;
+
+    Vector2 tileGoalPos;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -99,6 +107,9 @@ public class GameManager : MonoBehaviour
 
         //criar tiles pre setados
         instanciarTilePresets(tileChave, goalX, goalY);
+
+        //instanciar tiles de moeda
+        instanciarTileCoin();
     }
     private void Start()
     {
@@ -111,11 +122,40 @@ public class GameManager : MonoBehaviour
 
     }
 
+    void instanciarTileCoin()
+    {
+        //instanciar os tiles de moeda num raio predeterminado
+        for (int i = 0; i < numeroTilesMoeda; i++)
+        {
+            int randomX = Random.Range(-raio/2, raio/2 + 1);
+            int randomY = Random.Range(1, raio + 1);
+
+            //nao pode ocupar espaco do tile inicial ou do tile do objetivo
+            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y)
+            {
+                randomX = Random.Range(-raio / 2, raio / 2 + 1);
+                randomY = Random.Range(1, raio + 1);
+            }
+            else
+            {
+                Vector3 location = new Vector3(randomX * 2.5f, 0, randomY * 2.5f);
+
+                GameObject moneyTile = Instantiate(coinTile, location, Quaternion.identity);
+                moneyTile.transform.parent = tileWorld.transform;
+            }
+        
+        }
+    }
+
     void instanciarTilePresets(GameObject tile, Vector2 x, Vector2 y)
     {
         float xTrue = (int)Random.Range(x.x,x.y);
         float yTrue = (int)Random.Range(y.x, y.y);
-        
+
+
+        tileGoalPos.x = xTrue;
+        tileGoalPos.y = yTrue;
+
         tileChavePos = yTrue; //usado para forçar posição da Death Fog
 
         Vector3 local = new Vector3(xTrue*2.5f,0, yTrue*2.5f);
@@ -199,6 +239,8 @@ public class GameManager : MonoBehaviour
         grabbedTile = Instantiate(Tile,transform.position,Quaternion.identity);
         grabbedTile.GetComponent<tileSetup>().updateTile(tipo);
         grabbedTile.SetActive(false);
+
+        activeTile.GetComponent<tileSetup>().checkConnections();
     }
 
     public void colocarTile(Vector3 position, Transform parent)
@@ -219,6 +261,7 @@ public class GameManager : MonoBehaviour
         for(int x = 0; x < newTile.GetComponent<tileSetup>().spawnPoints.Length; x++)
         {
             newTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.SetActive(grabbedTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.active);
+
         }
         //grabbedTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
         //newTile.transform.parent = parent;
@@ -240,6 +283,7 @@ public class GameManager : MonoBehaviour
         reenableTileButtons();
 
         activeTile.GetComponent<tileSetup>().checkConnections();
+        //newTile.GetComponent<tileSetup>().checkConnections();
 
         hasTilePreviewsLeft();
 
@@ -332,6 +376,22 @@ public class GameManager : MonoBehaviour
             // Alterar offset da câmera para deixar player mais pro topo da tela
             DeathFogInGame = Instantiate(DeathFog, new Vector3 (0, 0, (2.5f * (tileChavePos + 1))), Quaternion.identity);
             print("começou");
+
+            activeTile.gameObject.tag = null;
+
+            //tirar item em cima
+            activeTile.GetComponent<hoverItems>().hoveringItem.SetActive(false);
+        }
+        else if (activeTile.gameObject.CompareTag("Money"))
+        {
+            //pegou dinheiro
+            print("got money");
+            moneySystem.instance.addMoney(10);
+
+            activeTile.gameObject.tag = null;
+
+            //tirar item em cima
+            activeTile.GetComponent<hoverItems>().hoveringItem.SetActive(false);
         }
 
         if(activeTile.gameObject.CompareTag("SpawnPoint") && startFinalAttack) {
@@ -366,6 +426,8 @@ public class GameManager : MonoBehaviour
             }
             Destroy(tile);
         }
+
+        activeTile.GetComponent<tileSetup>().checkConnections();
 
         matrizTiles.RemoveAt(matrizTiles.Count - 1);
 

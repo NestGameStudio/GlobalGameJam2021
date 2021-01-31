@@ -25,6 +25,10 @@ public class checkSpawnPointConnection : MonoBehaviour
                     //gameObject.transform.GetChild(0).gameObject.SetActive(false);
                     //gameObject.SetActive(false);
                 }
+                else if(hitCollider.gameObject == null)
+                {
+                    hasConnection = false;
+                }
             } else {
 
                 hasConnection = false;
