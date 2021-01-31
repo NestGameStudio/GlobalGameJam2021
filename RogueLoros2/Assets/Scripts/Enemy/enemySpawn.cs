@@ -5,15 +5,15 @@ using UnityEngine;
 public class enemySpawn : MonoBehaviour
 {
     public GameObject inimigo;
-    public int chance = 20;
 
-    public void spawnInimigo()
+    public void spawnInimigo(GameObject tileObject, int chance)
     {
         int chanceCheck = Random.Range(0,101);
         if(chance >= chanceCheck)
         {
             //instanciar inimigo
-            Instantiate(inimigo,transform.position,Quaternion.identity);
+            GameObject inimigoNovo = Instantiate(inimigo,transform.position,Quaternion.identity);
+            inimigoNovo.transform.parent = tileObject.transform;
         }
     }
 }
