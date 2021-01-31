@@ -209,6 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 5
+  pickParticle: {fileID: 6551764916240548767, guid: 139c89e296b93824e99865200ffaf579,
+    type: 3}
 --- !u!1 &6796344118817981479
 GameObject:
   m_ObjectHideFlags: 0
