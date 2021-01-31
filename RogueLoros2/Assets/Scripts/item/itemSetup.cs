@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public enum itemType {
     clockwise,
-    counter_clockwise
+    counter_clockwise,
+    reroll
 }
 
 public class itemSetup : MonoBehaviour {
@@ -33,6 +34,9 @@ public class itemSetup : MonoBehaviour {
                 break;
             case itemType.counter_clockwise:
                 slot.GetComponentInChildren<Button>().image.sprite = itemSprite[1];
+                break;
+            case itemType.reroll:
+                slot.GetComponentInChildren<Button>().image.sprite = itemSprite[2];
                 break;
             default:
                 break;

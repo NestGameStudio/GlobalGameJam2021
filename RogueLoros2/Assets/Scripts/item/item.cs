@@ -50,6 +50,10 @@ public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerE
             } else if (type == itemType.counter_clockwise) {
                 RotateCounterClockwise();
             }
+            else if(type == itemType.reroll)
+            {
+                reroll();
+            }
 
             //deduzir dinheiro
             moneySystem.instance.removeMoney(precoObj);
@@ -60,7 +64,10 @@ public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerE
             Debug.Log("Não há tile selecionado");
         }
     } 
-
+    private void reroll()
+    {
+        GameManager.instance.gameObject.GetComponent<TileRandomizer>().RandomizeAllTiles();
+    }
     private void RotateClockwise() {
 
         for (int i = 0; i < 3; i++) {
