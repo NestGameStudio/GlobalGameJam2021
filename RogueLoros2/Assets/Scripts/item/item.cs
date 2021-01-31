@@ -76,7 +76,7 @@ public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerE
     } 
     private void reroll()
     {
-        GameManager.instance.gameObject.GetComponent<TileRandomizer>().RandomizeAllTiles();
+        GameManager.instance.instanciarTilePreview();
     }
     private void RotateClockwise() {
 

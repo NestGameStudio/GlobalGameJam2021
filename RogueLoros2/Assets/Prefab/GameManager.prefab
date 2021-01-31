@@ -92,6 +92,7 @@ MonoBehaviour:
     type: 3}
   Tile: {fileID: 6207175062040002095, guid: 89460e2098b27b848ac60646e7d7ba4f, type: 3}
   tileWorld: {fileID: 7573753864651291095}
+  objectiveUI: {fileID: 8407853852055619422}
   nextTurnButton: {fileID: 5900238186948313601}
   isPlacingTile: 0
   activeTile: {fileID: 0}
@@ -190,17 +191,17 @@ PrefabInstance:
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 745.27765
+      value: 1490.5553
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 498.58566
+      value: 977.1713
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -156.23438
+      value: -297.46875
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
@@ -560,3 +561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &8407853852055619422 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2688483874089591985, guid: bd621e71d2bf6a34bab66be631b0ac3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5900238186899383279}
+  m_PrefabAsset: {fileID: 0}

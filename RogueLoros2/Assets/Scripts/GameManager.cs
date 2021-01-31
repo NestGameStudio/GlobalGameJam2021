@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject tilePreview;
     public GameObject Tile;
     public Transform tileWorld;
+    public RectTransform objectiveUI;
 
     public Button nextTurnButton;
 
@@ -119,11 +120,28 @@ public class GameManager : MonoBehaviour
         playerInGame = GameObject.FindGameObjectWithTag("Player");
 
         itemPanel.transform.parent.gameObject.SetActive(false);
+
+        
     }
     // Update is called once per frame
     void Update()
     {
         interacaoDeColocacaoTile();
+
+    }
+    IEnumerator objectiveTextShow()
+    {
+        //fade in
+        objectiveUI.gameObject.GetComponent<Text>().color = new Color(1,1,1,0);
+
+        yield return new WaitForSeconds(0.5f);
+
+        LeanTween.alphaText(objectiveUI, 1, 2).setEaseOutExpo();
+
+        yield return new WaitForSeconds(3);
+
+        //fade out
+        LeanTween.alphaText(objectiveUI, 0, 1);
 
     }
     void transformAll()
@@ -134,6 +152,8 @@ public class GameManager : MonoBehaviour
     public void activateUI()
     {
         itemPanel.transform.parent.gameObject.SetActive(true);
+
+        StartCoroutine(objectiveTextShow());
     }
     void instanciarTileCoin()
     {
