@@ -81,6 +81,13 @@ public class GameManager : MonoBehaviour
 
     Vector2 tileGoalPos;
 
+    public GameObject tileVida;
+
+    public int numeroTilesVida;
+
+    List<Vector3> listaTileVida = new List<Vector3>();
+    List<Vector3> listaTileCoin = new List<Vector3>();
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -111,7 +118,7 @@ public class GameManager : MonoBehaviour
 
         //instanciar tiles de moeda
         instanciarTileCoin();
-
+        instanciarTileVida();
         //mover todo o palco para frente
         //transformAll();
     }
@@ -171,7 +178,7 @@ public class GameManager : MonoBehaviour
             int randomY = Random.Range(1, raio + 1);
 
             //nao pode ocupar espaco do tile inicial ou do tile do objetivo
-            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y)
+            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileVida.Contains(new Vector3(randomX, randomY)))
             {
                 randomX = Random.Range(-raio / 2, raio / 2 + 1);
                 randomY = Random.Range(1, raio + 1);
@@ -181,9 +188,35 @@ public class GameManager : MonoBehaviour
                 Vector3 location = new Vector3(randomX * 2.5f, 0, randomY * 2.5f);
 
                 GameObject moneyTile = Instantiate(coinTile, location, Quaternion.identity);
+                listaTileCoin.Add(location);
                 moneyTile.transform.parent = tileWorld.transform;
             }
         
+        }
+    }
+    void instanciarTileVida()
+    {
+        //instanciar os tiles de moeda num raio predeterminado
+        for (int i = 0; i < numeroTilesVida; i++)
+        {
+            int randomX = Random.Range(-raio / 2, raio / 2 + 1);
+            int randomY = Random.Range(1, raio + 1);
+
+            //nao pode ocupar espaco do tile inicial ou do tile do objetivo
+            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileCoin.Contains(new Vector3(randomX,randomY)))
+            {
+                randomX = Random.Range(-raio / 2, raio / 2 + 1);
+                randomY = Random.Range(1, raio + 1);
+            }
+            else
+            {
+                Vector3 location = new Vector3(randomX * 2.5f, 0, randomY * 2.5f);
+
+                GameObject vidaTile = Instantiate(tileVida, location, Quaternion.identity);
+                listaTileVida.Add(location);
+                vidaTile.transform.parent = tileWorld.transform;
+            }
+
         }
     }
 

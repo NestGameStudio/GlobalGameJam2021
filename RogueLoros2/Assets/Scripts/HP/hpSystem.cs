@@ -35,6 +35,7 @@ public class hpSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.M))
         {
             //mais vida
@@ -45,7 +46,7 @@ public class hpSystem : MonoBehaviour
             //menos vida
             menosVida();
         }
-
+        */
     }
     void updateLifeCounter()
     {

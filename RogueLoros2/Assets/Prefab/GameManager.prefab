@@ -113,6 +113,9 @@ MonoBehaviour:
   raio: 40
   coinTile: {fileID: 1415749290348639868, guid: 121306c82b8ec6945a77595e989a6c5f,
     type: 3}
+  tileVida: {fileID: 7108830035450197542, guid: 2a241d3929c2a3f4482ac76e7212fdca,
+    type: 3}
+  numeroTilesVida: 10
 --- !u!114 &261901469570699094
 MonoBehaviour:
   m_ObjectHideFlags: 0
