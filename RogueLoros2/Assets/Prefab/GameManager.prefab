@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 261901469570699094}
   - component: {fileID: 633509532}
   - component: {fileID: 1471064846}
+  - component: {fileID: 1471064847}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -702,6 +703,20 @@ MonoBehaviour:
   - {fileID: 1682832126}
   hpIconOn: {fileID: 21300000, guid: 0494e473b650464478ab896dc9f710f8, type: 3}
   hpIconOff: {fileID: 21300000, guid: b7c9ca1b3271fd245997281bf108fabe, type: 3}
+--- !u!114 &1471064847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432068704576851517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0b3527fef143a46b9f363168afb395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  moneyText: {fileID: 2568142327288939772}
 --- !u!1001 &3681677896238953403
 PrefabInstance:
   m_ObjectHideFlags: 0

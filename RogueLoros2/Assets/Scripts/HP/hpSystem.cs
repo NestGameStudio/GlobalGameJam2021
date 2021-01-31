@@ -45,7 +45,7 @@ public class hpSystem : MonoBehaviour
             }
         }
     }
-    void maisVida()
+    public void maisVida()
     {
         if (health <= 2)
         {
@@ -53,7 +53,7 @@ public class hpSystem : MonoBehaviour
             updateLifeCounter();
         }
     }
-    void menosVida()
+    public void menosVida()
     {
         if (health > 0)
         {
