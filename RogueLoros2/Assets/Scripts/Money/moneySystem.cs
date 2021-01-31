@@ -45,7 +45,7 @@ public class moneySystem : MonoBehaviour
     }
     void atualizarText()
     {
-        moneyText.text = "$ " + money.ToString();
+        moneyText.text = money.ToString();
 
         GameManager.instance.checarItensCompraveis();
     }
