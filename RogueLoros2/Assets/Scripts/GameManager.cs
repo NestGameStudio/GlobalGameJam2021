@@ -44,13 +44,19 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Quaternion grabbedTileRotation;
 
-    //Vector2 
+    //min/max - distancia X ate chave
+    public Vector2 goalX = new Vector2(5,10);
 
+    //min/max - distancia y ate chave
+    public Vector2 goalY = new Vector2(5, 10);
+
+    /*
     //distancia X ate chave 
     public int goalX = 5;
 
     //distancia y ate chave 
     public int goalY = 8;
+    */
 
     public GameObject tileChave;
 
@@ -99,16 +105,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void instanciarTilePresets(GameObject tile, float x, float y)
+    void instanciarTilePresets(GameObject tile, Vector2 x, Vector2 y)
     {
-        Vector3 local = new Vector3(x*2.5f,0, y*2.5f);
+        float xTrue = (int)Random.Range(x.x,x.y);
+        float yTrue = (int)Random.Range(y.x, y.y);
+        Vector3 local = new Vector3(xTrue*2.5f,0, yTrue*2.5f);
         GameObject tileGoal = Instantiate(tile, local,Quaternion.identity);
 
-        while(y > matrizTiles.Count) {
+        while(yTrue > matrizTiles.Count) {
             matrizTiles.Add(new List<GameObject>());
         }
         matrizTiles.Add(new List<GameObject>());
-        matrizTiles[(int)y].Add(tileGoal);
+        matrizTiles[(int)yTrue].Add(tileGoal);
     }
 
     public void instanciarItemSlots()
