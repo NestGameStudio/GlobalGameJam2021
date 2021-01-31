@@ -8,6 +8,7 @@ TagManager:
   - SpawnPoint
   - Goal
   - Money
+  - Enemy
   layers:
   - Default
   - TransparentFX
