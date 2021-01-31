@@ -353,7 +353,11 @@ public class GameManager : MonoBehaviour
 
     public void movePlayer(tileSetup tileObject)
     {
+        activeTile.transform.GetChild(1).transform.position = new Vector3(activeTile.transform.GetChild(1).transform.position.x,0, activeTile.transform.GetChild(1).transform.position.z);
+
         activeTile = tileObject.gameObject;
+
+        activeTile.transform.GetChild(1).transform.position = new Vector3(activeTile.transform.GetChild(1).transform.position.x, -0.25f, activeTile.transform.GetChild(1).transform.position.z);
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 

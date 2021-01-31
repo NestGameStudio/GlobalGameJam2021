@@ -154,6 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855646187223663959}
   - component: {fileID: -8019944572600148860}
+  - component: {fileID: 7343112645364617105}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -206,6 +207,26 @@ MonoBehaviour:
   - {fileID: 5688999371812734868}
   - {fileID: 1843277224683291833}
   - {fileID: 4627765206217106849}
+  assignOnPlay: 0
+--- !u!95 &7343112645364617105
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207175062040002095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 287cac5798e1b7d45aea19b73e51cff5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6762765586422667212
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +477,7 @@ PrefabInstance:
     - target: {fileID: 1832410591373475663, guid: 542de2171ac273049970a49369a1facc,
         type: 3}
       propertyPath: spawnPointNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3547577759431438793, guid: 542de2171ac273049970a49369a1facc,
         type: 3}
@@ -553,7 +574,7 @@ PrefabInstance:
     - target: {fileID: 1832410591373475663, guid: 542de2171ac273049970a49369a1facc,
         type: 3}
       propertyPath: spawnPointNumber
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3547577759431438793, guid: 542de2171ac273049970a49369a1facc,
         type: 3}
