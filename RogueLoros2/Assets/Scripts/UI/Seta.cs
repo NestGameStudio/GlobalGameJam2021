@@ -4,29 +4,45 @@ using UnityEngine;
 
 public class Seta : MonoBehaviour
 {
-    Vector3 screenPos;
-    Vector2 onScreenPos;
-    float max;
-    Camera camera;
+    public GameObject Target;
+
+    RectTransform rt;
+
+    GameObject player;
 
     void Start()
     {
-        camera = Camera.main;
+        rt = GetComponent<RectTransform>();
+
+        Target = GameObject.FindGameObjectWithTag("Goal");
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        screenPos = camera.WorldToViewportPoint(transform.position); //get viewport positions
+        /*
+        // Get the position of the object in screen space
+        Vector3 objScreenPos = Camera.main.WorldToScreenPoint(Target.transform.position);
 
-        if (screenPos.x >= 0 && screenPos.x <= 1 && screenPos.y >= 0 && screenPos.y <= 1)
-        {
-            Debug.Log("already on screen, don't bother with the rest!");
-            return;
-        }
+        // Get the directional vector between your arrow and the object
+        Vector3 dir = (objScreenPos - rt.position).normalized;
 
-        onScreenPos = new Vector2(screenPos.x - 0.5f, screenPos.y - 0.5f) * 2; //2D version, new mapping
-        max = Mathf.Max(Mathf.Abs(onScreenPos.x), Mathf.Abs(onScreenPos.y)); //get largest offset
-        onScreenPos = (onScreenPos / (max * 2)) + new Vector2(0.5f, 0.5f); //undo mapping
-        Debug.Log(onScreenPos);
+        // Calculate the angle 
+        // We assume the default arrow position at 0° is "up"
+        float angle = Mathf.Rad2Deg * Mathf.Acos(Vector3.Dot(dir, Vector3.up));
+
+        // Use the cross product to determine if the angle is clockwise
+        // or anticlockwise
+        Vector3 cross = Vector3.Cross(dir, Vector3.up);
+        angle = -Mathf.Sign(cross.z) * angle;
+
+        // Update the rotation of your arrow
+        rt.localEulerAngles = new Vector3(rt.localEulerAngles.x, rt.localEulerAngles.y, angle);
+        */
+
+        Vector3 dir = transform.TransformDirection(Target.transform.position - player.transform.position);
+        float angle = Mathf.Atan2(-dir.x, dir.z) * Mathf.Rad2Deg;
+        rt.eulerAngles = new Vector3(0, 0, angle);
     }
 }
