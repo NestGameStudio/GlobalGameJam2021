@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 980c78a1abd0fdf41859ec7e85c040f5
+guid: 2c2b1fed01b89be44aaef788e6ea5653
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Daydream
+  fontName: Motorola ScreenType
   fontNames:
-  - Daydream
+  - Motorola ScreenType
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 2
