@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     private float tileChavePos;
 
+    public int[] itemPrecos;
+
     /*
     //distancia X ate chave 
     public int goalX = 5;
@@ -134,9 +136,29 @@ public class GameManager : MonoBehaviour
             slot.transform.parent = itemPanel.transform;
 
             // seta o item conforme o tiletype
-            GetComponent<itemSetup>().SetupItem(slot, (itemType) x);
+            GetComponent<itemSetup>().SetupItem(slot, (itemType) x, itemPrecos[x]);
             slot.GetComponentInChildren<Button>().onClick.AddListener(slot.GetComponent<item>().DoAction);
 
+        }
+
+        checarItensCompraveis();
+    }
+
+    public void checarItensCompraveis()
+    {
+        int playerMoney = GetComponent<moneySystem>().money;
+
+        for (int i = 0; i < itemPanel.transform.childCount; i++)
+        {
+            //enable buttons of items if their cost is less than the money the player has
+            if (itemPanel.transform.GetChild(i).GetComponent<item>().precoObj <= playerMoney)
+            {
+                itemPanel.transform.GetChild(i).GetComponent<item>().activateButton();
+            }
+            else
+            {
+                itemPanel.transform.GetChild(i).GetComponent<item>().deactivateButton();
+            }
         }
     }
     public void instanciarTilePreview()

@@ -1,18 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class item : MonoBehaviour {
 
     public itemType type;
 
+    public Text priceText;
+
+    public int precoObj = 0;
+
+    Button button;
 
     private void Start() {
-        
+        priceText = GetComponentInChildren<Text>();
+    }
+    void setUI(int preco)
+    {
+        priceText = GetComponentInChildren<Text>();
+
+        if (priceText != null)
+        {
+            priceText.text = "$ " + preco.ToString();
+        }
+        else
+        {
+            Debug.Log("nao achou pricetext");
+        }
     }
 
-    public void setType(itemType type) {
+    public void setType(itemType type, int preco) {
         this.type = type;
+        precoObj = preco;
+        setUI(preco);
     }
 
     public void DoAction() {
@@ -24,6 +45,11 @@ public class item : MonoBehaviour {
             } else if (type == itemType.counter_clockwise) {
                 RotateCounterClockwise();
             }
+
+            //deduzir dinheiro
+            moneySystem.instance.removeMoney(precoObj);
+
+            GameManager.instance.checarItensCompraveis();
 
         } else {
             Debug.Log("Não há tile selecionado");
@@ -59,6 +85,17 @@ public class item : MonoBehaviour {
 
         }
 
+    }
+
+    public void activateButton()
+    {
+        button = GetComponentInChildren<Button>();
+        button.interactable = true;
+    }
+    public void deactivateButton()
+    {
+        button = GetComponentInChildren<Button>();
+        button.interactable = false;
     }
 
 }

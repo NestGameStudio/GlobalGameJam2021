@@ -12,13 +12,20 @@ public class itemSetup : MonoBehaviour {
 
     public GameObject itemPanel;
     public Sprite[] itemSprite; // 0 clockwise, 1 counter
+   
+
+    public void Start()
+    {
+        
+    }
 
     // Gameobject, o slot criado no panel
-    public void SetupItem(GameObject slot, itemType tipo) {
+    public void SetupItem(GameObject slot, itemType tipo, int precoDef) {
 
         // cria um tipo para aquele item
         item item = slot.AddComponent<item>();
-        item.setType(tipo);
+        item.setType(tipo,precoDef);
+
 
         switch (tipo) {
             case itemType.clockwise:

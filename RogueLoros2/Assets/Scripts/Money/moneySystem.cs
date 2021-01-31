@@ -5,8 +5,24 @@ using UnityEngine.UI;
 
 public class moneySystem : MonoBehaviour
 {
+    public static moneySystem instance {get; private set;}
+
     public int money = 0;
     public Text moneyText;
+
+    private void Awake()
+    {
+        //lida com duplicatas de instancia
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +46,8 @@ public class moneySystem : MonoBehaviour
     void atualizarText()
     {
         moneyText.text = "$ " + money.ToString();
+
+        GameManager.instance.checarItensCompraveis();
     }
     public void addMoney(int quantity)
     {

@@ -103,6 +103,7 @@ MonoBehaviour:
   grabbedTileRotation: {x: 0, y: 0, z: 0, w: 0}
   goalX: {x: -1, y: 1}
   goalY: {x: 5, y: 6}
+  itemPrecos: 050000000a000000
   tileChave: {fileID: 4686599827725014374, guid: 51fe8cb30283a43478a9b12821964118,
     type: 3}
   startFinalAttack: 0
