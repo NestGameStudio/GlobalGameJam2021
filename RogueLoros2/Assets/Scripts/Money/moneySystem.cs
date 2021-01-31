@@ -51,8 +51,18 @@ public class moneySystem : MonoBehaviour
     }
     public void addMoney(int quantity)
     {
-        money += quantity;
-        atualizarText();
+        if (money < 100)
+        {
+            if (quantity + money >= 99)
+            {
+                money = 99;
+            }
+            else
+            {
+                money += quantity;
+                atualizarText();
+            }
+        }
     }
     public void removeMoney(int quantity)
     {

@@ -78,14 +78,14 @@ public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerE
     {
         GameManager.instance.instanciarTilePreview();
     }
-    private void RotateClockwise() {
+    public void RotateClockwise() {
 
         for (int i = 0; i < 3; i++) {
             RotateCounterClockwise();
         }
     }
 
-    private void RotateCounterClockwise() {
+    public void RotateCounterClockwise() {
 
         GameManager.instance.grabbedTile.transform.Rotate(Vector3.up, -90);
 

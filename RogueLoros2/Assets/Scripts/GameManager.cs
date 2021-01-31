@@ -245,12 +245,16 @@ public class GameManager : MonoBehaviour
     public void instanciarTilePreview()
     {
         int numberTilePreviewsCompensated = numberTilePreview - GetComponent<TileRandomizer>().UITilePanel.transform.childCount;
+        GameObject slot = null;
         for (int x = 0; x < numberTilePreviewsCompensated; x++)
         {
-            GameObject slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
+            slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
             slot.transform.parent = tilePanel.transform;
-            GetComponent<TileRandomizer>().RandomizeAllTiles();
+           
         }
+
+        GetComponent<TileRandomizer>().RandomizeAllTiles();
+
     }
 
     void firstTile()
@@ -281,6 +285,12 @@ public class GameManager : MonoBehaviour
         grabbedTile = Instantiate(Tile,transform.position,Quaternion.identity);
         grabbedTile.GetComponent<tileSetup>().updateTile(tipo);
         grabbedTile.SetActive(false);
+
+        for (int i = 0; i < previewGrabbed.GetComponent<tilePreview_Properties>().randomCount; i++) {
+            
+            itemPanel.GetComponentInChildren<item>().RotateClockwise();
+            
+        }
 
         activeTile.GetComponent<tileSetup>().checkConnections();
     }
@@ -338,7 +348,7 @@ public class GameManager : MonoBehaviour
         //newTile.transform.transform.rotation = Quaternion.Euler(grabbedTile.transform.transform.rotation.x, grabbedTile.transform.transform.rotation.y + randomPos, grabbedTile.transform.transform.rotation.z );
 
         //checar se nasce inimigo no tile
-        newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo();
+        newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo(newTile.gameObject,13);
     }
 
     void interacaoDeColocacaoTile()
@@ -437,6 +447,9 @@ public class GameManager : MonoBehaviour
 
             activeTile.gameObject.tag = null;
 
+            //spawnar inimigos em tiles
+            spawnInimigosEmTilesExistentes();
+
             //tirar item em cima
             //activeTile.GetComponent<hoverItems>().destroyItem();
         }
@@ -492,5 +505,15 @@ public class GameManager : MonoBehaviour
 
         print("destrui ultima linha");
     }
-
+    void spawnInimigosEmTilesExistentes()
+    {
+        for (int i = 0; i < tileWorld.transform.childCount; i++)
+        {
+            //verificar se o tile e um tile que pode colocar inimigo e que ja nao tenha inimigo nenhum nele
+            if(tileWorld.transform.GetChild(i).tag == "Tile" && tileWorld.transform.GetChild(i).gameObject.GetComponentInChildren<enemyAttack>() == null)
+            {
+                tileWorld.transform.GetChild(i).gameObject.GetComponent<enemySpawn>().spawnInimigo(tileWorld.transform.GetChild(i).gameObject,33);
+            }
+        }
+    }
 }

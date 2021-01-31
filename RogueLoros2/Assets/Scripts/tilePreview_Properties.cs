@@ -18,6 +18,8 @@ public class tilePreview_Properties : MonoBehaviour, IPointerClickHandler,IDragH
 
     public Texture2D[] tileTextures;
 
+    [HideInInspector] public int randomCount = 0; 
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,8 +31,11 @@ public class tilePreview_Properties : MonoBehaviour, IPointerClickHandler,IDragH
         LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.7f).setEaseOutBounce();
     }
 
-    public void randomizePreview()
+    public void randomizePreview(int randomRotation)
     {
+
+        randomCount = randomRotation;
+
         //Create a seed
         //int seed = (int)Time.deltaTime;
         //Set a seed in the Random Generator
@@ -46,10 +51,7 @@ public class tilePreview_Properties : MonoBehaviour, IPointerClickHandler,IDragH
         switch (tipoPreview)
         {
             case previewType.OneSide:
-                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[0], new Rect(0, 0, 64, 64), new Vector2());
-
-                
-
+                GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[0], new Rect(0, 0, 64, 64), new Vector2()); 
                 break;
             case previewType.OneSideB:
                 GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[1], new Rect(0, 0, 64, 64), new Vector2());
@@ -66,15 +68,18 @@ public class tilePreview_Properties : MonoBehaviour, IPointerClickHandler,IDragH
             case previewType.FourSides:
                 GetComponentInChildren<Image>().sprite = Sprite.Create((Texture2D)tileTextures[3], new Rect(0, 0, 64, 64), new Vector2());
 
-
-
                 break;
         }
 
+
+        for (int i = 0; i < randomCount; i++) {
+            GetComponentInChildren<Image>().transform.Rotate(Vector3.forward, -90);
+        }
     }
 
     public void GrabTile()
     {
+
         if(GameManager.instance != null)
         {
             switch (tipoPreview)

@@ -45,6 +45,7 @@ public class hpSystem : MonoBehaviour
             //menos vida
             menosVida();
         }
+
     }
     void updateLifeCounter()
     {
