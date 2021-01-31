@@ -245,12 +245,16 @@ public class GameManager : MonoBehaviour
     public void instanciarTilePreview()
     {
         int numberTilePreviewsCompensated = numberTilePreview - GetComponent<TileRandomizer>().UITilePanel.transform.childCount;
+        GameObject slot = null;
         for (int x = 0; x < numberTilePreviewsCompensated; x++)
         {
-            GameObject slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
+            slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
             slot.transform.parent = tilePanel.transform;
-            GetComponent<TileRandomizer>().RandomizeAllTiles();
+           
         }
+
+        GetComponent<TileRandomizer>().RandomizeAllTiles();
+
     }
 
     void firstTile()
@@ -281,6 +285,12 @@ public class GameManager : MonoBehaviour
         grabbedTile = Instantiate(Tile,transform.position,Quaternion.identity);
         grabbedTile.GetComponent<tileSetup>().updateTile(tipo);
         grabbedTile.SetActive(false);
+
+        for (int i = 0; i < previewGrabbed.GetComponent<tilePreview_Properties>().randomCount; i++) {
+            
+            itemPanel.GetComponentInChildren<item>().RotateClockwise();
+            
+        }
 
         activeTile.GetComponent<tileSetup>().checkConnections();
     }

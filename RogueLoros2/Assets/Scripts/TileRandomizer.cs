@@ -23,40 +23,17 @@ public class TileRandomizer : MonoBehaviour {
     public void RandomizeAllTiles() {
 
 
-        
-
         for (int i = 0; i < UITilePanel.transform.childCount; i++) {
 
-                RandomizeSingleTiles(i);
+            int randRotation = Random.Range(0, 4);
+            RandomizeSingleTiles(i, randRotation);
         }
-        /*
-        Debug.Log("UITilePanel childCount: " + UITilePanel.transform.childCount);
-
-        for (int i = 0; i < UITilePanel.transform.childCount; i++)
-        {
-
-            if (UITilePanel.transform.childCount > numeroMaxTiles)
-            {
-                Debug.Log("destruir");
-                Destroy(UITilePanel.transform.GetChild(0).gameObject);
-            }
-
-        }
-        */
-
-        /*
-        if (UITilePanel.transform.childCount == 0)
-        {
-            Debug.Log("instanciou mais cartas");
-            //instanciar tilePreviews dentro do tilepanel
-            GameManager.instance.instanciarTilePreview();
-        }
-        */
+       
     }
 
     // os 4 espaços da UI são númerados de 0 a 3 da esquerda para a direita
     // o valor recebdo pela função é relacionado ao número do slot de tile na UI
-    public void RandomizeSingleTiles(int tileNum) {
+    public void RandomizeSingleTiles(int tileNum, int randomRotation) {
 
         //tileType type = (tileType) Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length - 1);
 
@@ -69,7 +46,7 @@ public class TileRandomizer : MonoBehaviour {
 
         if (UIButton.GetComponentInParent<tilePreview_Properties>() != null)
         {
-            UIButton.GetComponentInParent<tilePreview_Properties>().randomizePreview();
+            UIButton.GetComponentInParent<tilePreview_Properties>().randomizePreview(randomRotation);
         }
         else
         {
