@@ -82,7 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2357757189031018313, guid: b7c26bd63b86134499e461aad29c172a, type: 3}
-  DeathFog: {fileID: 0}
+  DeathFog: {fileID: 7087040517301835968, guid: 8b311b574f9272f4b80bd789d677527e,
+    type: 3}
   itemPanel: {fileID: 7851567077664171460}
   tilePanel: {fileID: 8612491653904449387}
   itemSlot: {fileID: 4211450813792970647, guid: 9b70d4d7893aa8d4c997b05c5d537d98,
