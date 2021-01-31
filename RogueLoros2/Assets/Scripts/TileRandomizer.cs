@@ -28,6 +28,8 @@ public class TileRandomizer : MonoBehaviour {
             int randRotation = Random.Range(0, 4);
             RandomizeSingleTiles(i, randRotation);
         }
+
+        audioManager.instance.refreshTilesAudio();
        
     }
 
@@ -52,21 +54,6 @@ public class TileRandomizer : MonoBehaviour {
         {
             Debug.LogError("Tile randomizado não foi encontrado",UIButton);
         }
-        /*
-        try {
-
-
-            //Texture texture = Tile.GetComponent<tileSetup>().tileTextures[0];
-
-            
-
-            //UIButton.image.sprite = Sprite.Create((Texture2D) texture, new Rect(0, 0, 32, 32), new Vector2()); ;
-
-        } catch (System.Exception) {
-
-            Debug.LogError("Tile randomizado não foi encontrado");
-            throw;
-        }
-        */
+        
     }
 }

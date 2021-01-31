@@ -1359,12 +1359,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1869445228}
-        m_MethodName: 
+      - m_Target: {fileID: 1540356508914428114}
+        m_MethodName: quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1485,12 +1485,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827208954}
   m_CullTransparentMesh: 0
---- !u!1 &1869445228 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7276861234559739153, guid: 65098ca508f727c42934b17d7a1bc83c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1540356508914428113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1980872446
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,7 +6488,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1540356508914428113}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869445228}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a12203f441266b449a2a9635d6fae134, type: 3}

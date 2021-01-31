@@ -32,6 +32,7 @@ public class moneySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.K))
         {
             //mais 2 de dinheiro
@@ -42,6 +43,7 @@ public class moneySystem : MonoBehaviour
             //menos 5 de dinheiro
             removeMoney(5);
         }
+        */
     }
     void atualizarText()
     {
@@ -77,6 +79,7 @@ public class moneySystem : MonoBehaviour
             else
             {
                 money -= quantity;
+                audioManager.instance.loseMoney();
             }
 
             atualizarText();

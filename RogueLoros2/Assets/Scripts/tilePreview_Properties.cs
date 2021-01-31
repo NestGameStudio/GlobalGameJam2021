@@ -71,14 +71,17 @@ public class tilePreview_Properties : MonoBehaviour, IPointerClickHandler,IDragH
                 break;
         }
 
-
+        //print("tem que rotacionar x vezes " + randomCount);
         for (int i = 0; i < randomCount; i++) {
+            //print("rotacionei");
             GetComponentInChildren<Image>().transform.Rotate(Vector3.forward, -90);
         }
     }
 
     public void GrabTile()
     {
+
+        audioManager.instance.chooseTilePreview();
 
         if(GameManager.instance != null)
         {

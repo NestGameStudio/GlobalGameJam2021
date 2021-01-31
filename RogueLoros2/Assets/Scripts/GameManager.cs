@@ -81,6 +81,13 @@ public class GameManager : MonoBehaviour
 
     Vector2 tileGoalPos;
 
+    public GameObject tileVida;
+
+    public int numeroTilesVida;
+
+    List<Vector3> listaTileVida = new List<Vector3>();
+    List<Vector3> listaTileCoin = new List<Vector3>();
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -111,7 +118,7 @@ public class GameManager : MonoBehaviour
 
         //instanciar tiles de moeda
         instanciarTileCoin();
-
+        instanciarTileVida();
         //mover todo o palco para frente
         //transformAll();
     }
@@ -171,7 +178,7 @@ public class GameManager : MonoBehaviour
             int randomY = Random.Range(1, raio + 1);
 
             //nao pode ocupar espaco do tile inicial ou do tile do objetivo
-            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y)
+            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileVida.Contains(new Vector3(randomX, randomY)))
             {
                 randomX = Random.Range(-raio / 2, raio / 2 + 1);
                 randomY = Random.Range(1, raio + 1);
@@ -181,9 +188,35 @@ public class GameManager : MonoBehaviour
                 Vector3 location = new Vector3(randomX * 2.5f, 0, randomY * 2.5f);
 
                 GameObject moneyTile = Instantiate(coinTile, location, Quaternion.identity);
+                listaTileCoin.Add(location);
                 moneyTile.transform.parent = tileWorld.transform;
             }
         
+        }
+    }
+    void instanciarTileVida()
+    {
+        //instanciar os tiles de moeda num raio predeterminado
+        for (int i = 0; i < numeroTilesVida; i++)
+        {
+            int randomX = Random.Range(-raio / 2, raio / 2 + 1);
+            int randomY = Random.Range(1, raio + 1);
+
+            //nao pode ocupar espaco do tile inicial ou do tile do objetivo
+            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileCoin.Contains(new Vector3(randomX,randomY)))
+            {
+                randomX = Random.Range(-raio / 2, raio / 2 + 1);
+                randomY = Random.Range(1, raio + 1);
+            }
+            else
+            {
+                Vector3 location = new Vector3(randomX * 2.5f, 0, randomY * 2.5f);
+
+                GameObject vidaTile = Instantiate(tileVida, location, Quaternion.identity);
+                listaTileVida.Add(location);
+                vidaTile.transform.parent = tileWorld.transform;
+            }
+
         }
     }
 
@@ -250,10 +283,26 @@ public class GameManager : MonoBehaviour
         {
             slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
             slot.transform.parent = tilePanel.transform;
-           
+
+            int randRotation = Random.Range(0, 4);
+            print(numberTilePreview);
+            if (numberTilePreviewsCompensated == 4) {
+                GetComponent<TileRandomizer>().RandomizeSingleTiles(x, randRotation);
+            } else {
+                GetComponent<TileRandomizer>().RandomizeSingleTiles(numberTilePreviewsCompensated + x, randRotation);
+            }
+
         }
 
-        GetComponent<TileRandomizer>().RandomizeAllTiles();
+        /*GetComponent<TileRandomizer>().RandomizeAllTiles();
+
+        for (int i = 0; i < GetComponent<TileRandomizer>().UITilePanel.transform.childCount; i++) {
+
+            if (GetComponent<TileRandomizer>().UITilePanel.transform.GetChild(i) == slot) {
+                int randRotation = Random.Range(0, 4);
+                GetComponent<TileRandomizer>().RandomizeSingleTiles(i, randRotation);
+            }
+        }*/
 
     }
 
@@ -286,8 +335,9 @@ public class GameManager : MonoBehaviour
         grabbedTile.GetComponent<tileSetup>().updateTile(tipo);
         grabbedTile.SetActive(false);
 
+        //print("roda " + previewGrabbed.GetComponent<tilePreview_Properties>().randomCount);
         for (int i = 0; i < previewGrabbed.GetComponent<tilePreview_Properties>().randomCount; i++) {
-            
+            //print("retacionei");
             itemPanel.GetComponentInChildren<item>().RotateClockwise();
             
         }
@@ -303,7 +353,6 @@ public class GameManager : MonoBehaviour
 
         // adiciona os tiles na matriz para serem destruidos quando chegar o ataque final
         int index = (int) (newTile.transform.position.z / 2.5f);
-        print(index);
         if (index > matrizTiles.Count - 1) {
             matrizTiles.Add(new List<GameObject>());
 

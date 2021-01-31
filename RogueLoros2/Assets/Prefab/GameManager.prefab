@@ -113,6 +113,9 @@ MonoBehaviour:
   raio: 40
   coinTile: {fileID: 1415749290348639868, guid: 121306c82b8ec6945a77595e989a6c5f,
     type: 3}
+  tileVida: {fileID: 7108830035450197542, guid: 2a241d3929c2a3f4482ac76e7212fdca,
+    type: 3}
+  numeroTilesVida: 10
 --- !u!114 &261901469570699094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPanel: {fileID: 7851567077664171460}
   itemSprite:
-  - {fileID: 21300000, guid: 418bd7edd4a1f014bbed27a75ee9f9e6, type: 3}
+  - {fileID: 21300000, guid: 111742bd4bb1c0346bdbec27b4bb07ae, type: 3}
   - {fileID: 21300000, guid: 073d34c9b2aecb040bfc8ffba79dbe57, type: 3}
   - {fileID: 21300000, guid: c1bdeab87f4d3374e9c1608026c869b6, type: 3}
 --- !u!114 &1471064846
