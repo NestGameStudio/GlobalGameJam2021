@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
+            GameManager.instance.activeTile.GetComponent<tileSetup>().checkConnections();
+
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 isMovementLegal(1);
