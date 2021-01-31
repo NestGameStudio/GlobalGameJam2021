@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
         instanciarTileCoin();
 
         //mover todo o palco para frente
-        transformAll();
+        //transformAll();
     }
     private void Start()
     {
@@ -269,9 +269,11 @@ public class GameManager : MonoBehaviour
         print(index);
         if (index > matrizTiles.Count - 1) {
             matrizTiles.Add(new List<GameObject>());
+
+            matrizTiles[index].Add(newTile);
         } 
 
-        matrizTiles[index].Add(newTile);
+        
 
         for(int x = 0; x < newTile.GetComponent<tileSetup>().spawnPoints.Length; x++)
         {
@@ -396,6 +398,7 @@ public class GameManager : MonoBehaviour
             startFinalAttack = true;
             // Alterar offset da câmera para deixar player mais pro topo da tela
             DeathFogInGame = Instantiate(DeathFog, new Vector3 (0, 0, (2.5f * (tileChavePos + 1))), Quaternion.identity);
+            //DeathFogInGame.transform.parent = tileWorld;
             print("começou");
 
             activeTile.gameObject.tag = null;
