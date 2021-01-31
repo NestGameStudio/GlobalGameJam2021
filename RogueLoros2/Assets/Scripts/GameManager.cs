@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject Player;
     private GameObject playerInGame;
+    public GameObject DeathFog;
+    private GameObject DeathFogInGame;
 
     //referencias dentro do gamemanager
     public GameObject itemPanel;
@@ -292,7 +294,8 @@ public class GameManager : MonoBehaviour
         // precisa estar embaixo desse if par aque ele não comece a contar erroneamente os tiles
         if (activeTile.gameObject.CompareTag("Goal")) {
             startFinalAttack = true;
-            // ROTACIONAR A CAMERA E O PLAYER
+            // Alterar offset da câmera para deixar player mais pro topo da tela
+            DeathFogInGame = Instantiate(DeathFog, new Vector3 (tileChave.transform.position.x, tileChave.transform.position.y, tileChave.transform.position.z + 2.5f), Quaternion.identity);
             print("começou");
         }
 
