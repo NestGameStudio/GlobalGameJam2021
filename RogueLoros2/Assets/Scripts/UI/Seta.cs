@@ -21,6 +21,13 @@ public class Seta : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(Target.transform.position);
+        if (Target != null)
+        {
+            transform.LookAt(Target.transform.position);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
