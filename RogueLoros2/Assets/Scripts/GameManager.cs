@@ -114,6 +114,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         playerInGame = GameObject.FindGameObjectWithTag("Player");
+
+        itemPanel.transform.parent.gameObject.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -122,6 +124,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //ativar ui depois de animacao de inicio
+    public void activateUI()
+    {
+        itemPanel.transform.parent.gameObject.SetActive(true);
+    }
     void instanciarTileCoin()
     {
         //instanciar os tiles de moeda num raio predeterminado

@@ -21,5 +21,8 @@ public class deactivateCamera : MonoBehaviour
     {
         yield return new WaitForSeconds(sec);
         GetComponent<CinemachineVirtualCamera>().enabled = false;
+
+        yield return new WaitForSeconds(3f);
+        GameManager.instance.activateUI();
     }
 }
