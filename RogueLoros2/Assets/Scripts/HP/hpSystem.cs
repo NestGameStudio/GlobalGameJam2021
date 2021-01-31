@@ -68,6 +68,7 @@ public class hpSystem : MonoBehaviour
         {
             health += 1;
             updateLifeCounter();
+            audioManager.instance.getLifeAudio();
         }
     }
     public void menosVida()
@@ -76,6 +77,7 @@ public class hpSystem : MonoBehaviour
         {
             health -= 1;
             updateLifeCounter();
+            audioManager.instance.loseLifeAudio();
         }
         if (health <= 0)
         {
@@ -83,6 +85,8 @@ public class hpSystem : MonoBehaviour
             health -= 1;
             updateLifeCounter();
             Debug.Log("morreu");
+
+            audioManager.instance.loseAudio();
 
             SceneController.instance.morte();
         }
