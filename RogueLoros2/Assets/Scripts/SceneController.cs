@@ -36,4 +36,8 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("FinalSceneVictory");
     }
+    public void quit()
+    {
+        Application.Quit();
+    }
 }
