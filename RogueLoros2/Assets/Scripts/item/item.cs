@@ -47,21 +47,31 @@ public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerE
 
             if (type == itemType.clockwise) {
                 RotateClockwise();
+                //deduzir dinheiro
+                moneySystem.instance.removeMoney(precoObj);
             } else if (type == itemType.counter_clockwise) {
                 RotateCounterClockwise();
+                //deduzir dinheiro
+                moneySystem.instance.removeMoney(precoObj);
             }
+            /*
             else if(type == itemType.reroll)
             {
                 reroll();
             }
-
-            //deduzir dinheiro
-            moneySystem.instance.removeMoney(precoObj);
+            */
+            
 
             GameManager.instance.checarItensCompraveis();
 
         } else {
             Debug.Log("Não há tile selecionado");
+        }
+        if(type == itemType.reroll)
+        {
+            reroll();
+            //deduzir dinheiro
+            moneySystem.instance.removeMoney(precoObj);
         }
     } 
     private void reroll()
