@@ -338,7 +338,7 @@ public class GameManager : MonoBehaviour
         //newTile.transform.transform.rotation = Quaternion.Euler(grabbedTile.transform.transform.rotation.x, grabbedTile.transform.transform.rotation.y + randomPos, grabbedTile.transform.transform.rotation.z );
 
         //checar se nasce inimigo no tile
-        newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo(newTile.gameObject,15);
+        newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo(newTile.gameObject,12);
     }
 
     void interacaoDeColocacaoTile()
@@ -502,7 +502,7 @@ public class GameManager : MonoBehaviour
             //verificar se o tile e um tile que pode colocar inimigo e que ja nao tenha inimigo nenhum nele
             if(tileWorld.transform.GetChild(i).tag == "Tile" && tileWorld.transform.GetChild(i).gameObject.GetComponentInChildren<enemyAttack>() == null)
             {
-                tileWorld.transform.GetChild(i).gameObject.GetComponent<enemySpawn>().spawnInimigo(tileWorld.transform.GetChild(i).gameObject,30);
+                tileWorld.transform.GetChild(i).gameObject.GetComponent<enemySpawn>().spawnInimigo(tileWorld.transform.GetChild(i).gameObject,35);
             }
         }
     }
