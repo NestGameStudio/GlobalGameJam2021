@@ -133,15 +133,22 @@ public class GameManager : MonoBehaviour
     {
         //fade in
         objectiveUI.gameObject.GetComponent<Text>().color = new Color(1,1,1,0);
+        Image sombrinha = objectiveUI.transform.parent.GetComponentInChildren<Image>();
+        sombrinha.color = new Color(1, 1, 1, 0);
 
         yield return new WaitForSeconds(0.5f);
 
         LeanTween.alphaText(objectiveUI, 1, 2).setEaseOutExpo();
+        LeanTween.alpha(sombrinha.GetComponent<RectTransform>(), 1f, 2).setEaseOutExpo();
 
         yield return new WaitForSeconds(3);
 
         //fade out
         LeanTween.alphaText(objectiveUI, 0, 1);
+        LeanTween.alpha(sombrinha.GetComponent<RectTransform>(), 0, 1);
+
+        yield return new WaitForSeconds(1);
+        Destroy(objectiveUI.transform.parent.gameObject);
 
     }
     void transformAll()
