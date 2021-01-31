@@ -110,6 +110,9 @@ public class GameManager : MonoBehaviour
 
         //instanciar tiles de moeda
         instanciarTileCoin();
+
+        //mover todo o palco para frente
+        transformAll();
     }
     private void Start()
     {
@@ -123,7 +126,10 @@ public class GameManager : MonoBehaviour
         interacaoDeColocacaoTile();
 
     }
-
+    void transformAll()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 50);
+    }
     //ativar ui depois de animacao de inicio
     public void activateUI()
     {
@@ -167,6 +173,7 @@ public class GameManager : MonoBehaviour
 
         Vector3 local = new Vector3(xTrue*2.5f,0, yTrue*2.5f);
         GameObject tileGoal = Instantiate(tile, local,Quaternion.identity);
+        tileGoal.transform.parent = tileWorld;
 
         while(yTrue > matrizTiles.Count) {
             matrizTiles.Add(new List<GameObject>());
@@ -222,6 +229,7 @@ public class GameManager : MonoBehaviour
     void firstTile()
     {
         GameObject tile = Instantiate(Tile,transform.position,Quaternion.identity);
+        tile.GetComponent<tileSetup>().firstTile = true;
         tile.transform.parent = tileWorld;
         tile.transform.position = new Vector3(0, 0, 0);
         tile.gameObject.tag = "SpawnPoint";

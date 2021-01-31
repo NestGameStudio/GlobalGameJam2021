@@ -25,6 +25,7 @@ public class tileSetup : MonoBehaviour
 
     public bool assignOnPlay = false;
 
+    public bool firstTile = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,14 @@ public class tileSetup : MonoBehaviour
             //tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
             tileType type = tileType.FourSides;
             updateTile(type);
+        }
+
+        if (firstTile)
+        {
+            tileType type = tileType.ThreeSides;
+            updateTile(type);
+            //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y - 90, transform.rotation.z);
+            //RotateCounterClockwise(this);
         }
         
     }
@@ -156,5 +165,34 @@ public class tileSetup : MonoBehaviour
         {
             spawnPoints[x].GetComponent<checkSpawnPointConnection>().detectConnection();
         }
+    }
+
+    private void RotateCounterClockwise(tileSetup thisTile)
+    {
+
+        thisTile.transform.Rotate(Vector3.up, -90);
+
+        tileSetup tile = thisTile.GetComponent<tileSetup>();
+
+        Transform auxSP = tile.spawnPoints[0];
+        visualizeFutureTile auxVFT = tile.tileMarkers[0];
+        for (int i = 0; i < tile.spawnPoints.Length; i++)
+        {
+
+            if (i == tile.spawnPoints.Length - 1)
+            {
+                tile.spawnPoints[i] = auxSP;
+                tile.tileMarkers[i] = auxVFT;
+            }
+            else
+            {
+                tile.spawnPoints[i] = tile.spawnPoints[i + 1];
+                tile.spawnPoints[i + 1] = null;
+                tile.tileMarkers[i] = tile.tileMarkers[i + 1];
+                tile.tileMarkers[i + 1] = null;
+            }
+
+        }
+
     }
 }
