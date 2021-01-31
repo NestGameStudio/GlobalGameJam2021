@@ -87,6 +87,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileKey
       objectReference: {fileID: 0}
+    - target: {fileID: 6207175062040002095, guid: 89460e2098b27b848ac60646e7d7ba4f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
     - target: {fileID: 7941944879948845777, guid: 89460e2098b27b848ac60646e7d7ba4f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

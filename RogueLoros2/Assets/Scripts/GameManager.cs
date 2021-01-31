@@ -52,6 +52,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject tileChave;
 
+    public bool startFinalAttack = false;
+
+    private int walkCounter = 0;
+
+    private List<List<GameObject>> matrizTiles = new List<List<GameObject>>();
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -78,7 +84,7 @@ public class GameManager : MonoBehaviour
         positionPlayer();
 
         //criar tiles pre setados
-        instanciarTilePresets(tileChave, goalX, goalY );
+        instanciarTilePresets(tileChave, goalX, goalY);
     }
     private void Start()
     {
@@ -95,6 +101,12 @@ public class GameManager : MonoBehaviour
     {
         Vector3 local = new Vector3(x*2.5f,0, y*2.5f);
         GameObject tileGoal = Instantiate(tile, local,Quaternion.identity);
+
+        while(y > matrizTiles.Count) {
+            matrizTiles.Add(new List<GameObject>());
+        }
+        matrizTiles.Add(new List<GameObject>());
+        matrizTiles[(int)y].Add(tileGoal);
     }
 
     public void instanciarItemSlots()
@@ -126,10 +138,14 @@ public class GameManager : MonoBehaviour
         GameObject tile = Instantiate(Tile,transform.position,Quaternion.identity);
         tile.transform.parent = tileWorld;
         tile.transform.position = new Vector3(0, 0, 0);
+        tile.gameObject.tag = "SpawnPoint";
 
         tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
         tile.GetComponent<tileSetup>().updateTile(type);
         activeTile = tile;
+
+        matrizTiles.Add(new List<GameObject>());
+        matrizTiles[0].Add(tile);
     }
 
     public void createHoverInstance(tileType tipo,GameObject previewGrabbed)
@@ -151,6 +167,15 @@ public class GameManager : MonoBehaviour
         //instanciar tile no local
         GameObject newTile = Instantiate(grabbedTile,position, grabbedTile.transform.rotation);
         newTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
+
+        // adiciona os tiles na matriz para serem destruidos quando chegar o ataque final
+        int index = (int) (newTile.transform.position.z / 2.5f);
+        print(index);
+        if (index > matrizTiles.Count - 1) {
+            matrizTiles.Add(new List<GameObject>());
+        } 
+
+        matrizTiles[index].Add(newTile);
 
         for(int x = 0; x < newTile.GetComponent<tileSetup>().spawnPoints.Length; x++)
         {
@@ -226,8 +251,6 @@ public class GameManager : MonoBehaviour
     {
         for (int x = 0; x < tilePanel.transform.childCount; x++)
         {
-            Debug.Log("tile buttons disabled");
-
             tilePanel.transform.GetChild(x).GetComponentInChildren<Button>().interactable = true;
             tilePanel.transform.GetChild(x).gameObject.SetActive(true);
         }
@@ -254,16 +277,51 @@ public class GameManager : MonoBehaviour
         player.transform.position = activeTile.transform.position;
 
         activeTile.GetComponent<tileSetup>().checkConnections();
+
+        if (startFinalAttack) {
+            walkCounter += 1;
+
+            if (walkCounter == 2) {
+                DestroyLastLineOfTiles();
+                walkCounter = 0;
+            }
+        }
+
+        // precisa estar embaixo desse if par aque ele não comece a contar erroneamente os tiles
+        if (activeTile.gameObject.CompareTag("Goal")) {
+            startFinalAttack = true;
+            // ROTACIONAR A CAMERA E O PLAYER
+            print("começou");
+        }
+
+        if(activeTile.gameObject.CompareTag("SpawnPoint") && startFinalAttack) {
+            print("você ganhou");
+        }
     }
 
     void hasTilePreviewsLeft()
     {
-        Debug.Log("tilepanel childcount: " + tilePanel.transform.childCount);
+        //Debug.Log("tilepanel childcount: " + tilePanel.transform.childCount);
         if(tilePanel.transform.childCount == 3)
         {
-            Debug.Log("acabaram cartas");
+            //Debug.Log("acabaram cartas");
             //acabaram os tiles -> religar o botao
             nextTurnButton.interactable = true;
         }
+    }
+
+    private void DestroyLastLineOfTiles() {
+
+        foreach(GameObject tile in matrizTiles[matrizTiles.Count - 1]) {
+
+            if (activeTile == tile) {
+                print("você perdeu");
+            }
+            Destroy(tile);
+        }
+
+        matrizTiles.RemoveAt(matrizTiles.Count - 1);
+
+        print("destrui ultima linha");
     }
 }
