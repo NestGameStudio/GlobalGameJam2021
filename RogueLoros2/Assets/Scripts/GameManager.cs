@@ -428,7 +428,7 @@ public class GameManager : MonoBehaviour
         if (activeTile.gameObject.CompareTag("Goal")) {
             startFinalAttack = true;
             // Alterar offset da câmera para deixar player mais pro topo da tela
-            DeathFogInGame = Instantiate(DeathFog, new Vector3 (0, 0, (2.5f * (tileChavePos + 1))), Quaternion.identity);
+            DeathFogInGame = Instantiate(DeathFog, new Vector3 (playerInGame.transform.position.x, 0, (2.5f * (tileChavePos + 1))), Quaternion.identity);
             //DeathFogInGame.transform.parent = tileWorld;
             print("começou");
 
@@ -471,7 +471,7 @@ public class GameManager : MonoBehaviour
     private void DestroyLastLineOfTiles() {
 
         //move a tile forward
-        DeathFogInGame.transform.position = new Vector3 (0,0, DeathFogInGame.transform.position.z - 2.5f);
+        DeathFogInGame.transform.position = new Vector3 (playerInGame.transform.position.x,0, DeathFogInGame.transform.position.z - 2.5f);
 
         foreach(GameObject tile in matrizTiles[matrizTiles.Count - 1]) {
 
