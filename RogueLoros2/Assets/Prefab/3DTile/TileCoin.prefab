@@ -131,6 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1264831037843808244, guid: 51fe8cb30283a43478a9b12821964118, type: 3}
+    - {fileID: 4052160448467598474, guid: 51fe8cb30283a43478a9b12821964118, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 51fe8cb30283a43478a9b12821964118, type: 3}
 --- !u!1 &1415749290348639868 stripped
 GameObject:
@@ -157,6 +158,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6647599809328123140}
     m_Modifications:
+    - target: {fileID: -865787174660971143, guid: 2865689f60c08414ea79fbd322f73501,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 207372598893414687, guid: 2865689f60c08414ea79fbd322f73501,
         type: 3}
       propertyPath: m_RootOrder
@@ -226,6 +232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771913063206662215, guid: 2865689f60c08414ea79fbd322f73501,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2865689f60c08414ea79fbd322f73501, type: 3}

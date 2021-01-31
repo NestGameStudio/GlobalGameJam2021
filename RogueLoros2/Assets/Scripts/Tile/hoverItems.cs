@@ -5,4 +5,12 @@ using UnityEngine;
 public class hoverItems : MonoBehaviour
 {
     public GameObject hoveringItem;
+
+    public void destroyItem()
+    {
+        Debug.Log("destroy item");
+        Destroy(hoveringItem);
+
+        gameObject.tag = null;
+    }
 }

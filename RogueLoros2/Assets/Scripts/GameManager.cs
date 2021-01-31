@@ -380,8 +380,9 @@ public class GameManager : MonoBehaviour
             activeTile.gameObject.tag = null;
 
             //tirar item em cima
-            activeTile.GetComponent<hoverItems>().hoveringItem.SetActive(false);
+            activeTile.GetComponent<hoverItems>().destroyItem();
         }
+        /*
         else if (activeTile.gameObject.CompareTag("Money"))
         {
             //pegou dinheiro
@@ -391,9 +392,9 @@ public class GameManager : MonoBehaviour
             activeTile.gameObject.tag = null;
 
             //tirar item em cima
-            activeTile.GetComponent<hoverItems>().hoveringItem.SetActive(false);
+            activeTile.GetComponent<hoverItems>().destroyItem();
         }
-
+        */
         if(activeTile.gameObject.CompareTag("SpawnPoint") && startFinalAttack) {
 
             SceneController.instance.vitoria();
