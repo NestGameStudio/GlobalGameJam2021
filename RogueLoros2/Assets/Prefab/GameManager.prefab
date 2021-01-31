@@ -105,7 +105,7 @@ MonoBehaviour:
   grabbedTileRotation: {x: 0, y: 0, z: 0, w: 0}
   goalX: {x: -10, y: 10}
   goalY: {x: 20, y: 30}
-  itemPrecos: 0a0000000a00000019000000
+  itemPrecos: 05000000050000000f000000
   tileChave: {fileID: 4686599827725014374, guid: 51fe8cb30283a43478a9b12821964118,
     type: 3}
   startFinalAttack: 0
@@ -224,17 +224,17 @@ PrefabInstance:
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 745.27765
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20
+      value: 498.58566
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15
+      value: -156.23438
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
