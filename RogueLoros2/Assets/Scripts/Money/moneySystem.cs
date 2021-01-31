@@ -61,6 +61,7 @@ public class moneySystem : MonoBehaviour
             {
                 money += quantity;
                 atualizarText();
+                audioManager.instance.getMoneyAudio();
             }
         }
     }

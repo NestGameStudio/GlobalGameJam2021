@@ -14,6 +14,8 @@ public class enemyAttack : MonoBehaviour
             gameObject.SetActive(false);
             hpSystem.instance.menosVida();
             moneySystem.instance.addMoney(3);
+
+            audioManager.instance.enemyAttackAudio();
         }
     }
 }

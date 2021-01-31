@@ -428,6 +428,9 @@ public class GameManager : MonoBehaviour
 
         activeTile.GetComponent<tileSetup>().checkConnections();
 
+        //tocar audio de caminhada
+        audioManager.instance.playFootstep();
+
         if (startFinalAttack) {
             walkCounter += 1;
 
