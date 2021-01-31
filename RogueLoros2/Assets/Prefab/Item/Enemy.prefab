@@ -264,7 +264,7 @@ ParticleSystem:
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 52428
+        ctime0: 13107
         ctime1: 65535
         ctime2: 65535
         ctime3: 0
@@ -4860,3 +4860,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c58e5bb73fe4d648b3eefb0aad2fc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickParticle: {fileID: 6551764916240548767, guid: 0e1b27b15271d9640939eda83aca3f0e,
+    type: 3}
