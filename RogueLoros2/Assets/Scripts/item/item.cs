@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class item : MonoBehaviour {
+public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+{
 
     public itemType type;
 
@@ -48,6 +50,10 @@ public class item : MonoBehaviour {
             } else if (type == itemType.counter_clockwise) {
                 RotateCounterClockwise();
             }
+            else if(type == itemType.reroll)
+            {
+                reroll();
+            }
 
             //deduzir dinheiro
             moneySystem.instance.removeMoney(precoObj);
@@ -58,7 +64,10 @@ public class item : MonoBehaviour {
             Debug.Log("Não há tile selecionado");
         }
     } 
-
+    private void reroll()
+    {
+        GameManager.instance.gameObject.GetComponent<TileRandomizer>().RandomizeAllTiles();
+    }
     private void RotateClockwise() {
 
         for (int i = 0; i < 3; i++) {
@@ -99,6 +108,34 @@ public class item : MonoBehaviour {
     {
         button = GetComponentInChildren<Button>();
         button.interactable = false;
+    }
+
+    public void OnPointerClick(PointerEventData eventData) // 3
+    {
+        print("I was clicked");
+
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        print("I'm being dragged!");
+
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (GetComponentInChildren<Button>().interactable)
+        {
+            LeanTween.scale(gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.1f).setEaseOutSine();
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //if (GetComponentInChildren<Button>().interactable)
+        //{
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.1f).setEaseInSine();
+        //}
     }
 
 }

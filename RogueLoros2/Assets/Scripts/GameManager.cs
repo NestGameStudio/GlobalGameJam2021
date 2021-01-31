@@ -290,8 +290,8 @@ public class GameManager : MonoBehaviour
         //habilitar movimento do player
         playerInGame.GetComponent<PlayerController>().canMove = true;
 
-        float randomRot = Random.Range(-1.5f,1.6f);
-        newTile.transform.GetChild(1).transform.rotation = Quaternion.Euler(newTile.transform.GetChild(1).transform.rotation.x, newTile.transform.GetChild(1).transform.rotation.y + randomRot, newTile.transform.GetChild(1).transform.rotation.z);
+        //float randomPos = Random.Range(-1f,1.1f);
+        //newTile.transform.transform.rotation = Quaternion.Euler(grabbedTile.transform.transform.rotation.x, grabbedTile.transform.transform.rotation.y + randomPos, grabbedTile.transform.transform.rotation.z );
     }
 
     void interacaoDeColocacaoTile()

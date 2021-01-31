@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class tilePreview_Properties : MonoBehaviour
+public class tilePreview_Properties : MonoBehaviour, IPointerClickHandler,IDragHandler,IPointerEnterHandler,IPointerExitHandler
 {
     public enum previewType
     {
@@ -99,5 +100,33 @@ public class tilePreview_Properties : MonoBehaviour
             gameObject.SetActive(false);
 
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData) // 3
+    {
+        print("I was clicked");
+        
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        print("I'm being dragged!");
+        
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (GetComponentInChildren<Button>().interactable)
+        {
+            LeanTween.scale(gameObject, new Vector3(1.2f, 1.2f, 1.2f), 0.1f).setEaseOutSine();
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //if (GetComponentInChildren<Button>().interactable)
+        //{
+            LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.1f).setEaseInSine();
+        //}
     }
 }

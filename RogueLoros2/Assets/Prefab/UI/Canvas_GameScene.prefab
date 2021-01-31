@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 2084086379909395013}
   - component: {fileID: 5061232683939329200}
   - component: {fileID: 473258722881173568}
-  - component: {fileID: 4530130216465161073}
+  - component: {fileID: 496022925}
   m_Layer: 5
   m_Name: TilePanel
   m_TagString: Untagged
@@ -894,10 +894,10 @@ RectTransform:
   m_Father: {fileID: 61891939479051382}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -166.9}
-  m_SizeDelta: {x: 1141.1238, y: 333.8246}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -164, y: 0}
+  m_SizeDelta: {x: 150, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5061232683939329200
 CanvasRenderer:
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4530130216465161073
+--- !u!114 &496022925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -945,18 +945,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2766455754564607108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 25
     m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildAlignment: 1
+  m_Spacing: 25
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -997,7 +997,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 164, y: 0}
-  m_SizeDelta: {x: 160.29358, y: 632.8136}
+  m_SizeDelta: {x: 150, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &944246488169171963
 CanvasRenderer:
@@ -1051,12 +1051,12 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 25
     m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildAlignment: 1
+  m_Spacing: 72
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
