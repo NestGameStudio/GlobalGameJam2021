@@ -23,13 +23,19 @@ public class tileSetup : MonoBehaviour
 
     public visualizeFutureTile[] tileMarkers;
 
+    public bool assignOnPlay = false;
+
     // Start is called before the first frame update
     void Start()
     {
         //dar o numero de cada spawnpoint pros marcadores para detectar onde nao existe conexao
         assignMarkerNumbers();
 
-        
+        if (assignOnPlay)
+        {
+            tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+            updateTile(type);
+        }
         
     }
 

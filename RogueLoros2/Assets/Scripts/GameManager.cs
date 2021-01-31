@@ -44,6 +44,13 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Quaternion grabbedTileRotation;
 
+    //distancia X ate chave 
+    public int goalX = 5;
+
+    //distancia y ate chave 
+    public int goalY = 8;
+
+    public GameObject tileChave;
     // Start is called before the first frame update
     void Awake()
     {
@@ -68,6 +75,9 @@ public class GameManager : MonoBehaviour
 
         //criar player
         positionPlayer();
+
+        //criar tiles pre setados
+        instanciarTilePresets();
     }
     private void Start()
     {
@@ -79,6 +89,13 @@ public class GameManager : MonoBehaviour
         interacaoDeColocacaoTile();
 
     }
+
+    void instanciarTilePresets()
+    {
+        Vector3 local = new Vector3(goalX*2.5f,0, goalY*2.5f);
+        GameObject tileGoal = Instantiate(tileChave,local,Quaternion.identity);
+    }
+
     public void instanciarItemSlots()
     {
         for(int x = 0; x < System.Enum.GetValues(typeof(itemType)).Length; x++)
@@ -138,6 +155,7 @@ public class GameManager : MonoBehaviour
         {
             newTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.SetActive(grabbedTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.active);
         }
+        //grabbedTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
         //newTile.transform.parent = parent;
         //newTile.transform.rotation = grabbedTile.transform.rotation;
         newTile.transform.parent = tileWorld;
