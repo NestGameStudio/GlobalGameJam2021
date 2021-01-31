@@ -25,7 +25,7 @@ public class SceneController : MonoBehaviour
     }
 
     public void GoToGame() {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("CenaProg");
     }
 
     public void morte()

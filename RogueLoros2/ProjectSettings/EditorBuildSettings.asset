@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalSceneDefeat.unity
     guid: 5f2b0f91114957841bba9839f4e587df
+  - enabled: 1
+    path: Assets/Scenes/CenaProg.unity
+    guid: 7b39402130a9b0a4c8c65f77bdae7737
   m_configObjects: {}
