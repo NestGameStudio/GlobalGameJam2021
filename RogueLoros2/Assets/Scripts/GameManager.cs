@@ -304,6 +304,8 @@ public class GameManager : MonoBehaviour
             }
         }*/
 
+        audioManager.instance.refreshTilesAudio();
+
     }
 
     void firstTile()
@@ -503,6 +505,8 @@ public class GameManager : MonoBehaviour
 
             //spawnar inimigos em tiles
             spawnInimigosEmTilesExistentes();
+
+            audioManager.instance.changeToBossMusic();
 
             //tirar item em cima
             //activeTile.GetComponent<hoverItems>().destroyItem();

@@ -28,6 +28,9 @@ public class audioManager : MonoBehaviour
 
     public AudioSource spendMoney;
 
+    public AudioSource musica1;
+
+    public AudioSource musica2;
     private void Awake()
     {
         //lida com duplicatas de instancia
@@ -84,4 +87,55 @@ public class audioManager : MonoBehaviour
     {
         spendMoney.PlayOneShot(spendMoney.clip, spendMoney.volume);
     }
+    public void changeToBossMusic()
+    {
+        //musica1.FadeOut(1);
+        //musica2.FadeIn(1,0.5f);
+        musica1.Stop();
+        musica2.Play();
+    }
 }
+namespace UnityEngine
+{
+    public static class AudioSourceExtensions
+    {
+        public static void FadeOut(this AudioSource a, float duration)
+        {
+            a.GetComponent<MonoBehaviour>().StartCoroutine(FadeOutCore(a, duration));
+        }
+
+        private static IEnumerator FadeOutCore(AudioSource a, float duration)
+        {
+            float startVolume = a.volume;
+
+            while (a.volume > 0)
+            {
+                a.volume -= startVolume * Time.deltaTime / duration;
+                yield return new WaitForEndOfFrame();
+            }
+
+            a.Stop();
+            a.volume = startVolume;
+        }
+
+        public static void FadeIn(this AudioSource a, float duration, float finalVolume2)
+        {
+            a.GetComponent<MonoBehaviour>().StartCoroutine(FadeInCore(a, duration, finalVolume2));
+        }
+
+        private static IEnumerator FadeInCore(AudioSource a, float duration, float finalVolume)
+        {
+            float startVolume = a.volume;
+
+            while (a.volume < finalVolume)
+            {
+                a.volume += startVolume * Time.deltaTime / duration;
+                yield return new WaitForEndOfFrame();
+            }
+
+            a.Stop();
+            a.volume = startVolume;
+        }
+    }
+}
+

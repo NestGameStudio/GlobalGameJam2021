@@ -29,7 +29,7 @@ public class TileRandomizer : MonoBehaviour {
             RandomizeSingleTiles(i, randRotation);
         }
 
-        audioManager.instance.refreshTilesAudio();
+        
        
     }
 
