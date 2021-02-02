@@ -16,6 +16,8 @@ public class enemyAttack : MonoBehaviour
             moneySystem.instance.addMoney(3);
 
             audioManager.instance.enemyAttackAudio();
+
+            CameraShake.instance.shakeCam(2, 1, 0.5f);
         }
     }
 }
