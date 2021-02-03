@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969dccc18854a924cbd65d30a65251cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 6207175062040002095, guid: 89460e2098b27b848ac60646e7d7ba4f, type: 3}
+  spawnPointNumber: 0
 --- !u!1 &5864303682423162464
 GameObject:
   m_ObjectHideFlags: 0

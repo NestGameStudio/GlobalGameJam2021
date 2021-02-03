@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4917957243282451705}
   - component: {fileID: 5391537662172830194}
   - component: {fileID: 7941944879948845777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: -8019944572600148860}
   - component: {fileID: 7343112645364617105}
   - component: {fileID: 5730840287007362212}
+  - component: {fileID: 1799243153660425268}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Tile
@@ -242,7 +243,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inimigo: {fileID: 6776082306135502346, guid: 7655a4651d8c263478fbdbceaf60ada5, type: 3}
-  chance: 20
+--- !u!65 &1799243153660425268
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207175062040002095}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6762765586422667212
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +316,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasConnection: 0
   connectionTile: {fileID: 0}
+  hasTile: 0
+  tile: {fileID: 0}
+  active: 1
 --- !u!1 &8189897216158502008
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7824561332443975617
 Transform:
   m_ObjectHideFlags: 0
@@ -363,6 +379,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasConnection: 0
   connectionTile: {fileID: 0}
+  hasTile: 0
+  tile: {fileID: 0}
+  active: 0
 --- !u!1 &8762072405807198974
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +442,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasConnection: 0
   connectionTile: {fileID: 0}
+  hasTile: 0
+  tile: {fileID: 0}
+  active: 1
 --- !u!1 &9104951431893127371
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +505,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasConnection: 0
   connectionTile: {fileID: 0}
+  hasTile: 0
+  tile: {fileID: 0}
+  active: 1
 --- !u!1001 &70550609378049014
 PrefabInstance:
   m_ObjectHideFlags: 0

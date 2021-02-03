@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
                 //checar se no tile ativo, dentro do spawnpoint acessado tem um objeto tile
                 tileSetup tileAtivo = GameManager.instance.activeTile.GetComponent<tileSetup>();
 
-                if (tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().hasConnection && tileAtivo.spawnPoints[0].gameObject.active)
+                if (tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().hasConnection && tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().active)
                 {
                     if (tileAtivo.spawnPoints[0].GetComponent<checkSpawnPointConnection>().connectionTile != null)
                     {
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
                 tileAtivo = GameManager.instance.activeTile.GetComponent<tileSetup>();
                 
 
-                if (tileAtivo.spawnPoints[1].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[1].GetComponent<checkSpawnPointConnection>().hasConnection && tileAtivo.spawnPoints[1].gameObject.active)
+                if (tileAtivo.spawnPoints[1].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[1].GetComponent<checkSpawnPointConnection>().hasConnection && tileAtivo.spawnPoints[1].GetComponent<checkSpawnPointConnection>().active)
                 {
                     //executa o movimento
                     //GameManager.instance.movePlayer(tileAtivo.spawnPoints[1].GetComponent<checkSpawnPointConnection>().connectionTile);
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
                 tileAtivo = GameManager.instance.activeTile.GetComponent<tileSetup>();
 
 
-                if (tileAtivo.spawnPoints[2].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[2].GetComponent<checkSpawnPointConnection>().hasConnection && tileAtivo.spawnPoints[2].gameObject.active)
+                if (tileAtivo.spawnPoints[2].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[2].GetComponent<checkSpawnPointConnection>().hasConnection && tileAtivo.spawnPoints[2].GetComponent<checkSpawnPointConnection>().active)
                 {
                     if (tileAtivo.spawnPoints[2].GetComponent<checkSpawnPointConnection>().connectionTile != null)
                     {
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
                 tileAtivo = GameManager.instance.activeTile.GetComponent<tileSetup>();
 
 
-                if (tileAtivo.spawnPoints[3].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[3].GetComponent<checkSpawnPointConnection>().hasConnection && tileAtivo.spawnPoints[3].gameObject.active)
+                if (tileAtivo.spawnPoints[3].GetComponent<checkSpawnPointConnection>().connectionTile != tileAtivo && tileAtivo.spawnPoints[3].GetComponent<checkSpawnPointConnection>().hasConnection && tileAtivo.spawnPoints[3].GetComponent<checkSpawnPointConnection>().active)
                 {
                     if (tileAtivo.spawnPoints[3].GetComponent<checkSpawnPointConnection>().connectionTile != null)
                     {

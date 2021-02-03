@@ -94,11 +94,11 @@ public class tileSetup : MonoBehaviour
                 {
                     if(x == 0 || x == 2)
                     {
-                        spawnPoints[x].gameObject.SetActive(true);
+                        spawnPoints[x].GetComponent<checkSpawnPointConnection>().active = true;
                     }
                     else
                     {
-                        spawnPoints[x].gameObject.SetActive(false);
+                        spawnPoints[x].GetComponent<checkSpawnPointConnection>().active = false;
                     }
                 }
 
@@ -111,11 +111,11 @@ public class tileSetup : MonoBehaviour
                 {
                     if (x == 0 || x == 1)
                     {
-                        spawnPoints[x].gameObject.SetActive(true);
+                        spawnPoints[x].GetComponent<checkSpawnPointConnection>().active = true;
                     }
                     else
                     {
-                        spawnPoints[x].gameObject.SetActive(false);
+                        spawnPoints[x].GetComponent<checkSpawnPointConnection>().active = false;
                     }
                 }
 
@@ -128,11 +128,11 @@ public class tileSetup : MonoBehaviour
                 {
                     if (x == 0 || x == 1 || x == 2)
                     {
-                        spawnPoints[x].gameObject.SetActive(true);
+                        spawnPoints[x].GetComponent<checkSpawnPointConnection>().active = true;
                     }
                     else
                     {
-                        spawnPoints[x].gameObject.SetActive(false);
+                        spawnPoints[x].GetComponent<checkSpawnPointConnection>().active = false;
                     }
                 }
 
@@ -143,9 +143,9 @@ public class tileSetup : MonoBehaviour
                 //ativar spawnpoints correspondentes
                 for (int x = 0; x < spawnPoints.Length; x++)
                 {
-                    
-                    spawnPoints[x].gameObject.SetActive(true);
-                    
+
+                    spawnPoints[x].GetComponent<checkSpawnPointConnection>().active = true;
+
                 }
 
                 break;

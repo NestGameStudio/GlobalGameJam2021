@@ -365,7 +365,8 @@ public class GameManager : MonoBehaviour
 
         for (int x = 0; x < newTile.GetComponent<tileSetup>().spawnPoints.Length; x++)
         {
-            newTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.SetActive(grabbedTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.active);
+            //newTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.SetActive(grabbedTile.GetComponent<tileSetup>().spawnPoints[x].gameObject.active);
+            newTile.GetComponent<tileSetup>().spawnPoints[x].GetComponent<checkSpawnPointConnection>().active = (grabbedTile.GetComponent<tileSetup>().spawnPoints[x].GetComponent<checkSpawnPointConnection>().active);
 
         }
         //grabbedTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);

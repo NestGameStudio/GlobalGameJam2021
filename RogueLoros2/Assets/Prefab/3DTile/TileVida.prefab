@@ -11160,6 +11160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasConnection: 0
   connectionTile: {fileID: 0}
+  hasTile: 0
+  tile: {fileID: 0}
 --- !u!1 &4857788270283487135
 GameObject:
   m_ObjectHideFlags: 0
@@ -11282,6 +11284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasConnection: 0
   connectionTile: {fileID: 0}
+  hasTile: 0
+  tile: {fileID: 0}
 --- !u!1 &5394131592503033125
 GameObject:
   m_ObjectHideFlags: 0
@@ -11514,6 +11518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasConnection: 0
   connectionTile: {fileID: 0}
+  hasTile: 0
+  tile: {fileID: 0}
 --- !u!1 &6484840279080698955
 GameObject:
   m_ObjectHideFlags: 0
@@ -11821,6 +11827,7 @@ GameObject:
   - component: {fileID: 4920223781947704336}
   - component: {fileID: 836293886423345792}
   - component: {fileID: 5762925902000423598}
+  - component: {fileID: 8611016477752749496}
   m_Layer: 0
   m_Name: TileVida
   m_TagString: Money
@@ -11923,6 +11930,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoveringItem: {fileID: 821397180894727587}
+--- !u!65 &8611016477752749496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108830035450197542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7139250368733791700
 GameObject:
   m_ObjectHideFlags: 0
@@ -12047,6 +12067,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasConnection: 0
   connectionTile: {fileID: 0}
+  hasTile: 0
+  tile: {fileID: 0}
 --- !u!1 &7517094345318557223
 GameObject:
   m_ObjectHideFlags: 0
