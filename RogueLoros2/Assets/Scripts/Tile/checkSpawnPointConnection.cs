@@ -24,7 +24,7 @@ public class checkSpawnPointConnection : MonoBehaviour
             if (hitCollider.gameObject.tag == "SpawnPoint" || hitCollider.gameObject.tag == "Tile" || hitCollider.gameObject.tag == "Money" || hitCollider.gameObject.tag == "Goal")
             {
                 //gameObject.SetActive(false);
-                if (hitCollider.gameObject.GetComponentInParent<tileSetup>() != GetComponentInParent<tileSetup>())
+                if (hitCollider.gameObject.GetComponentInParent<tileSetup>() != GetComponentInParent<tileSetup>() && hitCollider.GetComponent<checkSpawnPointConnection>() != null)
                 {
                     hasTile = true;
                     if (hitCollider.GetComponent<checkSpawnPointConnection>().active)

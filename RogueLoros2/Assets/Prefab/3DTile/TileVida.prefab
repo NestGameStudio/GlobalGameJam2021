@@ -11162,6 +11162,8 @@ MonoBehaviour:
   connectionTile: {fileID: 0}
   hasTile: 0
   tile: {fileID: 0}
+  active: 1
+  marker: {fileID: 2978521857168428062}
 --- !u!1 &4857788270283487135
 GameObject:
   m_ObjectHideFlags: 0
@@ -11286,6 +11288,8 @@ MonoBehaviour:
   connectionTile: {fileID: 0}
   hasTile: 0
   tile: {fileID: 0}
+  active: 1
+  marker: {fileID: 229994535825359160}
 --- !u!1 &5394131592503033125
 GameObject:
   m_ObjectHideFlags: 0
@@ -11520,6 +11524,8 @@ MonoBehaviour:
   connectionTile: {fileID: 0}
   hasTile: 0
   tile: {fileID: 0}
+  active: 1
+  marker: {fileID: 1045476431647227165}
 --- !u!1 &6484840279080698955
 GameObject:
   m_ObjectHideFlags: 0
@@ -12069,6 +12075,8 @@ MonoBehaviour:
   connectionTile: {fileID: 0}
   hasTile: 0
   tile: {fileID: 0}
+  active: 1
+  marker: {fileID: 3954446097701989579}
 --- !u!1 &7517094345318557223
 GameObject:
   m_ObjectHideFlags: 0
