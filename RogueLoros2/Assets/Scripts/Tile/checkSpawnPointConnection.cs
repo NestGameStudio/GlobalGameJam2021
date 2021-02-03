@@ -14,6 +14,8 @@ public class checkSpawnPointConnection : MonoBehaviour
 
     public bool active = false;
 
+    public GameObject marker;
+
     public void detectConnection()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.1f);
@@ -52,22 +54,11 @@ public class checkSpawnPointConnection : MonoBehaviour
                 connectionTile = null;
 
             }
-            /*
-            if(hitCollider.gameObject.tag == "Tile")
-            {
-                if (hitCollider.gameObject != gameObject)
-                {
-                    hasTile = true;
-                    tile = hitCollider.gameObject.GetComponentInParent<tileSetup>();
-                }
-                else
-                {
-                    hasTile = false;
-                    tile = null;
-                }
+        }
 
-            }
-            */
+        if(active == false || hasTile && hasConnection == false)
+        {
+            marker.SetActive(false);
         }
     }
     private void OnDrawGizmos()
