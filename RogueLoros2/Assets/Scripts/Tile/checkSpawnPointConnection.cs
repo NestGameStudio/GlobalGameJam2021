@@ -16,6 +16,14 @@ public class checkSpawnPointConnection : MonoBehaviour
 
     public GameObject marker;
 
+    private void Start()
+    {
+        if (GetComponentInChildren<visualizeFutureTile>() != null)
+        {
+            marker = GetComponentInChildren<visualizeFutureTile>().gameObject;
+        }
+    }
+
     public void detectConnection()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.1f);
@@ -56,9 +64,12 @@ public class checkSpawnPointConnection : MonoBehaviour
             }
         }
 
-        if(active == false || hasTile && hasConnection == false)
+        if (active == false || hasTile && hasConnection == false)
         {
-            marker.SetActive(false);
+            if (marker != null)
+            {
+                marker.SetActive(false);
+            }
         }
     }
     private void OnDrawGizmos()

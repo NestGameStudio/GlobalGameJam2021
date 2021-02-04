@@ -85,8 +85,8 @@ public class GameManager : MonoBehaviour
 
     public int numeroTilesVida;
 
-    List<Vector3> listaTileVida = new List<Vector3>();
-    List<Vector3> listaTileCoin = new List<Vector3>();
+    public List<Vector3> listaTileVida = new List<Vector3>();
+    public List<Vector3> listaTileCoin = new List<Vector3>();
 
     // Start is called before the first frame update
     void Awake()
@@ -293,16 +293,6 @@ public class GameManager : MonoBehaviour
             }
 
         }
-
-        /*GetComponent<TileRandomizer>().RandomizeAllTiles();
-
-        for (int i = 0; i < GetComponent<TileRandomizer>().UITilePanel.transform.childCount; i++) {
-
-            if (GetComponent<TileRandomizer>().UITilePanel.transform.GetChild(i) == slot) {
-                int randRotation = Random.Range(0, 4);
-                GetComponent<TileRandomizer>().RandomizeSingleTiles(i, randRotation);
-            }
-        }*/
 
         audioManager.instance.refreshTilesAudio();
 
