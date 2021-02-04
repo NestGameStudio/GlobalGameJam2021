@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     public List<Vector3> listaTileVida = new List<Vector3>();
     public List<Vector3> listaTileCoin = new List<Vector3>();
+    List<GameObject> tileCoinObjects = new List<GameObject>();
 
     // Start is called before the first frame update
     void Awake()
@@ -121,6 +122,8 @@ public class GameManager : MonoBehaviour
         instanciarTileVida();
         //mover todo o palco para frente
         //transformAll();
+
+        checkTileDuplicates();
     }
     private void Start()
     {
@@ -136,6 +139,25 @@ public class GameManager : MonoBehaviour
         interacaoDeColocacaoTile();
 
     }
+    void checkTileDuplicates()
+    {
+        for (int i = 0; i < listaTileVida.Count; i++)
+        {
+            if (listaTileCoin.Contains(listaTileVida[i]))
+            {
+                Debug.Log("DUPLICATA LISTA TILE VIDA: " + listaTileVida[i]);
+            }
+        }
+        for (int i = 0; i < listaTileCoin.Count; i++)
+        {
+            if (listaTileVida.Contains(listaTileCoin[i]))
+            {
+                Debug.Log("DUPLICATA LISTA TILE COIN: " + listaTileCoin[i]);
+                Destroy(tileCoinObjects[i]);
+            }
+        }
+    }
+
     IEnumerator objectiveTextShow()
     {
         //fade in
@@ -189,6 +211,7 @@ public class GameManager : MonoBehaviour
 
                 GameObject moneyTile = Instantiate(coinTile, location, Quaternion.identity);
                 listaTileCoin.Add(location);
+                tileCoinObjects.Add(moneyTile);
                 moneyTile.transform.parent = tileWorld.transform;
             }
         
