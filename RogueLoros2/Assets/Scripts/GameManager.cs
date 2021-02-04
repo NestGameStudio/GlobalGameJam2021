@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
 
         itemPanel.transform.parent.gameObject.SetActive(false);
 
-        
+        LeanTween.init(500);
     }
     // Update is called once per frame
     void Update()
@@ -337,6 +337,13 @@ public class GameManager : MonoBehaviour
         activeTile = tile;
         firstTileObject = tile;
 
+        if (tile.GetComponent<tileAnimation>() != null)
+        {
+            tile.GetComponent<tileAnimation>().canAnimate = true;
+            tile.GetComponent<tileAnimation>().movableGO = tile.gameObject;
+            tile.GetComponent<tileAnimation>().animate();
+        }
+
         matrizTiles.Add(new List<GameObject>());
         matrizTiles[0].Add(tile);
     }
@@ -418,6 +425,13 @@ public class GameManager : MonoBehaviour
 
         //checar se nasce inimigo no tile
         newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo(newTile.gameObject,13);
+
+        if (newTile.GetComponent<tileAnimation>() != null)
+        {
+            newTile.GetComponent<tileAnimation>().canAnimate = true;
+            newTile.GetComponent<tileAnimation>().movableGO = newTile.gameObject;
+            newTile.GetComponent<tileAnimation>().animate();
+        }
 
         audioManager.instance.audioBuild();
     }

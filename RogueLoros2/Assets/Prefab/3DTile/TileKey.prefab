@@ -205,6 +205,11 @@ PrefabInstance:
       propertyPath: tipoTileAtual
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1058621633878532165, guid: 89460e2098b27b848ac60646e7d7ba4f,
+        type: 3}
+      propertyPath: canAnimate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1843277224683291833, guid: 89460e2098b27b848ac60646e7d7ba4f,
         type: 3}
       propertyPath: spawnPointNumber
