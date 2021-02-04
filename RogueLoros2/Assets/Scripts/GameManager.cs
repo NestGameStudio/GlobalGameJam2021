@@ -89,6 +89,9 @@ public class GameManager : MonoBehaviour
     public List<Vector3> listaTileCoin = new List<Vector3>();
     List<GameObject> tileCoinObjects = new List<GameObject>();
 
+    [HideInInspector]
+    public GameObject firstTileObject;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -332,6 +335,7 @@ public class GameManager : MonoBehaviour
         tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
         tile.GetComponent<tileSetup>().updateTile(type);
         activeTile = tile;
+        firstTileObject = tile;
 
         matrizTiles.Add(new List<GameObject>());
         matrizTiles[0].Add(tile);
@@ -514,6 +518,8 @@ public class GameManager : MonoBehaviour
             DeathFogInGame = Instantiate(DeathFog, new Vector3 (playerInGame.transform.position.x, 0, (2.5f * (tileChavePos + 1))), Quaternion.identity);
             //DeathFogInGame.transform.parent = tileWorld;
             print("começou");
+
+            Seta.instance.changeTarget();
 
             activeTile.gameObject.tag = null;
 
