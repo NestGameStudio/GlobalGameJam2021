@@ -10,7 +10,7 @@ public enum tileType
     OneSide
 }
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class tileSetup : MonoBehaviour
 {
     public GameObject tileGraphics;

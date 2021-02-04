@@ -10541,7 +10541,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: d99e339d73bea854794b279060dbc700, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11963,6 +11963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canAnimate: 1
+  movableGO: {fileID: 0}
 --- !u!1 &7139250368733791700
 GameObject:
   m_ObjectHideFlags: 0
