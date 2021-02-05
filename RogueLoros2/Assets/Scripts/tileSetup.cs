@@ -41,7 +41,7 @@ public class tileSetup : MonoBehaviour
 
         if (firstTile)
         {
-            tileType type = tileType.ThreeSides;
+            tileType type = tileType.FourSides;
             updateTile(type);
             //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y - 90, transform.rotation.z);
             //RotateCounterClockwise(this);

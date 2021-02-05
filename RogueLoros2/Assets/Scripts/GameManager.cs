@@ -332,8 +332,9 @@ public class GameManager : MonoBehaviour
         tile.transform.position = new Vector3(0, 0, 0);
         tile.gameObject.tag = "SpawnPoint";
 
-        tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
-        tile.GetComponent<tileSetup>().updateTile(type);
+        //tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+        //tileType type = tileType.FourSides;
+        //tile.GetComponent<tileSetup>().updateTile(type);
         activeTile = tile;
         firstTileObject = tile;
 
