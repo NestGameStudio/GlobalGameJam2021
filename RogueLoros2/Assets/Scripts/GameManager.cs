@@ -199,8 +199,10 @@ public class GameManager : MonoBehaviour
         //instanciar os tiles de moeda num raio predeterminado
         for (int i = 0; i < numeroTilesMoeda; i++)
         {
-            int randomX = Random.Range(-raio/2, raio/2 + 1);
-            int randomY = Random.Range(1, raio + 1);
+            //int randomX = Random.Range(-raio/2, raio/2 + 1);
+            int randomX = (int)RandomFromDistribution.RandomRangeLinear(-raio / 2, raio / 2 + 1, 0.5f);
+            //int randomY = Random.Range(1, raio + 1);
+            int randomY = (int)RandomFromDistribution.RandomRangeNormalDistribution(1, raio + 1, RandomFromDistribution.ConfidenceLevel_e._60);
 
             //nao pode ocupar espaco do tile inicial ou do tile do objetivo
             if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileVida.Contains(new Vector3(randomX, randomY)))
@@ -216,8 +218,11 @@ public class GameManager : MonoBehaviour
                 listaTileCoin.Add(location);
                 tileCoinObjects.Add(moneyTile);
                 moneyTile.transform.parent = tileWorld.transform;
+
+                tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+                moneyTile.GetComponent<tileSetup>().updateTile(type);
             }
-        
+
         }
     }
     void instanciarTileVida()
@@ -225,8 +230,10 @@ public class GameManager : MonoBehaviour
         //instanciar os tiles de moeda num raio predeterminado
         for (int i = 0; i < numeroTilesVida; i++)
         {
-            int randomX = Random.Range(-raio / 2, raio / 2 + 1);
-            int randomY = Random.Range(1, raio + 1);
+            //int randomX = Random.Range(-raio / 2, raio / 2 + 1);
+            int randomX = (int)RandomFromDistribution.RandomRangeLinear(-raio / 2, raio / 2 + 1, 0.5f);
+            //int randomY = Random.Range(1, raio + 1);
+            int randomY = (int)RandomFromDistribution.RandomRangeNormalDistribution(1, raio + 1, RandomFromDistribution.ConfidenceLevel_e._60);
 
             //nao pode ocupar espaco do tile inicial ou do tile do objetivo
             if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileCoin.Contains(new Vector3(randomX,randomY)))
@@ -241,6 +248,9 @@ public class GameManager : MonoBehaviour
                 GameObject vidaTile = Instantiate(tileVida, location, Quaternion.identity);
                 listaTileVida.Add(location);
                 vidaTile.transform.parent = tileWorld.transform;
+
+                tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+                vidaTile.GetComponent<tileSetup>().updateTile(type);
             }
 
         }
@@ -310,7 +320,8 @@ public class GameManager : MonoBehaviour
             slot = Instantiate(tilePreview, transform.position, Quaternion.identity);
             slot.transform.parent = tilePanel.transform;
 
-            int randRotation = Random.Range(0, 4);
+            //int randRotation = Random.Range(0, 4);
+            int randRotation = (int)RandomFromDistribution.RandomRangeLinear(0, 4, 0.5f);
             if (numberTilePreviewsCompensated == 4) {
                 GetComponent<TileRandomizer>().RandomizeSingleTiles(x, randRotation);
             } else {

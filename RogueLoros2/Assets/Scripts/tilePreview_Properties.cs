@@ -40,12 +40,13 @@ public class tilePreview_Properties : MonoBehaviour, IPointerClickHandler,IDragH
         //int seed = (int)Time.deltaTime;
         //Set a seed in the Random Generator
         int firstPass = Random.Range(0, System.DateTime.Now.Millisecond);
-        int secondPass = firstPass * Random.Range(0, firstPass);
+        //int secondPass = firstPass * Random.Range(0, firstPass);
+        int secondPass = (int)RandomFromDistribution.RandomRangeLinear(0, 100, 1);
 
-        Random.InitState(secondPass);
+        //Random.InitState(secondPass);
 
 
-        previewType type = (previewType)Random.Range(0, System.Enum.GetValues(typeof(previewType)).Length );
+        previewType type = (previewType)(int)RandomFromDistribution.RandomRangeLinear(0, System.Enum.GetValues(typeof(previewType)).Length ,0.5f);
         tipoPreview = type;
 
         switch (tipoPreview)
