@@ -4,7 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance { get; private set; }
+
     public bool canMove = true;
+    public bool isOnMenu = false;
+    private void Awake()
+    {
+        //lida com duplicatas de instancia
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (canMove && isOnMenu == false)
         {
             GameManager.instance.activeTile.GetComponent<tileSetup>().checkConnections();
 
