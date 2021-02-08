@@ -467,7 +467,7 @@ public class GameManager : MonoBehaviour
             activeTile.GetComponent<tileSetup>().activateMarkers();
 
             //cancelar colocacao de tile
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) || PlayerController.instance.isOnMenu)
             {
                 isPlacingTile = false;
 
