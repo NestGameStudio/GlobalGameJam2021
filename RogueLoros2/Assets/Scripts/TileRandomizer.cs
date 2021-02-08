@@ -19,7 +19,14 @@ public class TileRandomizer : MonoBehaviour {
     {
         //RandomizeAllTiles();
     }
-
+    private void Update()
+    {
+        //Debug.Log("childcount: " + UITilePanel.transform.childCount);
+        if(UITilePanel.transform.childCount == 0)
+        {
+            GameManager.instance.instanciarTilePreview();
+        }
+    }
     public void RandomizeAllTiles() {
 
 
