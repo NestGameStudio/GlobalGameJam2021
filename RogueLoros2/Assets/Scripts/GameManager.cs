@@ -132,7 +132,8 @@ public class GameManager : MonoBehaviour
     {
         playerInGame = GameObject.FindGameObjectWithTag("Player");
 
-        itemPanel.transform.parent.gameObject.SetActive(false);
+        //itemPanel.transform.parent.gameObject.SetActive(false);
+        itemPanel.GetComponentInParent<CanvasGroup>().alpha = 0;
 
         LeanTween.init(500);
     }
@@ -190,7 +191,8 @@ public class GameManager : MonoBehaviour
     //ativar ui depois de animacao de inicio
     public void activateUI()
     {
-        itemPanel.transform.parent.gameObject.SetActive(true);
+        //itemPanel.transform.parent.gameObject.SetActive(true);
+        LeanTween.alphaCanvas(itemPanel.GetComponentInParent<CanvasGroup>(),1, 0.5f).setEaseOutQuad();
 
         StartCoroutine(objectiveTextShow());
     }
