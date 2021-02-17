@@ -353,7 +353,7 @@ public class GameManager : MonoBehaviour
 
         if (tile.GetComponent<tileAnimation>() != null)
         {
-            tile.GetComponent<tileAnimation>().canAnimate = true;
+            tile.GetComponent<tileAnimation>().canAnimate = false;
             tile.GetComponent<tileAnimation>().movableGO = tile.gameObject;
             tile.GetComponent<tileAnimation>().animate();
         }
