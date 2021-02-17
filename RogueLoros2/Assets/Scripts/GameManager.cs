@@ -92,6 +92,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public GameObject firstTileObject;
 
+    //check pra ver se o player esta voltando
+    private bool isReturning = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -164,6 +166,11 @@ public class GameManager : MonoBehaviour
 
     IEnumerator objectiveTextShow()
     {
+        if (isReturning)
+        {
+            objectiveUI.GetComponentInChildren<Text>().text = "Get out!";
+        }
+
         //fade in
         objectiveUI.gameObject.GetComponent<Text>().color = new Color(1,1,1,0);
         Image sombrinha = objectiveUI.transform.parent.GetComponentInChildren<Image>();
@@ -195,6 +202,13 @@ public class GameManager : MonoBehaviour
         LeanTween.alphaCanvas(itemPanel.GetComponentInParent<CanvasGroup>(),1, 0.5f).setEaseOutQuad();
 
         StartCoroutine(objectiveTextShow());
+    }
+    public void deactivateUI()
+    {
+        //itemPanel.transform.parent.gameObject.SetActive(true);
+        LeanTween.alphaCanvas(itemPanel.GetComponentInParent<CanvasGroup>(), 0, 0.5f).setEaseOutQuad();
+
+        //StartCoroutine(objectiveTextShow());
     }
     void instanciarTileCoin()
     {
@@ -553,6 +567,10 @@ public class GameManager : MonoBehaviour
             //DeathFogInGame.transform.parent = tileWorld;
             print("começou");
 
+            isReturning = true;
+
+            StartCoroutine(deathFogAnim());
+
             Seta.instance.changeTarget();
 
             activeTile.gameObject.tag = null;
@@ -627,5 +645,26 @@ public class GameManager : MonoBehaviour
                 tileWorld.transform.GetChild(i).gameObject.GetComponent<enemySpawn>().spawnInimigo(tileWorld.transform.GetChild(i).gameObject,33);
             }
         }
+    }
+    //Lockar o player e tirar a UI durante animação do deathfog
+    IEnumerator deathFogAnim()
+    {
+        Debug.Log("nao pode se mexer");
+
+        //desabilitar UI
+        deactivateUI();
+
+        //tirar controle do player
+        PlayerController.instance.canMove = false;
+
+        yield return new WaitForSeconds(3);
+
+        Debug.Log("agora pode se mexer");
+
+        //ativar UI
+        activateUI();
+
+        //recolocar controle no player
+        PlayerController.instance.canMove = true;
     }
 }
