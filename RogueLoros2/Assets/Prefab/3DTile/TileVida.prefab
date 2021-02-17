@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3958803041052659889}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile_Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6723721023052998977}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile_Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5571151430323702929}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TileMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 9098752728060594583}
   - component: {fileID: 545344856101764565}
   - component: {fileID: 577036079532788839}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 8197903841936197863}
   - component: {fileID: 4838064178002026451}
   - component: {fileID: 5564714841205309978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 7356577102594645709}
   - component: {fileID: 2703427279352440099}
   - component: {fileID: 6726049755593890956}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 3210972925920983866}
   - component: {fileID: 6014915005598015675}
   - component: {fileID: 1074825588162443326}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Vida
   m_TagString: Vida
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 4487272836115786581}
   - component: {fileID: 2328834347617408188}
   - component: {fileID: 1140653850292093518}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CM vcam2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 3402335389668855533}
   - component: {fileID: 2086730307219354755}
   - component: {fileID: 2039414764066854190}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2489212460506575043}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TileMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8739296567016030800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 7566089608236016158}
   - component: {fileID: 7165626065784875828}
   - component: {fileID: 8951032624774551412}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AuraParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5514,7 +5514,7 @@ GameObject:
   - component: {fileID: 8990982847809524282}
   - component: {fileID: 2432317743496635511}
   - component: {fileID: 498943464678725717}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AuraParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10268,7 +10268,7 @@ GameObject:
   - component: {fileID: 6988590583223476605}
   - component: {fileID: 95562428909608908}
   - component: {fileID: 6253291897858655092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Soul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10367,7 +10367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6354921693947022429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile_Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10398,7 +10398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5469580018929018799}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10428,7 +10428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2503444276310935379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10458,7 +10458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602597271684974129}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10494,7 +10494,7 @@ GameObject:
   - component: {fileID: 4324373057649899211}
   - component: {fileID: 5510897239693529672}
   - component: {fileID: 5452554903776276955}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10576,7 +10576,7 @@ GameObject:
   - component: {fileID: 7522213123404517897}
   - component: {fileID: 2466698146295282144}
   - component: {fileID: 5765352743339551573}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10693,7 +10693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3776614239659155757}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile_Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10724,7 +10724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5122582159403347208}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10755,7 +10755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9103471022208894470}
   - component: {fileID: 183476900248125047}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10835,7 +10835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3715746632511937326}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10865,7 +10865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 767259141085061316}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10900,7 +10900,7 @@ GameObject:
   - component: {fileID: 7736430248908914070}
   - component: {fileID: 6342401060303241752}
   - component: {fileID: 3432176420720501738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11017,7 +11017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2835357854540739953}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TileMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11049,7 +11049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5283614995800365451}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11079,7 +11079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3686085117543728259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11111,7 +11111,7 @@ GameObject:
   - component: {fileID: 5090933532289535060}
   - component: {fileID: 3520035243159083256}
   - component: {fileID: 3028605849325281601}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint2
   m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
@@ -11173,7 +11173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6227743446012676715}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GoalGraphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11205,7 +11205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 450938518302802826}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11237,7 +11237,7 @@ GameObject:
   - component: {fileID: 7798712355777589380}
   - component: {fileID: 3737764481552843919}
   - component: {fileID: 3006468456251759618}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint1
   m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
@@ -11299,7 +11299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7576649126907526313}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GoalGraphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11331,7 +11331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8514222184106753067}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11361,7 +11361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312831450757065907}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11394,7 +11394,7 @@ GameObject:
   - component: {fileID: 3637058892383419175}
   - component: {fileID: 92710501346570907}
   - component: {fileID: 7394831112866050272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Goal
   m_TagString: Money
   m_Icon: {fileID: 0}
@@ -11473,7 +11473,7 @@ GameObject:
   - component: {fileID: 2873597550071561626}
   - component: {fileID: 1900890111094605150}
   - component: {fileID: 4295099870932350487}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint4
   m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
@@ -11535,7 +11535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8714104829833630107}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11572,7 +11572,7 @@ GameObject:
   - component: {fileID: 3845894251915051350}
   - component: {fileID: 5650254494294732754}
   - component: {fileID: 8723060930304815221}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Effect (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11663,7 +11663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8320466202515944233}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11699,7 +11699,7 @@ GameObject:
   - component: {fileID: 5787619340951798391}
   - component: {fileID: 4132815775592256337}
   - component: {fileID: 8991453120714368109}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11798,7 +11798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1576118756060649827}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tile_Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11835,7 +11835,7 @@ GameObject:
   - component: {fileID: 5762925902000423598}
   - component: {fileID: 8611016477752749496}
   - component: {fileID: 1400754549819882286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TileVida
   m_TagString: Money
   m_Icon: {fileID: 0}
@@ -11945,7 +11945,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7108830035450197542}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -11973,7 +11973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6643571622731052283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12003,7 +12003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7245191270804433049}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12039,7 +12039,7 @@ GameObject:
   - component: {fileID: 7132093124967648929}
   - component: {fileID: 3913962540569244175}
   - component: {fileID: 4529801218207715721}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint3
   m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
@@ -12101,7 +12101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7015069866695585177}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12131,7 +12131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1136433277162637604}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12161,7 +12161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5348856285660423654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12191,7 +12191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6843694877873542081}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12221,7 +12221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1892301324938021013}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawnPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12251,7 +12251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2375974719958064804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TileMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

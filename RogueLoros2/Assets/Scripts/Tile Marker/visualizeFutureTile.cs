@@ -15,6 +15,7 @@ public class visualizeFutureTile: MonoBehaviour {
     private void OnMouseEnter() {
         //GameObject tileCreated = Instantiate(tile, transform.position,Quaternion.identity);
         //tileCreated.GetComponent<tileSetup>().tipoTileAtual = GameManager.instance.tipoTileGrabbed;
+        Debug.Log("mouseEnter marker");
 
         GameManager.instance.grabbedTile.SetActive(true);
         GameManager.instance.grabbedTile.transform.position = gameObject.transform.position;
