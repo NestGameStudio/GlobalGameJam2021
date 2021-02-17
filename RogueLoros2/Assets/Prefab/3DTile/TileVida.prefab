@@ -11835,6 +11835,7 @@ GameObject:
   - component: {fileID: 5762925902000423598}
   - component: {fileID: 8611016477752749496}
   - component: {fileID: 1400754549819882286}
+  - component: {fileID: 1084598623678609246}
   m_Layer: 9
   m_Name: TileVida
   m_TagString: Money
@@ -11964,6 +11965,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canAnimate: 1
   movableGO: {fileID: 0}
+--- !u!54 &1084598623678609246
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108830035450197542}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7139250368733791700
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,17 @@ public class DestroyTiles : MonoBehaviour
            if (other.tag == "Tile" || other.tag == "Money" || other.tag == "Goal") {
                 //Debug.Log("Death Fog entrou em um Trigger de tag " + other.tag,other.gameObject);
                 Debug.Log("Death Fog pegou o seguinte tile: " + other.gameObject.name, other.gameObject);
-                Destroy(other.gameObject);
+                
+
+                //caso destrua o tile ativo
+                if (other.gameObject == GameManager.instance.activeTile)
+                {
+                    SceneController.instance.morte();
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
            }
         }
        
