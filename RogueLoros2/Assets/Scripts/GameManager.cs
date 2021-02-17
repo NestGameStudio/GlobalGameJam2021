@@ -511,6 +511,9 @@ public class GameManager : MonoBehaviour
 
     public void movePlayer(tileSetup tileObject)
     {
+        //ativar animacao
+        activeTile.GetComponentInChildren<tileAnimation>().canAnimate = true;
+
         //resetar y de ultimo tile
         activeTile.transform.GetChild(1).transform.position = new Vector3(activeTile.transform.GetChild(1).transform.position.x,0, activeTile.transform.GetChild(1).transform.position.z);
         activeTile.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
@@ -529,6 +532,9 @@ public class GameManager : MonoBehaviour
 
         //tocar audio de caminhada
         audioManager.instance.playFootstep();
+
+        //desativar animacao
+        activeTile.GetComponentInChildren<tileAnimation>().canAnimate = false;
 
         if (startFinalAttack) {
             walkCounter += 1;

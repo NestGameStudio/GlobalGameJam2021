@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Tile
   - Vida
+  - Marker
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - 
   - Marker
-  - 
+  - Tile
   - 
   - 
   - 

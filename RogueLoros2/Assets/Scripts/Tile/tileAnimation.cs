@@ -14,7 +14,7 @@ public static class ExtensionMethods
 
 public class tileAnimation : MonoBehaviour
 {
-    public bool canAnimate = false;
+    public bool canAnimate = true;
     public GameObject movableGO;
     private float randomNum;
     private float t = 0;
@@ -31,22 +31,25 @@ public class tileAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movableGO.transform.position = new Vector3(movableGO.transform.position.x, Damp(-0.15f,0.15f,1,t), movableGO.transform.position.z);
-        if (tUp)
+        if (canAnimate)
         {
-            t += Time.deltaTime/ 1.7f * randomNum;
-        }
-        else
-        {
-            t -= Time.deltaTime / 1.7f * randomNum;
-        }
-        if(t > 1)
-        {
-            tUp = false;
-        }
-        else if(t < 0)
-        {
-            tUp = true;
+            movableGO.transform.position = new Vector3(movableGO.transform.position.x, Damp(-0.15f, 0.15f, 1, t), movableGO.transform.position.z);
+            if (tUp)
+            {
+                t += Time.deltaTime / 1.7f * randomNum;
+            }
+            else
+            {
+                t -= Time.deltaTime / 1.7f * randomNum;
+            }
+            if (t > 1)
+            {
+                tUp = false;
+            }
+            else if (t < 0)
+            {
+                tUp = true;
+            }
         }
     }
     public void animate()

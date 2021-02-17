@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class visualizeFutureTile: MonoBehaviour {
+public class visualizeFutureTile: MonoBehaviour
+{
     //public GameObject tile;
     //private GameObject newTile;
 
@@ -12,6 +13,7 @@ public class visualizeFutureTile: MonoBehaviour {
 
     bool isConnection = false;
 
+    
     private void OnMouseEnter() {
         //GameObject tileCreated = Instantiate(tile, transform.position,Quaternion.identity);
         //tileCreated.GetComponent<tileSetup>().tipoTileAtual = GameManager.instance.tipoTileGrabbed;
@@ -27,14 +29,14 @@ public class visualizeFutureTile: MonoBehaviour {
 
     }
     private void OnMouseExit() {
+        Debug.Log("mouseExit marker");
         GameManager.instance.grabbedTile.SetActive(false);
         //GameManager.instance.grabbedTile.transform.position = gameObject.transform.position;
 
         detectClick = false;
     }
-
+    
     private void Update() {
-
 
         //quando clica em cima do quadrado da visualizacao
         if (detectClick && Input.GetMouseButtonDown(0) && isConnection) {
