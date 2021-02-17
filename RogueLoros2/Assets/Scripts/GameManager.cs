@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
     {
         if (isReturning)
         {
-            objectiveUI.GetComponentInChildren<Text>().text = "Get out!";
+            objectiveUI.gameObject.GetComponent<Text>().text = "Get out!";
         }
 
         //fade in
@@ -187,8 +187,8 @@ public class GameManager : MonoBehaviour
         LeanTween.alphaText(objectiveUI, 0, 1);
         LeanTween.alpha(sombrinha.GetComponent<RectTransform>(), 0, 1);
 
-        yield return new WaitForSeconds(1);
-        Destroy(objectiveUI.transform.parent.gameObject);
+        //yield return new WaitForSeconds(1);
+        //Destroy(objectiveUI.transform.parent.gameObject);
 
     }
     void transformAll()
@@ -651,13 +651,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("nao pode se mexer");
 
+        //colocar objeto de portal no primeiro tile
+        firstTileObject.transform.GetChild(2).gameObject.SetActive(true);
+
         //desabilitar UI
         deactivateUI();
 
         //tirar controle do player
-        PlayerController.instance.canMove = false;
+        PlayerController.instance.isOnAnim = true;
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
 
         Debug.Log("agora pode se mexer");
 
@@ -665,6 +668,6 @@ public class GameManager : MonoBehaviour
         activateUI();
 
         //recolocar controle no player
-        PlayerController.instance.canMove = true;
+        PlayerController.instance.isOnAnim = false;
     }
 }

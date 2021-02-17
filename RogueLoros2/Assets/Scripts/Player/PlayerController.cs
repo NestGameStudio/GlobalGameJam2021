@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
     public bool isOnMenu = false;
+    public bool isOnAnim = false;
     private void Awake()
     {
         //lida com duplicatas de instancia
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove && isOnMenu == false)
+        if (canMove == true && isOnMenu == false && isOnAnim == false)
         {
             GameManager.instance.activeTile.GetComponent<tileSetup>().checkConnections();
 
