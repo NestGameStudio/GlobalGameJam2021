@@ -559,6 +559,11 @@ public class GameManager : MonoBehaviour
 
 
                 reenableTileButtons();
+
+                for (int i = 0; i < activeTile.GetComponentsInChildren<visualizeFutureTile>().Length; i++)
+                {
+                    activeTile.GetComponentsInChildren<visualizeFutureTile>()[i].detectClick = false;
+                }
             }
         }
         else

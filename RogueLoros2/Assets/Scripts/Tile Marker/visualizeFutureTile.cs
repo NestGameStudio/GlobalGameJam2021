@@ -9,10 +9,9 @@ public class visualizeFutureTile: MonoBehaviour
 
     public int spawnPointNumber = 0;
 
-    bool detectClick = false;
+    public bool detectClick = false;
 
-    bool isConnection = false;
-
+    public bool isConnection = false;
     
     private void OnMouseEnter() {
         //GameObject tileCreated = Instantiate(tile, transform.position,Quaternion.identity);
