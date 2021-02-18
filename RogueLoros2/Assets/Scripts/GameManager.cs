@@ -383,6 +383,17 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void RerollMode() {
+
+        foreach (tilePreview_Properties slot in GetComponent<TileRandomizer>().UITilePanel.transform.GetComponentsInChildren<tilePreview_Properties>()) {
+            if (GetComponent<TileRandomizer>().UITilePanel.transform.childCount > 0) {
+                Destroy(slot.gameObject);
+            }
+        }
+
+    }
+
     public void instanciarTilePreview()
     {
         int numberTilePreviewsCompensated = numberTilePreview - GetComponent<TileRandomizer>().UITilePanel.transform.childCount;
@@ -397,7 +408,7 @@ public class GameManager : MonoBehaviour
             if (numberTilePreviewsCompensated == 4) {
                 GetComponent<TileRandomizer>().RandomizeSingleTiles(x, randRotation);
             } else {
-                print(GetComponent<TileRandomizer>().UITilePanel.transform.childCount -1 + x);
+               // print(GetComponent<TileRandomizer>().UITilePanel.transform.childCount -1 + x);
                 GetComponent<TileRandomizer>().RandomizeSingleTiles(GetComponent<TileRandomizer>().UITilePanel.transform.childCount - 1, randRotation);
             }
 

@@ -76,7 +76,7 @@ public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerE
     } 
     private void reroll()
     {
-        GameManager.instance.instanciarTilePreview();
+        GameManager.instance.RerollMode();
     }
     public void RotateClockwise() {
 
