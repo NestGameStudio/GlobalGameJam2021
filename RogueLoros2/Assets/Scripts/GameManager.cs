@@ -569,12 +569,16 @@ public class GameManager : MonoBehaviour
                 //destruir o tile criado para servir como visualizacao
                 Destroy(grabbedTile);
 
-                reenableTileButtons();
 
                 for (int i = 0; i < activeTile.GetComponentsInChildren<visualizeFutureTile>().Length; i++)
                 {
+                    Debug.Log("achou", activeTile.GetComponentsInChildren<visualizeFutureTile>()[i].gameObject);
                     activeTile.GetComponentsInChildren<visualizeFutureTile>()[i].detectClick = false;
                 }
+
+                reenableTileButtons();
+
+                
             }
         }
         else
