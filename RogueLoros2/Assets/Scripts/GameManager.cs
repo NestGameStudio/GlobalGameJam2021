@@ -85,6 +85,9 @@ public class GameManager : MonoBehaviour
 
     public int numeroTilesVida;
 
+    [Range (0,100)]
+    public int tileDangerChance = 13;
+
     public List<Vector3> listaTileVida = new List<Vector3>();
     public List<Vector3> listaTileCoin = new List<Vector3>();
     List<GameObject> tileCoinObjects = new List<GameObject>();
@@ -452,7 +455,7 @@ public class GameManager : MonoBehaviour
         //newTile.transform.transform.rotation = Quaternion.Euler(grabbedTile.transform.transform.rotation.x, grabbedTile.transform.transform.rotation.y + randomPos, grabbedTile.transform.transform.rotation.z );
 
         //checar se nasce inimigo no tile
-        newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo(newTile.gameObject,13);
+        newTile.gameObject.GetComponent<enemySpawn>().spawnInimigo(newTile.gameObject,tileDangerChance);
 
         if (newTile.GetComponent<tileAnimation>() != null)
         {
