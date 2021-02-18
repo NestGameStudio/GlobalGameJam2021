@@ -14,6 +14,7 @@ public class getVida : MonoBehaviour
             hpSystem.instance.maisVida();
             if (pickParticle != null) Instantiate(pickParticle, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
+            audioManager.instance.getLifeAudio();
         }
     }
 }
