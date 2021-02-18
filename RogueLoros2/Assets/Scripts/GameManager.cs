@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
         //mover todo o palco para frente
         //transformAll();
 
-        checkTileDuplicates();
+        //checkTileDuplicates();
     }
     private void Start()
     {
@@ -155,6 +155,7 @@ public class GameManager : MonoBehaviour
             if (listaTileCoin.Contains(listaTileVida[i]))
             {
                 Debug.Log("DUPLICATA LISTA TILE VIDA: " + listaTileVida[i]);
+                //Destroy(tilevida[i]);
             }
         }
         for (int i = 0; i < listaTileCoin.Count; i++)
@@ -218,13 +219,14 @@ public class GameManager : MonoBehaviour
         //instanciar os tiles de moeda num raio predeterminado
         for (int i = 0; i < numeroTilesMoeda; i++)
         {
+            /*
             //int randomX = Random.Range(-raio/2, raio/2 + 1);
             int randomX = (int)RandomFromDistribution.RandomRangeLinear(-raio / 2, raio / 2 + 1, 0.5f);
             //int randomY = Random.Range(1, raio + 1);
             int randomY = (int)RandomFromDistribution.RandomRangeNormalDistribution(1, raio + 1, RandomFromDistribution.ConfidenceLevel_e._60);
 
             //nao pode ocupar espaco do tile inicial ou do tile do objetivo
-            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileVida.Contains(new Vector3(randomX, randomY)) || listaTileCoin.Contains(new Vector3(randomX, randomY)))
+            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileVida.Contains(new Vector3(randomX * 2.5f, randomY * 2.5f)) || listaTileCoin.Contains(new Vector3(randomX * 2.5f, randomY * 2.5f)))
             {
                 randomX = Random.Range(-raio / 2, raio / 2 + 1);
                 randomY = Random.Range(1, raio + 1);
@@ -241,21 +243,23 @@ public class GameManager : MonoBehaviour
                 tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
                 moneyTile.GetComponent<tileSetup>().updateTile(type);
             }
+            */
 
+            aleatorizarCoin();
         }
     }
     void instanciarTileVida()
     {
         //instanciar os tiles de moeda num raio predeterminado
         for (int i = 0; i < numeroTilesVida; i++)
-        {
+        { /*
             //int randomX = Random.Range(-raio / 2, raio / 2 + 1);
             int randomX = (int)RandomFromDistribution.RandomRangeLinear(-raio / 2, raio / 2 + 1, 0.5f);
             //int randomY = Random.Range(1, raio + 1);
             int randomY = (int)RandomFromDistribution.RandomRangeNormalDistribution(1, raio + 1, RandomFromDistribution.ConfidenceLevel_e._60);
 
             //nao pode ocupar espaco do tile inicial ou do tile do objetivo
-            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileCoin.Contains(new Vector3(randomX,randomY)))
+            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileCoin.Contains(new Vector3(randomX * 2.5f, randomY * 2.5f)) || listaTileVida.Contains(new Vector3(randomX * 2.5f, randomY * 2.5f)))
             {
                 randomX = Random.Range(-raio / 2, raio / 2 + 1);
                 randomY = Random.Range(1, raio + 1);
@@ -271,10 +275,59 @@ public class GameManager : MonoBehaviour
                 tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
                 vidaTile.GetComponent<tileSetup>().updateTile(type);
             }
+            */
 
+            aleatorizarVida();
         }
     }
+    void aleatorizarVida()
+    {
+        //int randomX = Random.Range(-raio / 2, raio / 2 + 1);
+        int randomX = (int)RandomFromDistribution.RandomRangeLinear(-raio / 2, raio / 2 + 1, 0.5f);
+        //int randomY = Random.Range(1, raio + 1);
+        int randomY = (int)RandomFromDistribution.RandomRangeNormalDistribution(1, raio + 1, RandomFromDistribution.ConfidenceLevel_e._60);
 
+        if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileCoin.Contains(new Vector3(randomX, randomY)) || listaTileVida.Contains(new Vector3(randomX, randomY)))
+        {
+            aleatorizarVida();
+        }
+        else
+        {
+            Vector3 location = new Vector3(randomX * 2.5f, 0, randomY * 2.5f);
+
+            GameObject vidaTile = Instantiate(tileVida, location, Quaternion.identity);
+            listaTileVida.Add(new Vector3(randomX,randomY));
+            vidaTile.transform.parent = tileWorld.transform;
+
+            tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+            vidaTile.GetComponent<tileSetup>().updateTile(type);
+        }
+    }
+    void aleatorizarCoin()
+    {
+        //int randomX = Random.Range(-raio/2, raio/2 + 1);
+        int randomX = (int)RandomFromDistribution.RandomRangeLinear(-raio / 2, raio / 2 + 1, 0.5f);
+        //int randomY = Random.Range(1, raio + 1);
+        int randomY = (int)RandomFromDistribution.RandomRangeNormalDistribution(1, raio + 1, RandomFromDistribution.ConfidenceLevel_e._60);
+
+        //nao pode ocupar espaco do tile inicial ou do tile do objetivo
+        if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileVida.Contains(new Vector3(randomX, randomY)) || listaTileCoin.Contains(new Vector3(randomX, randomY)))
+        {
+            aleatorizarCoin();
+        }
+        else
+        {
+            Vector3 location = new Vector3(randomX * 2.5f, 0, randomY * 2.5f);
+
+            GameObject moneyTile = Instantiate(coinTile, location, Quaternion.identity);
+            listaTileCoin.Add(new Vector3(randomX,randomY));
+            tileCoinObjects.Add(moneyTile);
+            moneyTile.transform.parent = tileWorld.transform;
+
+            tileType type = (tileType)Random.Range(0, System.Enum.GetValues(typeof(tileType)).Length);
+            moneyTile.GetComponent<tileSetup>().updateTile(type);
+        }
+    }
     void instanciarTilePresets(GameObject tile, Vector2 x, Vector2 y)
     {
         float xTrue = (int)Random.Range(x.x,x.y);

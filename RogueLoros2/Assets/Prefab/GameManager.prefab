@@ -110,7 +110,7 @@ MonoBehaviour:
     type: 3}
   startFinalAttack: 0
   numeroTilesMoeda: 13
-  raio: 20
+  raio: 15
   coinTile: {fileID: 1415749290348639868, guid: 121306c82b8ec6945a77595e989a6c5f,
     type: 3}
   tileVida: {fileID: 7108830035450197542, guid: 2a241d3929c2a3f4482ac76e7212fdca,
@@ -198,17 +198,17 @@ PrefabInstance:
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 745.27765
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 498.58566
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -156.23438
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 8827864651706374548, guid: 7d6008b96b4d3764fb7df06295948186,
         type: 3}
