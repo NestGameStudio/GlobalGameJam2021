@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Quaternion grabbedTileRotation;
 
+    [HideInInspector] public bool pagouParaRotacionar = false;
+
+
     //min/max - distancia X ate chave
     public Vector2 goalX = new Vector2(-5,5);
 
@@ -468,6 +471,10 @@ public class GameManager : MonoBehaviour
 
     public void colocarTile(Vector3 position, Transform parent)
     {
+        if (pagouParaRotacionar) {
+            pagouParaRotacionar = false;
+        }
+
         //instanciar tile no local
         GameObject newTile = Instantiate(grabbedTile,position, grabbedTile.transform.rotation);
         newTile.GetComponent<tileSetup>().updateTile(tipoTileGrabbed);
@@ -554,9 +561,13 @@ public class GameManager : MonoBehaviour
             {
                 isPlacingTile = false;
 
+                if (pagouParaRotacionar) {
+                    moneySystem.instance.addMoney(5);
+                    pagouParaRotacionar = false;
+                }
+
                 //destruir o tile criado para servir como visualizacao
                 Destroy(grabbedTile);
-
 
                 reenableTileButtons();
             }

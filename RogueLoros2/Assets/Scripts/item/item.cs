@@ -15,6 +15,7 @@ public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerE
 
     Button button;
 
+
     private void Start() {
         gameObject.transform.localScale = new Vector3(0, 0, 0);
         LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.7f).setEaseOutBounce();
@@ -54,6 +55,8 @@ public class item : MonoBehaviour, IPointerClickHandler, IDragHandler, IPointerE
                 //deduzir dinheiro
                 moneySystem.instance.removeMoney(precoObj);
             }
+
+            GameManager.instance.pagouParaRotacionar = true; 
             /*
             else if(type == itemType.reroll)
             {
