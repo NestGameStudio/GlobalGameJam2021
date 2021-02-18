@@ -12,7 +12,7 @@ public class getVida : MonoBehaviour
         {
             print("got vida");
             hpSystem.instance.maisVida();
-            //if (pickParticle != null) Instantiate(pickParticle, transform.position, Quaternion.identity);
+            if (pickParticle != null) Instantiate(pickParticle, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
         }
     }
