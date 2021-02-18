@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
             int randomY = (int)RandomFromDistribution.RandomRangeNormalDistribution(1, raio + 1, RandomFromDistribution.ConfidenceLevel_e._60);
 
             //nao pode ocupar espaco do tile inicial ou do tile do objetivo
-            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileVida.Contains(new Vector3(randomX, randomY)))
+            if (randomX == 0 && randomY == 0 || randomX == tileGoalPos.x && randomY == tileGoalPos.y || listaTileVida.Contains(new Vector3(randomX, randomY)) || listaTileCoin.Contains(new Vector3(randomX, randomY)))
             {
                 randomX = Random.Range(-raio / 2, raio / 2 + 1);
                 randomY = Random.Range(1, raio + 1);
