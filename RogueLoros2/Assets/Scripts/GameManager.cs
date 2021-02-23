@@ -669,10 +669,7 @@ public class GameManager : MonoBehaviour
             //spawnar inimigos em tiles
             spawnInimigosEmTilesExistentes();
 
-            audioManager.instance.changeToBossMusic();
-
-            //mudar orientacao de camera
-            cameraController.instance.changeOrientation();
+            audioManager.instance.changeToBossMusic();           
 
             //tirar item em cima
             //activeTile.GetComponent<hoverItems>().destroyItem();
@@ -754,7 +751,7 @@ public class GameManager : MonoBehaviour
         //tirar controle do player
         PlayerController.instance.isOnAnim = true;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
 
         //ativar camera do primeiro tile
         firstTileCamera.SetActive(true);
@@ -777,5 +774,8 @@ public class GameManager : MonoBehaviour
 
         //recolocar controle no player
         PlayerController.instance.isOnAnim = false;
+
+        //mudar orientacao de camera
+        cameraController.instance.changeOrientation();
     }
 }
