@@ -98,6 +98,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public GameObject firstTileObject;
 
+    GameObject firstTileCamera;
+
     //check pra ver se o player esta voltando
     private bool isReturning = false;
     // Start is called before the first frame update
@@ -444,6 +446,8 @@ public class GameManager : MonoBehaviour
 
         matrizTiles.Add(new List<GameObject>());
         matrizTiles[0].Add(tile);
+
+        firstTileCamera = tile.transform.GetChild(3).gameObject;
     }
 
     public void createHoverInstance(tileType tipo,GameObject previewGrabbed)
@@ -750,7 +754,21 @@ public class GameManager : MonoBehaviour
         //tirar controle do player
         PlayerController.instance.isOnAnim = true;
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
+
+        //ativar camera do primeiro tile
+        firstTileCamera.SetActive(true);
+
+        yield return new WaitForSeconds(4.5f);
+
+        //deixar um tempo visualizando o portal 
+
+        yield return new WaitForSeconds(1);
+
+        //desativar camera do primeiro tile
+        firstTileCamera.SetActive(false);
+
+        yield return new WaitForSeconds(3);
 
         Debug.Log("agora pode se mexer");
 
