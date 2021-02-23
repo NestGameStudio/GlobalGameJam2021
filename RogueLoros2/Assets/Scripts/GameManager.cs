@@ -667,6 +667,9 @@ public class GameManager : MonoBehaviour
 
             audioManager.instance.changeToBossMusic();
 
+            //mudar orientacao de camera
+            cameraController.instance.changeOrientation();
+
             //tirar item em cima
             //activeTile.GetComponent<hoverItems>().destroyItem();
         }
